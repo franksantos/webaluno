@@ -2,6 +2,10 @@
 
 @section('content')
     <div class="container">
+        <div class="box box-header">
+            <h3 class="box-title">Cadastro de Turma</h3>
+        </div>
+
         {!! Form::open(array('url' => 'turma/store')) !!}
             <div class="form-group">
                 {!! Form::label('Data de In&iacute;cio') !!}

@@ -13,6 +13,14 @@ class Curso extends Migration
     public function up()
     {
         //
+        Schema::table('curso', function(Blueprint $table){
+            $table->increments('cur_id');
+            $table->integer('cur_pol_id')->unsigned();
+            $table->foreign('cur_pol_id')->references('pol_id')->on('polo')->onDelete('cascade');
+            $table->string('cur_nome', 255);
+            $table->string('cur_area', 255);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,5 +31,6 @@ class Curso extends Migration
     public function down()
     {
         //
+        Schema::drop('curso');
     }
 }
