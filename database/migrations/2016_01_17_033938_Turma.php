@@ -13,7 +13,7 @@ class Turma extends Migration
     public function up()
     {
         //
-        Schema::table('turma', function(Blueprint $table){
+        Schema::create('turma', function(Blueprint $table){
             $table->increments('tur_id');
             $table->integer('tur_cur_id')->unsigned();
             $table->foreign('tur_cur_id')->references('cur_id')->on('curso')->onDelete('cascade');

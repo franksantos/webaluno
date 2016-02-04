@@ -13,7 +13,7 @@ class Ficha extends Migration
     public function up()
     {
         //
-        Schema::table('ficha', function(Blueprint $table){
+        Schema::create('ficha', function(Blueprint $table){
            $table->increments('fic_id');
             $table->string('fic_nome', 255);
             $table->string('fic_cpf', 11);

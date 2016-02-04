@@ -13,7 +13,7 @@ class Mensalidade extends Migration
     public function up()
     {
         //
-        Schema::table('mensalidade', function(Blueprint $table){
+        Schema::create('mensalidade', function(Blueprint $table){
             $table->increments('men_id');
             $table->integer('men_alu_id')->unsigned();
             $table->foreign('men_alu_id')->references('alu_id')->on('aluno')->onDelete('cascade');

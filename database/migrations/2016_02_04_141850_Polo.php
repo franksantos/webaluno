@@ -13,7 +13,7 @@ class Polo extends Migration
     public function up()
     {
         //
-        Schema::table('polo', function(Blueprint $table){
+        Schema::create('polo', function(Blueprint $table){
             $table->increments('pol_id');
             $table->string('pol_nome', 255);
             $table->timestamps();

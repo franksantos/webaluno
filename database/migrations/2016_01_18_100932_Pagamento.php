@@ -13,7 +13,7 @@ class Pagamento extends Migration
     public function up()
     {
         //
-        Schema::table('pagamento', function(Blueprint $table){
+        Schema::create('pagamento', function(Blueprint $table){
             $table->increments('pag_id');
             $table->integer('pag_mes_id')->unsigned();
             $table->foreign('pag_mes_id')->references('mes_id')->on('mensalidade')->onDelete('cascade');
