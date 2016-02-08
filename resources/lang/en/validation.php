@@ -92,6 +92,12 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'nome' => [
+            'required' => 'O Campo nome e obrigatorio',
+        ],
+        'area' => [
+            'required' => 'Por favor selecione uma Area a selecao e obrigatoria',
+        ],
     ],
 
     /*

@@ -27,7 +27,12 @@
         </div>
         <div class="form-group">
             {!! Form::label('Area do Curso') !!}
-            {!! Form::text('area', null, ['class' => 'form-control']) !!}
+            {!! Form::select('area',
+                [''=>'Selecione a Area','Ciencias Exatas e da Terra'=>'Ci&ecirc;ncias Exatas e da Terra',
+                'Ciencias Biologicas'=>'Ci&ecirc;ncias Humanas',
+                'Saude'=>'Ciencias da Saude',
+                'Engenharias'=>'Engenharias',
+                'Biologicas'=>'Ciencias Biologicas', ''],'', ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
