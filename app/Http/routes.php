@@ -47,7 +47,13 @@ Route::group(['middleware' => 'web'], function () {
     /* -- rota listagem de aluno --*/
     Route::get('aluno/lista',['as' => 'alunos.lista', 'uses' => 'AlunoController@index']);
     /* -- rota salvar aluno --*/
-    Route::get('aluno/store',['as' => 'alunos.store', 'uses' => 'AlunoController@store']);
+    Route::post('aluno/store',['as' => 'alunos.store', 'uses' => 'AlunoController@store']);
+    Route::get('aluno/{id}/edit', ['as' => 'alunos.edit', 'uses' => 'AlunoController@edit']);
+    Route::put('aluno/{id}/update', ['as' => 'alunos.update', 'uses' => 'AlunoController@update']);
+    Route::get('aluno/{id}/destroy', ['as' => 'alunos.destroy', 'uses' => 'AlunoController@destroy']);
+    /* -- rota para API para trazer um json de alunos com id e nome */
+
+
 
     /**
      * Todas as Rotas de Cursos
@@ -75,4 +81,25 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('turma/{id}/edit', ['as' => 'turmas.edit', 'uses' => 'TurmaController@edit']);
     Route::put('turma/{id}/update', ['as' => 'turmas.update', 'uses' => 'TurmaController@update']);
     Route::get('turma/{id}/destroy', ['as' => 'turmas.destroy', 'uses' => 'TurmaController@destroy']);
+
+    /**
+     * Todas as Rotas de Mensalidades
+     */
+    /* -- rota cadastro de Mensalidades --*/
+    Route::get('mensalidade/create',['as' => 'mensalidades.create', 'uses' => 'MensalidadeController@create']);
+    /* -- rota listagem de mensalidade --*/
+    Route::get('mensalidade/lista',['as' => 'mensalidades.lista', 'uses' => 'MensalidadeController@index']);
+    /* -- rota salvar mensalidade --*/
+    Route::post('mensalidade/store',['as' => 'mensalidades.store', 'uses' => 'MensalidadeController@store']);
+    Route::get('mensalidade/{id}/edit', ['as' => 'mensalidades.edit', 'uses' => 'MensalidadeController@edit']);
+    Route::put('mensalidade/{id}/update', ['as' => 'mensalidades.update', 'uses' => 'MensalidadeController@update']);
+    Route::get('mensalidade/{id}/destroy', ['as' => 'mensalidades.destroy', 'uses' => 'MensalidadeController@destroy']);
+    /*-- Rota para API retornar alunos JSON --*/
+    Route::get('aluno/api','MensalidadeController@getJsonAlunos');
+    /*Route::get('aluno/api', function(){
+        $term = \Illuminate\Support\Facades\Input::get('term');
+        //dd($term);
+        return Redirect::action('MensalidadeController@getJsonAlunos', compact('term'));
+    });*/
+
 });

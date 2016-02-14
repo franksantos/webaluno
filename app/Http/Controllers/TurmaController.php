@@ -47,14 +47,36 @@ class TurmaController extends Controller
     public function show(){
 
     }
-    public function edit(){
+    public function edit($id){
+        $turma = Turma::find($id);
+        $cur_id = $turma->tur_cur_id;//pega o id do curso da turma a ser editada
+        $c = new Curso();
+        $cursos = $c->all()->lists('cur_nome', 'cur_id');
+        return view('turma.edit', ['turma'=>$turma,'cursos'=>$cursos, 'cur_id'=>$cur_id]);
 
     }
-    public function update(){
+    public function update(TurmaRequest $request, $id){
+        $t = Turma::find($id);
+        $t->tur_cur_id = $request->curso;
+        $t->tur_nome = $request->nome;
+        $t->tur_data_inicio = date('Y-m-d', strtotime(str_replace('/','-',$request->data_inicio)));
+        $t->save();
 
+        $c = new Curso();
+        $cursos = $c->all()->lists('cur_nome', 'cur_id');
+        $tur = new Turma();
+        $turmas = $tur->all();
+        return view('turma.create', ['cursos'=>$cursos, 'turmas'=>$turmas]);
     }
-    public function destroy(){
+    public function destroy($id){
+        $turma = Turma::find($id);
+        $turma->delete();
 
+        $c = new Curso();
+        $cursos = $c->all()->lists('cur_nome', 'cur_id');
+        $tur = new Turma();
+        $turmas = $tur->all();
+        return view('turma.create', ['cursos'=>$cursos, 'turmas'=>$turmas]);
     }
 
 }

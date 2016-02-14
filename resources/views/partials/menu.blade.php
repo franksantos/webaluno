@@ -26,7 +26,7 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{!! route('alunos.create') !!}">Alunos</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Mensalidades</a></li>
+                                <li><a href="{!! route('mensalidades.create') !!}">Mensalidades</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Pagamentos</a></li>
                             </ul>
@@ -61,14 +61,6 @@
                         </li>
                     @endif
                 </ul>
-                @if(!(Auth::guest()))
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Buscar">
-                    </div>
-                    <button type="submit" class="btn btn-default">Pesquisar</button>
-                </form>
-                @endif
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())

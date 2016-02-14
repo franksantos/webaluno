@@ -5,7 +5,6 @@
         <div class="box box-header">
             <h3 class="box-title">Editando o curso: <span style="color: #005983">{!! $curso->cur_nome !!}</span> </h3>
         </div>
-        {{--
         @if($errors->any())
             <ul class="alert alert-warning">
                 @foreach($errors->all() as $error)
@@ -13,11 +12,10 @@
                 @endforeach
             </ul>
         @endif
-        --}}
         {!! Form::open(array('url' => "curso/$curso->cur_id/update", 'method'=>'put')) !!}
         <div class="form-group">
             {!! Form::label('Polo') !!}
-            {!! Form::select('polo', $todosPolos) !!}
+            {!! Form::select('polo', $todosPolos, $cur_pol_id, ['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('Nome do Curso') !!}

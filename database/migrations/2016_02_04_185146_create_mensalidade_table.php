@@ -18,7 +18,7 @@ class CreateMensalidadeTable extends Migration
             $table->integer('mes_num');//número da parcela, refere-se à parcela devida pelo aluno
             $table->decimal('mes_valor', 10, 2);
             $table->date('mes_data_venc');
-            $table->string('mes_status');
+            $table->string('mes_status')->default('Aguardando Pagamento');
             $table->timestamps();
         });
         Schema::table('mensalidade', function(Blueprint $table){

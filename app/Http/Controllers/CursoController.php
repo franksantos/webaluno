@@ -49,12 +49,29 @@ class CursoController extends Controller
         $polo = new Polo();
         $todosPolos = $polo->all()->lists('pol_nome', 'pol_id');
         $curso = Curso::find($id);
-        return view('curso.edit', ['curso'=>$curso, 'todosPolos'=>$todosPolos]);
+        $cur_pol_id = $curso->cur_pol_id;
+        return view('curso.edit', ['curso'=>$curso, 'todosPolos'=>$todosPolos, 'cur_pol_id'=>$cur_pol_id]);
     }
-    public function update(){
-
+    public function update(CursoRequest $request, $id){
+        $curso = Curso::find($id);
+        $curso->cur_pol_id = $request->polo;
+        $curso->cur_nome   = $request->nome;
+        $curso->cur_area   = $request->area;
+        $curso->save();
+        $polo = new Polo();
+        $todosPolos = $polo->all()->lists('pol_nome', 'pol_id');
+        $b = new Curso();
+        $cursos = $b->all();
+        return view('curso.create',['cursos' => $cursos, 'todosPolos'=>$todosPolos]);
     }
-    public function destroy(){
+    public function destroy($id){
+        $curso = Curso::find($id);
+        $curso->delete();
 
+        $polo = new Polo();
+        $todosPolos = $polo->all()->lists('pol_nome', 'pol_id');
+        $b = new Curso();
+        $cursos = $b->all();
+        return view('curso.create',['cursos' => $cursos, 'todosPolos'=>$todosPolos]);
     }
 }

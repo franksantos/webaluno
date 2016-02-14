@@ -18,6 +18,9 @@
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
+    <!-- CSS do Plugin Select2 -->
+    <link href="{{ asset("/bower_components/AdminLte/plugins/select2/select2.css") }}" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Lato';
@@ -42,6 +45,21 @@
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- Datepicker -->
+    <script src="{{ asset("/bower_components/AdminLte/plugins/datepicker/bootstrap-datepicker.js")}}"></script>
+    <!-- Locales Datepicker -->
+    <script src="{{ asset("/bower_components/AdminLte/plugins/datepicker/locales/bootstrap-datepicker.pt-BR.js")}}"></script>
+    <!-- Input Mask -->
+    <script src="{{ asset("/bower_components/AdminLte/plugins/input-mask/jquery.inputmask.js")}}"></script>
+    <!-- Input Mask DAte Extensions -->
+    <script src="{{ asset("/bower_components/AdminLte/plugins/input-mask/jquery.inputmask.date.extensions.js")}}"></script>
+    <!-- Input Mask Extensions -->
+    <script src="{{ asset("/bower_components/AdminLte/plugins/input-mask/jquery.inputmask.extensions.js")}}"></script>
+    <!-- Plugin Plentz MaskMoney -->
+    <script src="{{ asset("/bower_components/AdminLte/plugins/plentz/jquery.maskMoney.js")}}"></script>
+    <!-- Plugin Select2 -->
+    <script src="{{ asset("/bower_components/AdminLte/plugins/select2/select2.js") }}"></script>
+    @yield('scripts')
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

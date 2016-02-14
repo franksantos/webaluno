@@ -49,6 +49,7 @@
                 <th>Nome</th>
                 <th>Area</th>
                 <th>&nbsp;</th>
+                <th>&nbsp;</th>
 
             </tr>
             </thead>
@@ -58,8 +59,10 @@
                     <td>{{ $curso->cur_id }}</td>
                     <td>{{ $curso->cur_nome }}</td>
                     <td>{{ $curso->cur_area }}</td>
-                    <td>
+                    <td style="text-align: center">
                         <a href="{{ route('cursos.edit',['id'=>$curso->cur_id]) }}" class="btn-sm btn-success">Editar</a>
+                    </td>
+                    <td style="text-align: center">
                         <a href="{{ route('cursos.destroy',['id'=>$curso->cur_id]) }}" class="btn-sm btn-danger">Remover</a>
                     </td>
                 </tr>
