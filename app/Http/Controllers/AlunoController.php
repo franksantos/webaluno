@@ -24,7 +24,7 @@ class AlunoController extends Controller
         $a = new Aluno();
         $alunos = $a->all()->sortByDesc('alu_nome');
         $t = new Turma();
-        $turmas = $t->all()->lists('tur_nome','tur_id');
+        $turmas = $t->all()->lists('tur_nome','id');
         return view('aluno.create', ['alunos' => $alunos, 'turmas'=>$turmas]);
     }
     public function store(AlunoRequest $request, Aluno $query){
@@ -35,7 +35,7 @@ class AlunoController extends Controller
         $a->alu_tel    = $request->telefone;
         $a->save();
         $t = new Turma();
-        $turmas = $t->all()->lists('tur_nome', 'tur_id');
+        $turmas = $t->all()->lists('tur_nome', 'id');
         //$alunos = $a->all()->sortByDesc('alu_nome');
         $alunos = $query->orderBy('created_at', 'desc')->get();
         return view('aluno.create',['alunos'=>$alunos,'turmas'=>$turmas]);
@@ -48,7 +48,7 @@ class AlunoController extends Controller
         $aluno = Aluno::find($id);
         $alu_tur_id = $aluno->alu_tur_id;//id da turma do aluno
         $t = new Turma();
-        $turmas = $t->all()->lists('tur_nome', 'tur_id');
+        $turmas = $t->all()->lists('tur_nome', 'id');
         return view('aluno.edit',['aluno'=>$aluno, 'turmas'=>$turmas, 'alu_tur_id'=>$alu_tur_id ]);
     }
     public function update(AlunoRequest $request, $id){
@@ -60,7 +60,7 @@ class AlunoController extends Controller
         $aluno->save();
 
         $t = new Turma();
-        $turmas = $t->all()->lists('tur_nome', 'tur_id');
+        $turmas = $t->all()->lists('tur_nome', 'id');
         $a = new Aluno();
         $alunos = $a->all();
         return view('aluno.create',['alunos'=>$alunos,'turmas'=>$turmas]);
@@ -70,7 +70,7 @@ class AlunoController extends Controller
         $aluno->delete();
 
         $t = new Turma();
-        $turmas = $t->all()->lists('tur_nome', 'tur_id');
+        $turmas = $t->all()->lists('tur_nome', 'id');
         $a = new Aluno();
         $alunos = $a->all();
         return view('aluno.create',['alunos'=>$alunos,'turmas'=>$turmas]);

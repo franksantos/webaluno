@@ -56,10 +56,25 @@ Route::group(['middleware' => 'web'], function () {
 
 
     /**
+     * Todas as Rotas de Polos
+     */
+    /* -- rota cadastro de polo --*/
+    Route::get('polo/create',['as' => 'polos.create', 'uses' => 'PoloController@create']);
+    /* -- rota listagem de polo --*/
+    Route::get('polo/lista',['as' => 'polos.lista', 'uses' => 'PoloController@index']);
+    /* -- rota salvar polo --*/
+    Route::post('polo/store',['as' => 'polos.store', 'uses' => 'PoloController@store']);
+    Route::get('polo/{id}/edit', ['as' => 'polos.edit', 'uses' => 'PoloController@edit']);
+    Route::put('polo/{id}/update', ['as' => 'polos.update', 'uses' => 'PoloController@update']);
+    Route::get('polo/{id}/destroy', ['as' => 'polos.destroy', 'uses' => 'PoloController@destroy']);
+
+
+
+    /**
      * Todas as Rotas de Cursos
      */
     /* -- rota cadastro de curso --*/
-    Route::get('curso/create',['as' => 'cursos.create', 'uses' => 'CursoController@create']);
+    Route::get('curso/create',['as' => 'Poloss.create', 'uses' => 'CursoController@create']);
     /* -- rota listagem de curso --*/
     Route::get('curso/lista',['as' => 'cursos.lista', 'uses' => 'CursoController@index']);
     /* -- rota salvar curso --*/
@@ -81,6 +96,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('turma/{id}/edit', ['as' => 'turmas.edit', 'uses' => 'TurmaController@edit']);
     Route::put('turma/{id}/update', ['as' => 'turmas.update', 'uses' => 'TurmaController@update']);
     Route::get('turma/{id}/destroy', ['as' => 'turmas.destroy', 'uses' => 'TurmaController@destroy']);
+    /*-- Rota para API retornar turmas JSON --*/
+    Route::get('turma/api','TurmaController@getJsonTurmas');
 
     /**
      * Todas as Rotas de Mensalidades
@@ -96,10 +113,29 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('mensalidade/{id}/destroy', ['as' => 'mensalidades.destroy', 'uses' => 'MensalidadeController@destroy']);
     /*-- Rota para API retornar alunos JSON --*/
     Route::get('aluno/api','MensalidadeController@getJsonAlunos');
-    /*Route::get('aluno/api', function(){
-        $term = \Illuminate\Support\Facades\Input::get('term');
-        //dd($term);
-        return Redirect::action('MensalidadeController@getJsonAlunos', compact('term'));
-    });*/
+    /*-- Rota para retornar todas as mensalidade de um aluno por id --*/
+    Route::get('mensalidade/{id}', ['as' => 'mensalidades.aluno', 'uses' => 'MensalidadeController@getMensalidadesAluno']);
+
+    /**
+     * Todas as Rotas de Pagamentos
+     */
+    /* -- rota cadastro de Pagamentos --*/
+    Route::get('pagamento/create',['as' => 'pagamentos.create', 'uses' => 'PagamentoController@create']);
+    /* -- rota listagem de pagamento --*/
+    Route::get('pagamento/lista',['as' => 'pagamentos.lista', 'uses' => 'PagamentoController@index']);
+    /* -- rota salvar pagamento --*/
+    Route::post('pagamento/store',['as' => 'pagamentos.store', 'uses' => 'PagamentoController@store']);
+    Route::get('pagamento/{id}/edit', ['as' => 'pagamentos.edit', 'uses' => 'PagamentoController@edit']);
+    Route::put('pagamento/{id}/update', ['as' => 'pagamentos.update', 'uses' => 'PagamentoController@update']);
+    Route::get('pagamento/{id}/destroy', ['as' => 'pagamentos.destroy', 'uses' => 'PagamentoController@destroy']);
+
+    /*Rota Alternativa para DataTable */
+    Route::controller('pagamento/lista/alunos', 'PagamentoController', [
+        'getBasicData' => 'datatables.data',
+        'getIndex' => 'datatables',
+    ]);
+
+
+    //teste pegar resultados por querybuilder
 
 });

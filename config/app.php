@@ -150,6 +150,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
 
         'Kris\LaravelFormBuilder\FormBuilderServiceProvider',
+        Yajra\Datatables\DatatablesServiceProvider::class,
 
 
         /*
@@ -207,7 +208,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-        'FormBuilder' => 'Kris\LaravelFormBuilder\Facades\FormBuilder'
+        'FormBuilder' => 'Kris\LaravelFormBuilder\Facades\FormBuilder',
+        'Datatables' => Yajra\Datatables\Datatables::class,
 
     ],
 

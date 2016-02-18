@@ -13,7 +13,7 @@ class CreateMensalidadeTable extends Migration
     public function up()
     {
         Schema::create('mensalidade', function (Blueprint $table) {
-            $table->increments('mes_id');
+            $table->increments('id');
             $table->integer('mes_alu_id')->unsigned();
             $table->integer('mes_num');//número da parcela, refere-se à parcela devida pelo aluno
             $table->decimal('mes_valor', 10, 2);
@@ -22,7 +22,7 @@ class CreateMensalidadeTable extends Migration
             $table->timestamps();
         });
         Schema::table('mensalidade', function(Blueprint $table){
-            $table->foreign('mes_alu_id')->references('alu_id')->on('aluno')->onDelete('cascade');
+            $table->foreign('mes_alu_id')->references('id')->on('aluno')->onDelete('cascade');
         });
     }
 

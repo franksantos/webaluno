@@ -13,7 +13,7 @@ class CreatePagamentoTable extends Migration
     public function up()
     {
         Schema::create('pagamento', function (Blueprint $table) {
-            $table->increments('pag_id');
+            $table->increments('id');
             $table->integer('pag_mes_id')->unsigned();
             $table->date('pag_data');
             $table->time('pag_hora');
@@ -25,7 +25,7 @@ class CreatePagamentoTable extends Migration
             $table->timestamps();
         });
         Schema::table('pagamento', function(Blueprint $table){
-            $table->foreign('pag_mes_id')->references('mes_id')->on('mensalidade')->onDelete('cascade');
+            $table->foreign('pag_mes_id')->references('id')->on('mensalidade')->onDelete('cascade');
         });
     }
 

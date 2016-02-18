@@ -13,7 +13,7 @@ class CreateAlunoTable extends Migration
     public function up()
     {
         Schema::create('aluno', function (Blueprint $table) {
-            $table->increments('alu_id');
+            $table->increments('id');
             $table->integer('alu_tur_id')->unsigned();
             $table->string('alu_nome', 255);
             $table->string('alu_cpf', 11)->unique(); //cpf [e unico
@@ -21,7 +21,7 @@ class CreateAlunoTable extends Migration
             $table->timestamps();
         });
         Schema::table('aluno', function(Blueprint $table){
-            $table->foreign('alu_tur_id')->references('tur_id')->on('turma')->onDelete('cascade');
+            $table->foreign('alu_tur_id')->references('id')->on('turma')->onDelete('cascade');
         });
     }
 

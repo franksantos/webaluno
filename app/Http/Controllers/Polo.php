@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Curso;
-use App\Polo;
 use Illuminate\Http\Request;
-use App\Http\Requests\CursoRequest;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class CursoController extends Controller
+class Polo extends Controller
 {
     //
     //
@@ -19,17 +15,15 @@ class CursoController extends Controller
     }
     //
     public function index(){
-        $a = new Curso();
-        $todos = $a->all();
-        return view('curso.index', ['cursos' => compact($todos)]);
+        $p = new Polo();
+        $todos = $p->all();
+        return view('polo.index', ['polos' => compact($todos)]);
         //return view('curso.index');
     }
     public function create(){
         $polo = new Polo();
         $todosPolos = $polo->all()->lists('pol_nome', 'id');
-        $c = new Curso();
-        $cursos = $c->all();
-        return view('curso.create', ['cursos' => $cursos, 'todosPolos' => $todosPolos]);
+        return view('polo.create', ['todosPolos' => $todosPolos]);
     }
     public function store(CursoRequest $request){
         $polo = new Polo();

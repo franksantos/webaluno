@@ -79,4 +79,18 @@ class TurmaController extends Controller
         return view('turma.create', ['cursos'=>$cursos, 'turmas'=>$turmas]);
     }
 
+    public function getJsonTurmas(Turma $turmas, Request $requests){
+        if ($requests->has("term")){
+            $result = $turmas->where("tur_nome", "like", "%" . $requests->term . "%")->get();
+        } else {
+            $result = $turmas->all();
+        }
+        $list = [];
+        foreach($result as $key => $value){
+            $list[$key]['id'] = $value->tur_id;
+            $list[$key]['text'] = $value->tur_nome;
+        }
+        return $list;
+    }
+
 }

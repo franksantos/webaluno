@@ -28,7 +28,7 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{!! route('mensalidades.create') !!}">Mensalidades</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Pagamentos</a></li>
+                                <li><a href="{!! url('pagamento/create') !!}">Pagamentos</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">

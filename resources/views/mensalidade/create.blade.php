@@ -122,23 +122,5 @@
             },
 
         });
-        /*$('#aluno').select2({
-            placeholder: 'Buscar por nome',
-            minimumInputLength: 3,
-            ajax: {
-                url: '{{ url("aluno/api") }}',
-                dataType: 'json',
-                delay:400,
-                data: function (params) {
-                    return {
-                        aluno: params.term
-                    };
-                },
-                results: function (data, page) {
-                    return {results: data};
-                }
-            },
-            tags: true
-        });*/
     </script>
 @endsection

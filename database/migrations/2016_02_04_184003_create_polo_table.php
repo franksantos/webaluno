@@ -14,7 +14,7 @@ class CreatePoloTable extends Migration
     {
         //
         Schema::create('polo', function(Blueprint $table){
-            $table->increments('pol_id');
+            $table->increments('id');
             $table->string('pol_nome', 255);
             $table->timestamps();
         });

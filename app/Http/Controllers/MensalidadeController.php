@@ -29,16 +29,6 @@ class MensalidadeController extends Controller
         $t = new Aluno();
         $alunos = $t->all()->lists('alu_nome','alu_id')->sortByDesc('alu_id')->toArray();
         $totalDeAlunos = count($alunos);
-        //$TodosAlunos = json_encode($data);
-        /*
-        $result = array_reverse($a);
-        //print_r($a);
-        //echo "<br>";
-        //print_r($result);
-        $TodosAlunos = (object) $result;
-        //var_dump($TodosAlunos);
-        //dd();
-        */
         return view('mensalidade.create', ['mensalidades' => $mensalidades, 'alunos'=>$alunos, 'totalDeAlunos'=>$totalDeAlunos, 'test'=>2]);
 
     }
@@ -52,9 +42,6 @@ class MensalidadeController extends Controller
         $data_venc = Carbon::create($ano, $mes, $dia);
         $valor = $this->getfloat($request->valor);
         for($i=1;$i<=$request->num_parcelas;$i++){
-            //$m->mes_alu_id    = $request->aluno;
-            //$m->mes_num       = $i;
-            //$m->mes_valor     = $request->valor;
             if($i==1){
                 //primeiro vencimento
                 $mes_data_venc = $data_venc;
@@ -62,11 +49,6 @@ class MensalidadeController extends Controller
                 $mes_data_venc = $data_venc->addMonth();
             }
             $m->mes_status    = $request->status;
-            //echo "p=".$i."<br>";
-            //echo "aluno=".$m->mes_alu_id."<br>";
-            //echo "input_value_aluno".$request->aluno."<br>";
-            //echo "venc=".$m->mes_data_venc."<br>";
-            //echo "valor".$valor."<br>";
             $m->insert(
                 ['mes_alu_id'=>$request->aluno, 'mes_num'=>$i, 'mes_valor'=>$valor, 'mes_data_venc'=>$mes_data_venc, 'mes_status'=>$request->status, 'created_at'=>Carbon::now(), 'updated_at'=>Carbon::now()]
             );
@@ -84,9 +66,14 @@ class MensalidadeController extends Controller
         //return var_dump($mensalidades);
 
     }
-    public function show(){
+    public function show($id){
 
     }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit($id){
         $mensalidade = Mensalidade::find($id);
         $alu_tur_id = $mensalidade->alu_tur_id;//id da turma do mensalidade
@@ -157,6 +144,17 @@ class MensalidadeController extends Controller
         } else {
             return floatval($str); // take some last chances with floatval
         }
+    }
+
+
+    /**
+     * @param $id
+     * @return lista de mensalidades do aluno
+     */
+    public function getMensalidadesAluno($id){
+        $aluno = Aluno::find($id);
+        dd($aluno->mensalidades);
+        //return $aluno->mensalidades;
     }
 
 }

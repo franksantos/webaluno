@@ -15,6 +15,13 @@
     <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">-->
     <!--teste -->
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Datepicker -->
+    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLte/plugins/datepicker/datepicker3.css")}}">
+    <!-- DataTable for laravel -->
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+
+
+
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
@@ -59,6 +66,8 @@
     <script src="{{ asset("/bower_components/AdminLte/plugins/plentz/jquery.maskMoney.js")}}"></script>
     <!-- Plugin Select2 -->
     <script src="{{ asset("/bower_components/AdminLte/plugins/select2/select2.js") }}"></script>
+    <!-- DataTable laravel -->
+    <script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
     @yield('scripts')
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>

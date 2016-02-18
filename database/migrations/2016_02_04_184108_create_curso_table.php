@@ -13,14 +13,14 @@ class CreateCursoTable extends Migration
     public function up()
     {
         Schema::create('curso', function (Blueprint $table) {
-            $table->increments('cur_id');
+            $table->increments('id');
             $table->integer('cur_pol_id')->unsigned();
             $table->string('cur_nome', 255);
             $table->string('cur_area', 255);
             $table->timestamps();
         });
         Schema::table('curso', function (Blueprint $table) {
-            $table->foreign('cur_pol_id')->references('pol_id')->on('polo')->onDelete('cascade');
+            $table->foreign('cur_pol_id')->references('id')->on('polo')->onDelete('cascade');
         });
     }
 
