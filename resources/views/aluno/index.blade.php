@@ -2,7 +2,7 @@
 @section(`conteudo`)
     <div class="container">
         <h1>Alunos</h1>
-        <a href="{{ route('produtos.create') }}" class="btn btn-default">Cadastrar Aluno</a>
+        <a href="{{ route('alunos.create') }}" class="btn btn-default">Cadastrar Aluno</a>
         <br />
         <br />
         <table class="table table-striped table-bordered table-hover">

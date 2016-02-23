@@ -51,9 +51,19 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('aluno/{id}/edit', ['as' => 'alunos.edit', 'uses' => 'AlunoController@edit']);
     Route::put('aluno/{id}/update', ['as' => 'alunos.update', 'uses' => 'AlunoController@update']);
     Route::get('aluno/{id}/destroy', ['as' => 'alunos.destroy', 'uses' => 'AlunoController@destroy']);
-    /* -- rota para API para trazer um json de alunos com id e nome */
-
-
+    /*
+     * -- Rota para API retornar alunos JSON --
+     * -- O Retorno sera a lista de todos os alunos
+     * -- conforme a busca na view, pelo nome do aluno
+     * */
+    Route::get('api/alunos-com-parcelas-cadastradas','PagamentoController@getJsonAlunosComParcelas');
+    /*
+    -- rota alternativa do DataTable
+    */
+    Route::controller('aluno/busca', 'AlunoController', [
+        'anyData'  => 'datatables.aluno',
+        'getIndex' => 'datatables',
+    ]);
 
     /**
      * Todas as Rotas de Polos
@@ -74,7 +84,7 @@ Route::group(['middleware' => 'web'], function () {
      * Todas as Rotas de Cursos
      */
     /* -- rota cadastro de curso --*/
-    Route::get('curso/create',['as' => 'Poloss.create', 'uses' => 'CursoController@create']);
+    Route::get('curso/create',['as' => 'cursos.create', 'uses' => 'CursoController@create']);
     /* -- rota listagem de curso --*/
     Route::get('curso/lista',['as' => 'cursos.lista', 'uses' => 'CursoController@index']);
     /* -- rota salvar curso --*/
@@ -105,7 +115,7 @@ Route::group(['middleware' => 'web'], function () {
     /* -- rota cadastro de Mensalidades --*/
     Route::get('mensalidade/create',['as' => 'mensalidades.create', 'uses' => 'MensalidadeController@create']);
     /* -- rota listagem de mensalidade --*/
-    Route::get('mensalidade/lista',['as' => 'mensalidades.lista', 'uses' => 'MensalidadeController@index']);
+    Route::get('mensalidade/{id}/lista',['as' => 'mensalidades.lista', 'uses' => 'MensalidadeController@show']);
     /* -- rota salvar mensalidade --*/
     Route::post('mensalidade/store',['as' => 'mensalidades.store', 'uses' => 'MensalidadeController@store']);
     Route::get('mensalidade/{id}/edit', ['as' => 'mensalidades.edit', 'uses' => 'MensalidadeController@edit']);
@@ -121,8 +131,12 @@ Route::group(['middleware' => 'web'], function () {
      */
     /* -- rota cadastro de Pagamentos --*/
     Route::get('pagamento/create',['as' => 'pagamentos.create', 'uses' => 'PagamentoController@create']);
+    /*-- lista todas as mensalidades de um aluno --*/
+    Route::post('pagamento/lista/mensalidades',['as' => 'pagamentos.listamensalidades', 'uses' => 'PagamentoController@listaMensalidadesAluno']);
     /* -- rota listagem de pagamento --*/
     Route::get('pagamento/lista',['as' => 'pagamentos.lista', 'uses' => 'PagamentoController@index']);
+    /* -- rota cadastrar um pagamento com os dados do comprovante de pagamento --*/
+    Route::get('pagamento/comprovante/mensalidade/{idMensalidade}/aluno/{idAluno}',['as' => 'pagamentos.cadcomprovante', 'uses' => 'PagamentoController@cadComprovante']);
     /* -- rota salvar pagamento --*/
     Route::post('pagamento/store',['as' => 'pagamentos.store', 'uses' => 'PagamentoController@store']);
     Route::get('pagamento/{id}/edit', ['as' => 'pagamentos.edit', 'uses' => 'PagamentoController@edit']);
@@ -136,6 +150,5 @@ Route::group(['middleware' => 'web'], function () {
     ]);
 
 
-    //teste pegar resultados por querybuilder
 
 });

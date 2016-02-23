@@ -48,26 +48,61 @@
                 <th>Cod</th>
                 <th>Nome</th>
                 <th>Area</th>
-                <th>&nbsp;</th>
-                <th>&nbsp;</th>
+                <th colspan="2" style="text-align: center">A&ccedil;&otilde;es</th>
+
 
             </tr>
             </thead>
             <tbody>
             @foreach($cursos as $curso)
                 <tr>
-                    <td>{{ $curso->cur_id }}</td>
+                    <td>{{ $curso->id }}</td>
                     <td>{{ $curso->cur_nome }}</td>
                     <td>{{ $curso->cur_area }}</td>
                     <td style="text-align: center">
-                        <a href="{{ route('cursos.edit',['id'=>$curso->cur_id]) }}" class="btn-sm btn-success">Editar</a>
+                        <a href="{{ route('cursos.edit',['id'=>$curso->id]) }}" class="btn-sm btn-success">Editar</a>
                     </td>
                     <td style="text-align: center">
-                        <a href="{{ route('cursos.destroy',['id'=>$curso->cur_id]) }}" class="btn-sm btn-danger">Remover</a>
+                        <a href="{{ route('cursos.destroy',['id'=>$curso->id]) }}" id="btnRemover" class="btn-sm btn-danger">Remover</a>
                     </td>
                 </tr>
             @endforeach
             </tbody>
         </table>
     </div>
+
+
+
+    <!-- div para exibir uma mensagem de confirmacao se o usuario deseja realmente excluir um curso -->
+    <!-- Modal Mensagem  -->
+    <!-- inicio -->
+    <div class="modal fade" id="sucessoAjax" tabindex="-1" role="dialog" aria-     labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">SALVO COM SUCESSO</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="retorno">
+
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- FIM Mensagem de SUCESSO-->
+
+
+@endsection
+@section('scripts')
+    <script>
+       /* $("#btnRemover").click(function(event){
+            event.preventDefault();
+        });*/
+    </script>
 @endsection

@@ -24,14 +24,14 @@ class TurmaController extends Controller
     }
     public function create(){
 		$c = new Curso();
-		$cursos = $c->all()->lists('cur_nome', 'cur_id');
+		$cursos = $c->all()->lists('cur_nome', 'id');
         $t = new Turma();
         $turmas = $t->all();
         return view('turma.create', ['cursos'=>$cursos, 'turmas'=>$turmas]);
     }
     public function store(TurmaRequest $request){
         $c = new Curso();
-        $cursos = $c->all()->lists('cur_nome', 'cur_id');
+        $cursos = $c->all()->lists('cur_nome', 'id');
         /*$data_BRA = $request->data_inicio;
         $data_USA = date('Y-m-d', strtotime(str_replace('/','-',$data_BRA)));
         echo $data_USA;
@@ -87,7 +87,7 @@ class TurmaController extends Controller
         }
         $list = [];
         foreach($result as $key => $value){
-            $list[$key]['id'] = $value->tur_id;
+            $list[$key]['id'] = $value->id;
             $list[$key]['text'] = $value->tur_nome;
         }
         return $list;

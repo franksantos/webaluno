@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>IESPIMA - Sistema de Gest&atilde;o Acad&ecirc;mica</title>
 
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
@@ -17,16 +17,18 @@
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <!-- Datepicker -->
     <link rel="stylesheet" href="{{ asset("/bower_components/AdminLte/plugins/datepicker/datepicker3.css")}}">
+    <!-- Timepicker -->
+    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLte/plugins/timepicker/bootstrap-timepicker.min.css")}}">
     <!-- DataTable for laravel -->
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
-
-
-
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-
     <!-- CSS do Plugin Select2 -->
     <link href="{{ asset("/bower_components/AdminLte/plugins/select2/select2.css") }}" rel="stylesheet">
+
+
+    <!--<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+
+
 
     <style>
         body {
@@ -54,6 +56,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!-- Datepicker -->
     <script src="{{ asset("/bower_components/AdminLte/plugins/datepicker/bootstrap-datepicker.js")}}"></script>
+    <!-- Timepicker -->
+    <script src="{{ asset("/bower_components/AdminLte/plugins/timepicker/bootstrap-timepicker.js")}}"></script>
     <!-- Locales Datepicker -->
     <script src="{{ asset("/bower_components/AdminLte/plugins/datepicker/locales/bootstrap-datepicker.pt-BR.js")}}"></script>
     <!-- Input Mask -->

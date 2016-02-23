@@ -8,7 +8,7 @@ class Turma extends Model
 {
     //
     public $table = "turma";
-    protected $primaryKey = 'tur_id';
+    protected $primaryKey = 'id';
     protected $fillable = ['tur_cur_id','tur_nome', 'tur_data_inicio'];
 
     /**

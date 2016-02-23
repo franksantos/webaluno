@@ -2,104 +2,72 @@
 
 @section('content')
 
-@if($test==1)
-        <!-- div para exibir A RESPOSTA da requisição AJAX-->
-<!-- Modal Mensagem SUCESSO AJAX  -->
-<!-- inicio -->
-<div class="modal fade" id="sucessoAjax" tabindex="-1" role="dialog" aria-     labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">SALVO COM SUCESSO</h4>
+    <!-- inicio contedudo lista de alunos e suas mensalidade -->
+    <div class="container">
+        <div class="box box-header">
+            <h3 class="box-title">Cadastro de Confirma&ccedil;&atilde;o de Pagamento</h3>
+        </div>
+        {!! Form::open(array('url' => 'pagamento/lista/mensalidades')) !!}
+        <div class="form-group-lg">
+            <h4> Selecione um aluno para exibir suas parcelas</h4>
+            <div class="form-group">
+                <div class="col-sm-8">
+                    <select name="alunoNome" id="alunoNome" class="form-control">
+
+                    </select>
+                </div>
             </div>
-            <div class="modal-body">
-                <p id="retorno">
-
-                </p>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-<!-- FIM Mensagem de SUCESSO-->
-@endif
-
-
-<div class="container">
-    <div class="box box-header">
-        <h3 class="box-title">Cadastro de Parcela</h3>
-    </div>
-
-    {!! Form::open(array('url' => 'pagamento/store')) !!}
-    {!! Form::hidden('status','Pago') !!}
-    <div class="form-group">
-        {!! Form::label('Turma') !!}
-        <select name="turma" id="turma" class="form-control">
-
-        </select>
-    </div>
-    <div class="form-group">
-        {!! Form::label('Aluno') !!}
-        <select name="aluno" id="aluno" class="form-control">
-
-        </select>
-    </div>
-    <div class="form-group">
-        {!! Form::label('Parcela') !!}
-        <select name="aluno" id="aluno" class="form-control">
-
-        </select>
-    </div>
-    <div class="form-group">
-        {!! Form::label('Valor de cada Parcela') !!}
-        {!! Form::text('valor', null, ['id'=>'valor','data-thousands'=>'.','data-decimal'=>',','data-prefix'=>'R$ ','class' => 'form-control']) !!}
-    </div>
-    <div class="form-group">
-        {!! Form::label('Data do Primeiro Vencimento') !!}
-        {!! Form::text('dt_venc', null, ['id'=>'dt_venc','class' => 'form-control']) !!}
-    </div>
-    <div class="form-group">
-        <div class="row">
-            <div class="col-xs-2">
-                {!! Form::label('Quantidade de parcelas') !!}
-                {!! Form::select('num_parcelas', [''=>'-',
-                    '1'=>'1',
-                    '2'=>'2',
-                    '3'=>'3',
-                    '4'=>'4',
-                    '5'=>'5',
-                    '6'=>'6',
-                    '7'=>'7',
-                    '8'=>'8',
-                    '9'=>'9',
-                    '10'=>'10',
-                    '11'=>'11',
-                    '12'=>'12',
-                    '13'=>'13',
-                    '14'=>'14',
-                    '15'=>'15',
-                    '16'=>'16',
-                    '17'=>'17',
-                    '18'=>'18',
-                    '19'=>'19',
-                    '20'=>'20',
-                    '21'=>'21',
-                    '22'=>'22',
-                    '23'=>'23',
-                    '24'=>'24',
-                     ''],'', ['id'=>'num_parcelas','class' => 'form-control']) !!}
+            <div class="form-group">
+                {!! Form::submit('Exibir Parcelas do Aluno', ['class' => 'btn btn-primary']) !!}
             </div>
         </div>
-    </div>
-    <div class="form-group">
-        {!! Form::submit('Salvar Pagamento', ['class' => 'btn btn-primary']) !!}
-    </div>
+        {!! Form::close() !!}
 
-{!! Form::close() !!}
+    </div>
+    @if($flag['acao'] == 'listar')
+    <div class="container">
+            <h4>Parcelas do aluno: {{ $alunos->alu_nome }}</h4>
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Parcela</th>
+                <th>Valor</th>
+                <th>Data de Vencimento</th>
+                <th>Status</th>
+                <th style="text-align: center">A&ccedil;&otilde;es</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($mensalidades as $mensalidade)
+                <tr>
+                    <td>{{ $mensalidade->mes_num }}</td>
+                    <td>{{ $mensalidade->mes_valor }}</td>
+                    <td>{{ $mensalidade->mes_data_venc->format('d/m/Y') }}</td>
+                    <td>
+                        @if($mensalidade->mes_status == 'Pago')
+                            <p class="text-success"><strong>{!! $mensalidade->mes_status !!}</strong></p>
+                        @else
+                            <p class="text-danger"><strong>{!! $mensalidade->mes_status !!}</strong></p>
+                        @endif
+                        {{-- $mensalidade->mes_status --}}
+                    </td>
+                    <td style="text-align: center">
+                        @if($mensalidade->mes_status == 'Pago')
+                            &nbsp;
+                        @else
+                            <a href="{{ route('pagamentos.cadcomprovante',['idMensalidade'=>$mensalidade->id, 'idAluno'=>$alunos->id]) }}" class="btn-sm btn-success">Confirmar Pagamento</a>
+                        @endif
+
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
+    </div>
+    @endif
+
+
 
 
 @endsection
@@ -135,11 +103,11 @@
 
             });
 
-            $('#aluno').select2({
+            $('#alunoNome').select2({
                 placeholder: 'Buscar por nome',
                 ajax: {
                     dataType: 'json',
-                    url: '{{ url("aluno/api") }}',
+                    url: '{{ url("api/alunos-com-parcelas-cadastradas") }}',
                     delay: 400,
                     data: function(params) {
                         return {
@@ -153,6 +121,26 @@
                     },
                 },
 
+            });
+        </script>
+        <script>
+            var valor = "";
+            $( "#alunoNome" ).change(function () {
+                        var str = "";
+                        $( "#alunoNome option:selected" ).each(function() {
+                            //str += $( this ).text() + " ";
+                            str += $( this ).val();
+                        });
+                        if(str==""){
+
+                        }else{
+                            console.log(str);
+                            valor = str;
+                            console.log(valor);
+                        }
+                    }).change();
+            $('#paramNomeAluno').click(function(){
+                alert(valor);
             });
         </script>
 @endsection

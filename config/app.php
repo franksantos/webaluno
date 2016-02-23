@@ -151,6 +151,7 @@ return [
 
         'Kris\LaravelFormBuilder\FormBuilderServiceProvider',
         Yajra\Datatables\DatatablesServiceProvider::class,
+        'GrahamCampbell\Exceptions\ExceptionsServiceProvider',
 
 
         /*

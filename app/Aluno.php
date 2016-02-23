@@ -12,6 +12,15 @@ class Aluno extends Model
     protected $fillable = ['alu_tur_id', 'alu_nome', 'alu_cpf', 'alu_tel'];
 
     /**
+     * Relaciona alunos com turma
+     *  um aluno faz parte de uma turma
+     * retorna a turma do aluno
+     */
+    public function turmas(){
+        return $this->belongsTo('App\Turma', 'id');
+    }
+
+    /**
      * Relaciona alunos com mensalidade
      *  um aluno tem varias mensalidades*
      * retorna todas as mensalidades de um aluno

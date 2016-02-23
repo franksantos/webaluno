@@ -31,7 +31,7 @@
                                 <li><a href="{!! url('pagamento/create') !!}">Pagamentos</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
+                        <!--<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relat&oacute;rios <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Cursos</a></li>
@@ -44,19 +44,19 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">One more separated link</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pesquisar <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{!! route('cursos.lista') !!}">Cursos</a></li>
+                                <li><a href="{!! url('aluno/busca') !!}">Alunos</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Turmas</a></li>
+                                <li><a href="{!! route('pagamentos.lista') !!}">Pagamentos</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Alunos</a></li>
+                                <!--<li><a href="#">Alunos</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#">Separated link</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="#">One more separated link</a></li>-->
                             </ul>
                         </li>
                     @endif

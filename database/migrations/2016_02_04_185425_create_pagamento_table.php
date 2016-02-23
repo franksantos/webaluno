@@ -14,12 +14,12 @@ class CreatePagamentoTable extends Migration
     {
         Schema::create('pagamento', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('pag_mes_id')->unsigned();
+            $table->integer('pag_mes_id')->unique()->unsigned();
             $table->date('pag_data');
             $table->time('pag_hora');
             $table->string('pag_lote', 15);
             $table->string('pag_terminal', 45);
-            $table->string('pag_cod_barras', 155);
+            $table->string('pag_cod_barras', 155)->unique();
             $table->date('pag_data_venc');
             $table->decimal('pag_valor', 10, 2);
             $table->timestamps();

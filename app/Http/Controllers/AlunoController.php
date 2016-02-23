@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\AlunoRequest;
 use App\Http\Controllers\Controller;
+use Yajra\Datatables\Datatables;
 
 class AlunoController extends Controller
 {
@@ -25,7 +26,7 @@ class AlunoController extends Controller
         $alunos = $a->all()->sortByDesc('alu_nome');
         $t = new Turma();
         $turmas = $t->all()->lists('tur_nome','id');
-        return view('aluno.create', ['alunos' => $alunos, 'turmas'=>$turmas]);
+        return view('aluno.create', ['alunos' => $alunos, 'turmas'=>$turmas, 'sucesso'=>false]);
     }
     public function store(AlunoRequest $request, Aluno $query){
         $a = new Aluno();
@@ -38,7 +39,7 @@ class AlunoController extends Controller
         $turmas = $t->all()->lists('tur_nome', 'id');
         //$alunos = $a->all()->sortByDesc('alu_nome');
         $alunos = $query->orderBy('created_at', 'desc')->get();
-        return view('aluno.create',['alunos'=>$alunos,'turmas'=>$turmas]);
+        return view('aluno.create',['alunos'=>$alunos,'turmas'=>$turmas, 'sucesso'=>true]);
 
     }
     public function show(){
@@ -74,5 +75,28 @@ class AlunoController extends Controller
         $a = new Aluno();
         $alunos = $a->all();
         return view('aluno.create',['alunos'=>$alunos,'turmas'=>$turmas]);
+    }
+
+    /** Metodos do DataTable */
+    /**
+     * Displays datatables front end view
+     *
+     * @return \Illuminate\View\View
+     */
+    public function getIndex()
+        //public function getBasic()
+    {
+        return view('aluno.busca');
+    }
+
+    /**
+     * Process datatables ajax request.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    //public function anyData(Aluno $aluno)
+    public function anyData()
+    {
+        return Datatables::of(Aluno::all())->make(true);
     }
 }

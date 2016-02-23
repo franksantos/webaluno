@@ -3,7 +3,8 @@
 @section('content')
 <div class="container">
     @foreach($aluno as $chave)
-        <h4>Parcelas do aluno: {{ $chave->alu_nome }}</h4>
+        <h1>Parcelas do aluno: {{ $chave->alu_nome }}</h1>
+        <a href="{{url('mensalidade/create')}}" class="btn btn-success">Voltar</a>
     @endforeach
 
     <table class="table table-striped table-bordered table-hover">
@@ -37,4 +38,7 @@
     </table>
 </div>
 </div>
+@endsection
+@section('scripts')
+
 @endsection

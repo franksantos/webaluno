@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
                 {!! Form::label('Data de In&iacute;cio') !!}
-                {!! Form::date('data_inicio', null, ['class' => 'form-control']) !!}
+                {!! Form::text('data_inicio', null, ['id'=>'data_inicio','class' => 'form-control']) !!}
             </div>
             <div class="form-group">
                 {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
@@ -52,17 +52,27 @@
                     <td>{{ $turma->tur_nome }}</td>
                     <td>{{ implode('/', array_reverse(explode('-', $turma->tur_data_inicio))) }}</td>
                     <td style="text-align: center">
-                        <a href="{{ route('turmas.edit',['id'=>$turma->tur_id]) }}" class="btn-sm btn-success">Editar</a>
+                        <a href="{{ route('turmas.edit',['id'=>$turma->id]) }}" class="btn-sm btn-success">Editar</a>
 
                     </td>
                     <td style="text-align: center">
-                        <a href="{{ route('turmas.destroy',['id'=>$turma->tur_id]) }}" class="btn-sm btn-danger">Remover</a>
+                        <a href="{{ route('turmas.destroy',['id'=>$turma->id]) }}" class="btn-sm btn-danger">Remover</a>
                     </td>
                 </tr>
             @endforeach
             </tbody>
         </table>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        $('#data_inicio').datepicker({
+            format:'dd/mm/yyyy',
+            language: 'pt-BR',
+            autoclose: true,
+            todayHighlight: true
+        });
+    </script>
 @endsection
 
 

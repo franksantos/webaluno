@@ -54,13 +54,13 @@ class MensalidadeController extends Controller
             );
         }
         $mensalidades = $m->join('aluno', function($join) {
-                                $join->on('mensalidade.mes_alu_id', '=', 'aluno.alu_id');
+                                $join->on('mensalidade.mes_alu_id', '=', 'aluno.id');
                             })
                         ->where('mes_alu_id', '=', $request->aluno)
                         ->get();
         $aluno = new Aluno();
         //$nomeAluno = $aluno->all()->where('alu_id',$request->aluno);
-        $objAluno = DB::table('aluno')->where('alu_id', '=', $request->aluno)->get();
+        $objAluno = DB::table('aluno')->where('id', '=', $request->aluno)->get();
         //return $nomeAluno;
         return view('mensalidade.index',['mensalidades'=>$mensalidades, 'aluno'=>$objAluno, 'test'=>1]);
         //return var_dump($mensalidades);
@@ -78,7 +78,7 @@ class MensalidadeController extends Controller
         $mensalidade = Mensalidade::find($id);
         $alu_tur_id = $mensalidade->alu_tur_id;//id da turma do mensalidade
         $t = new Turma();
-        $turmas = $t->all()->lists('tur_nome', 'tur_id');
+        $turmas = $t->all()->lists('tur_nome', 'id');
         return view('mensalidade.edit',['mensalidade'=>$mensalidade, 'turmas'=>$turmas, 'alu_tur_id'=>$alu_tur_id ]);
     }
     public function update(MensalidadeRequest $request, $id){
@@ -107,24 +107,19 @@ class MensalidadeController extends Controller
     }
 
     public function getJsonAlunos(Aluno $alunos, Request $requests){
-        //$a = new Aluno();
-        /*$teste = $_GET("term");
-        if($teste){
-            //$alunos = $a->all()->where('alu_nome',$_GET["term"]);
-            $alunos = $query->where('alu_nome',$_GET["term"]);
-        }else{
-            $alunos = $a->all();
-        }*/
-        //$alunos = $a->all();
         if ($requests->has("term")){
             $result = $alunos->where("alu_nome", "like", "%" . $requests->term . "%")->get();
         } else {
-            $result = $alunos->all();
+            $result = $alunos->whereNotExists(function ($query) {
+                $query->select(DB::raw(1))->from('mensalidade')
+                    ->whereRaw('mensalidade.mes_alu_id = aluno.id');
+            })->get();
+            //$result = $alunos->all();
         }
 //        dd($requests->term);
         $list = [];
         foreach($result as $key => $value){
-            $list[$key]['id'] = $value->alu_id;
+            $list[$key]['id'] = $value->id;
             $list[$key]['text'] = $value->alu_nome;
         }
 //        $teste = json_encode($list);
@@ -153,8 +148,8 @@ class MensalidadeController extends Controller
      */
     public function getMensalidadesAluno($id){
         $aluno = Aluno::find($id);
-        dd($aluno->mensalidades);
-        //return $aluno->mensalidades;
+        //dd($aluno->mensalidades);
+        return $aluno->mensalidades;
     }
 
 }

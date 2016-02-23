@@ -1,30 +1,69 @@
 @extends('layouts.app')
 
 @section('content')
+    @if($sucesso==true)
+        <!-- div para exibir uma mensagem de confirmacao se o foi realmente cadastrado com SUCESSO -->
+        <!-- Modal Mensagem  -->
+        <!-- inicio -->
+        <div class="modal fade" id="sucessoAjax" tabindex="-1" role="dialog" aria-     labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">SALVO COM SUCESSO</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="retorno">
+
+                        </p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!-- FIM Mensagem de SUCESSO-->
+    @endif
     <div class="container">
         <div class="box box-header">
             <h3 class="box-title">Cadastro de Aluno</h3>
         </div>
 
         {!! Form::open(array('url' => 'aluno/store')) !!}
-        <div class="form-group">
-            {!! Form::label('Turma') !!}
-            {!! Form::select('turma', $turmas,'', ['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('Nome') !!}
-            {!! Form::text('nome', null, ['id'=>'nome','class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('CPF') !!}
-            {!! Form::text('cpf', null, ['id'=>'cpf','class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('Telefone') !!}
-            {!! Form::text('telefone', null, ['id'=>'telefone','class' => 'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    {!! Form::label('Turma') !!}
+                    {!! Form::select('turma', $turmas,'', ['class' => 'form-control']) !!}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    {!! Form::label('Nome') !!}
+                    {!! Form::text('nome', null, ['id'=>'nome','class' => 'form-control']) !!}
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    {!! Form::label('CPF') !!}
+                    {!! Form::text('cpf', null, ['id'=>'cpf','class' => 'form-control']) !!}
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    {!! Form::label('Telefone') !!}
+                    {!! Form::text('telefone', null, ['id'=>'telefone','class' => 'form-control']) !!}
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    {!! Form::submit('Salvar', ['class' => 'btn btn-block btn-primary btn-lg']) !!}
+                </div>
+            </div>
+
         </div>
 
         {!! Form::close() !!}
@@ -47,11 +86,11 @@
                             <td>{{ $aluno->alu_cpf }}</td>
                             <td>{{ $aluno->alu_tel }}</td>
                             <td style="text-align: center">
-                                <a href="{{ route('alunos.edit',['id'=>$aluno->alu_id]) }}" class="btn-sm btn-success">Editar</a>
+                                <a href="{{ route('alunos.edit',['id'=>$aluno->id]) }}" class="btn-sm btn-success">Editar</a>
 
                             </td>
                             <td style="text-align: center">
-                                <a href="{{ route('alunos.destroy',['id'=>$aluno->alu_id]) }}" class="btn-sm btn-danger">Remover</a>
+                                <a href="{{ route('alunos.destroy',['id'=>$aluno->id]) }}" class="btn-sm btn-danger">Remover</a>
                             </td>
                         </tr>
                     @endforeach
