@@ -66,15 +66,7 @@ class PagamentoController extends Controller
         $mesVenc = $dta2[1];
         $anoVenc = $dta2[2];
         $data_vencimento = Carbon::create($anoVenc, $mesVenc, $diaVenc);
-        
-        $mensalidades = $m->join('aluno', function($join) {
-            $join->on('mensalidade.mes_alu_id', '=', 'aluno.id');
-        })
-            ->where('mes_alu_id', '=', $request->idAluno)
-            ->get();
-        $aluno = new Aluno();
-        //$nomeAluno = $aluno->all()->where('alu_id',$request->aluno);
-        $objAluno = DB::table('aluno')->where('id', '=', $request->idAluno)->get();
+
         //return $nomeAluno;
         $flag = array('acao'=>'listar');
         //dd($flag);
@@ -96,7 +88,17 @@ class PagamentoController extends Controller
 			$p->pag_valor      = $request->valor_parcela;
 			$p->save();
         }
-        return view('pagamento.create',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno, 'flag'=>$flag]);
+        /** Após salvar o pagamento busca novamente as mensalidades do aluno no banco de dados para exibi-las atualizadas */
+        $mensalidades = $m->join('aluno', function($join) {
+            $join->on('mensalidade.mes_alu_id', '=', 'aluno.id');
+        })
+            ->where('mes_alu_id', '=', $request->idAluno)
+            ->get();
+        $aluno = new Aluno();
+        //$nomeAluno = $aluno->all()->where('alu_id',$request->aluno);
+        $objAluno = DB::table('aluno')->where('id', '=', $request->idAluno)->get();
+        //return view('pagamento.create',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno, 'flag'=>$flag]);
+        return view('pagamento.index',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno, 'flag'=>$flag]);
         //return var_dump($mensalidades);
     }
 

@@ -38,24 +38,28 @@
                 <div class="form-group">
                     {!! Form::label('Turma') !!}
                     {!! Form::select('turma', $turmas,'', ['class' => 'form-control']) !!}
+                    @if($errors->has('turma'))<p class="alert alert-danger">{{$errors->first('turma')}}</p>@endif
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     {!! Form::label('Nome') !!}
                     {!! Form::text('nome', null, ['id'=>'nome','class' => 'form-control']) !!}
+                    @if($errors->has('nome'))<p class="alert alert-danger">{{$errors->first('nome')}}</p>@endif
                 </div>
             </div>
             <div class="col-md-2">
                 <div class="form-group">
                     {!! Form::label('CPF') !!}
                     {!! Form::text('cpf', null, ['id'=>'cpf','class' => 'form-control']) !!}
+                    @if($errors->has('cpf'))<p class="alert alert-danger">{{$errors->first('cpf')}}</p>@endif
                 </div>
             </div>
             <div class="col-md-2">
                 <div class="form-group">
                     {!! Form::label('Telefone') !!}
                     {!! Form::text('telefone', null, ['id'=>'telefone','class' => 'form-control']) !!}
+                    @if($errors->has('telefone'))<p class="alert alert-danger">{{$errors->first('telefone')}}</p> @endif
                 </div>
             </div>
             <div class="col-md-2">
@@ -108,4 +112,25 @@
         //máscara para o telefone
         $('#telefone').inputmask("(99) 99999-9999", {"placeholder": "(__) _____-____"});
     </script>
+    <!-- validação do cpf do aluno -->
+    <script> function TestaCPF(strCPF) {
+            var Soma;
+            var Resto;
+            Soma = 0;
+            if (strCPF == "00000000000") return false;
+            for (i=1; i<=9; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+            Resto = (Soma * 10) % 11;
+            if ((Resto == 10) || (Resto == 11)) Resto = 0;
+            if (Resto != parseInt(strCPF.substring(9, 10)) ) return false;
+            Soma = 0;
+            for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+            Resto = (Soma * 10) % 11;
+            if ((Resto == 10) || (Resto == 11)) Resto = 0;
+            if (Resto != parseInt(strCPF.substring(10, 11) ) ) return false;
+            return true;
+        }
+        var strCPF = "12345678909";
+        alert(TestaCPF(strCPF));
+    </script>
+
 @endsection

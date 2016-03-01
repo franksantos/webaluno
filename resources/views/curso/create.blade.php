@@ -29,10 +29,10 @@
             {!! Form::label('Area do Curso') !!}
             {!! Form::select('area',
                 [''=>'Selecione a Area','Ciencias Exatas e da Terra'=>'Ci&ecirc;ncias Exatas e da Terra',
-                'Ciencias Biologicas'=>'Ci&ecirc;ncias Humanas',
-                'Saude'=>'Ciencias da Saude',
+                'Ciencias Humanas'=>'Ci&ecirc;ncias Humanas',
+                'Ciencias da Saude'=>'Ci&ecirc;ncias da Saude',
                 'Engenharias'=>'Engenharias',
-                'Biologicas'=>'Ciencias Biologicas', ''],'', ['class' => 'form-control']) !!}
+                'Ciencias Biologicas'=>'Ci&ecirc;ncias Biologicas', ''],'', ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
