@@ -32,25 +32,26 @@
             </div>
             <div class="form-group">
                 {!! Form::label('Data do Pagamento ( informada no comprovante )') !!}
-                {!! Form::text('data_pagto', null, ['id'=>'data_pagto', 'class'=>'form-control']) !!}
+                {!! Form::text('data_pagto', null, ['id'=>'data_pagto', 'class'=>'form-control', 'required'=>'required']) !!}
+
             </div>
             <div class="form-group">
                 {!! Form::label('Hora do Pagamento ( informada no comprovante )') !!}
-                {!! Form::text('hora_pagto', null, ['id'=>'hora_pagto', 'class'=>'form-control timepicker']) !!}
+                {!! Form::text('hora_pagto', null, ['id'=>'hora_pagto', 'class'=>'form-control timepicker', 'required'=>'required']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('Lote do Pagamento ( informado no comprovante )') !!}
-                {!! Form::text('lote_pagto', null, ['id'=>'lote_pagto', 'class'=>'form-control']) !!}
+                {!! Form::text('lote_pagto', null, ['id'=>'lote_pagto', 'class'=>'form-control', 'required'=>'required']) !!}
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 {!! Form::label('Numero do Terminal usado no Pagamento ( informado no comprovante )') !!}
-                {!! Form::text('terminal_pagto', null, ['id'=>'terminal_pagto', 'class'=>'form-control']) !!}
+                {!! Form::text('terminal_pagto', null, ['id'=>'terminal_pagto', 'class'=>'form-control', 'required'=>'required']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('C&oacute;digo de Barras do Pagamento ( informado no comprovante )') !!}
-                {!! Form::text('cod_barras_pagto', null, ['id'=>'cod_barras_pagto', 'class'=>'form-control']) !!}
+                {!! Form::text('cod_barras_pagto', null, ['id'=>'cod_barras_pagto', 'class'=>'form-control', 'required'=>'required']) !!}
             </div>
             <div class="form-group">
                 {!! Form::label('Data de Vencimento da Parcela') !!}
@@ -69,18 +70,38 @@
     </div>
 
     {!! Form::close() !!}
-
+</div>
 
     @endsection
     @section('scripts')
         <script>
-            $('#data_pagto').datepicker({
-                format:'dd/mm/yyyy',
-                language: 'pt-BR',
-                autoclose: true,
-                todayHighlight: true
+            $(document).ready(function(){
+                //datepicker da data de pagamento
+                $('#data_pagto').datepicker({
+                    format:'dd/mm/yyyy',
+                    language: 'pt-BR',
+                    autoclose: true,
+                    todayHighlight: true
+                });
+                //máscara para o telefone
+                $('#hora_pagto').inputmask("99:99:99", {"placeholder": "__:__:__"});
+
+                /** validate */
+                $("form").validate({
+                    debug: false,
+                    rules:{
+                        data_pagto:{required:true}
+                    },
+                    messages:{
+                        data_pagto:{
+                            required:"Esse campo n&atilde;o pode ser vazio"
+                        }
+                    },
+                    submitHandler: function(form){
+                        return true;
+                    }
+                });
             });
-            //máscara para o telefone
-            $('#hora_pagto').inputmask("99:99:99", {"placeholder": "__:__:__"});
+
         </script>
     @endsection

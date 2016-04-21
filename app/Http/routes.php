@@ -51,6 +51,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('aluno/{id}/edit', ['as' => 'alunos.edit', 'uses' => 'AlunoController@edit']);
     Route::put('aluno/{id}/update', ['as' => 'alunos.update', 'uses' => 'AlunoController@update']);
     Route::get('aluno/{id}/destroy', ['as' => 'alunos.destroy', 'uses' => 'AlunoController@destroy']);
+    Route::post('aluno/busca',['as' => 'alunos.busca', 'uses' => 'AlunoController@busca']);
     /*
      * -- Rota para API retornar alunos JSON --
      * -- O Retorno sera a lista de todos os alunos
@@ -116,6 +117,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('mensalidade/create',['as' => 'mensalidades.create', 'uses' => 'MensalidadeController@create']);
     /* -- rota listagem de mensalidade --*/
     Route::get('mensalidade/{id}/lista',['as' => 'mensalidades.lista', 'uses' => 'MensalidadeController@show']);
+    /* -- rota Index Mensalidade --*/
+    //Route::get('mensalidade', ['as' => ''])
     /* -- rota salvar mensalidade --*/
     Route::post('mensalidade/store',['as' => 'mensalidades.store', 'uses' => 'MensalidadeController@store']);
     Route::get('mensalidade/{id}/edit', ['as' => 'mensalidades.edit', 'uses' => 'MensalidadeController@edit']);
@@ -140,6 +143,12 @@ Route::group(['middleware' => 'web'], function () {
     /* -- rota salvar pagamento --*/
     Route::post('pagamento/store',['as' => 'pagamentos.store', 'uses' => 'PagamentoController@store']);
     Route::get('pagamento/{id}/edit', ['as' => 'pagamentos.edit', 'uses' => 'PagamentoController@edit']);
+    /* -- rota para pesquisar um pagamento de aluno --*/
+    Route::get('pagamento/pesquisar', ['as' => 'pagamentos.pesquisar', 'uses' => 'PagamentoController@show']);
+    Route::post('pagamento/pesquisar/mensalidades', ['as' => 'pagamentos.searchmensalidade', 'uses' => 'PagamentoController@show']);
+    /*-- rota para mostrar detalhes de um determinado pagamento --*/
+    Route::get('pagamento/{id}/show', ['as' => 'pagamentos.show', 'uses' => 'PagamentoController@show']);
+    /*-- rota para atualizar um pagamento --*/
     Route::put('pagamento/{id}/update', ['as' => 'pagamentos.update', 'uses' => 'PagamentoController@update']);
     Route::get('pagamento/{id}/destroy', ['as' => 'pagamentos.destroy', 'uses' => 'PagamentoController@destroy']);
 

@@ -1,31 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    @if($sucesso==true)
-        <!-- div para exibir uma mensagem de confirmacao se o foi realmente cadastrado com SUCESSO -->
-        <!-- Modal Mensagem  -->
-        <!-- inicio -->
-        <div class="modal fade" id="sucessoAjax" tabindex="-1" role="dialog" aria-     labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="myModalLabel">SALVO COM SUCESSO</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p id="retorno">
-
-                        </p>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-        <!-- FIM Mensagem de SUCESSO-->
-    @endif
     <div class="container">
         <div class="box box-header">
             <h3 class="box-title">Cadastro de Aluno</h3>
@@ -94,7 +69,7 @@
 
                             </td>
                             <td style="text-align: center">
-                                <a href="{{ route('alunos.destroy',['id'=>$aluno->id]) }}" class="btn-sm btn-danger">Remover</a>
+                                <a href="{{ route('alunos.destroy',['id'=>$aluno->id]) }}" class="btn-sm btn-danger" id="btnRemover">Remover</a>
                             </td>
                         </tr>
                     @endforeach
@@ -129,8 +104,30 @@
             if (Resto != parseInt(strCPF.substring(10, 11) ) ) return false;
             return true;
         }
-        var strCPF = "12345678909";
-        alert(TestaCPF(strCPF));
+
+        //teste
+
+
+
+
+        $("#cpf").blur(function(){
+            var cpf = $('#cpf').val();
+            var i = "";
+
+            alert(cpf);
+
+        });
+
+
+        $('#btnRemover').click(function(e){
+            e.preventDefault();
+            var teste = confirm("tem ceteza que deseja remover");
+            if(teste==false){
+                e.preventDefault();
+            }
+
+        });
+        //alert(TestaCPF(strCPF));
     </script>
 
 @endsection

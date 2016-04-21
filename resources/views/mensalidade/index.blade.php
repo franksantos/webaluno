@@ -22,7 +22,7 @@
             <tr>
                 <td>{{ $mensalidade->mes_num }}</td>
                 <td>{{ $mensalidade->mes_valor }}</td>
-                <td>{{ $mensalidade->mes_data_venc }}</td>
+                <td>{{ $mensalidade->mes_data_venc->format('d/m/Y') }}</td>
                 <td>{{ $mensalidade->mes_status }}</td>
                 <td style="text-align: center">
                     <a href="{{ route('mensalidades.edit',['id'=>$mensalidade->mes_id]) }}" class="btn-sm btn-success">Editar</a>

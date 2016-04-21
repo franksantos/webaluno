@@ -6,7 +6,7 @@
             <h3 class="box-title">Editando o aluno: <span style="color: #005983">{!! $aluno->alu_nome !!}</span> </h3>
         </div>
 
-        {!! Form::open(array('url' => "aluno/$aluno->alu_id/update", 'method'=>'put')) !!}
+        {!! Form::open(array('url' => "aluno/$aluno->id/update", 'method'=>'put')) !!}
         <div class="form-group">
             {!! Form::label('Turma') !!}
             {!! Form::select('turma', $turmas, $alu_tur_id, ['id'=>'turma','class' => 'form-control']) !!}

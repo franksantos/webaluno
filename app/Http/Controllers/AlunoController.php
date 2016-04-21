@@ -32,7 +32,7 @@ class AlunoController extends Controller
         $a = new Aluno();
         $a->alu_tur_id = $request->turma;
         $a->alu_nome   = $request->nome;
-        $a->alu_cpf    = $request->cpf;
+        $a->alu_cpf    = str_replace(".","",str_replace("-","",$request->cpf));
         $a->alu_tel    = $request->telefone;
         $a->save();
         $t = new Turma();
@@ -42,7 +42,7 @@ class AlunoController extends Controller
         return view('aluno.create',['alunos'=>$alunos,'turmas'=>$turmas, 'sucesso'=>true]);
 
     }
-    public function show(){
+    public function show($id){
 
     }
     public function edit($id){
@@ -56,7 +56,7 @@ class AlunoController extends Controller
         $aluno = Aluno::find($id);
         $aluno->alu_tur_id = $request->turma;
         $aluno->alu_nome   = $request->nome;
-        $aluno->alu_cpf    = $request->cpf;
+        $aluno->alu_cpf    = str_replace(".","",str_replace("-","",$request->cpf));
         $aluno->alu_tel    = $request->telefone;
         $aluno->save();
 

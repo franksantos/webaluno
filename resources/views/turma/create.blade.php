@@ -16,22 +16,34 @@
         @endif
 
         {!! Form::open(array('url' => 'turma/store')) !!}
-			<div class="form-group">
-                {!! Form::label('Curso') !!}
-                {!! Form::select('curso', $cursos, ['class' => 'form-control']) !!}
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    {!! Form::label('Curso') !!}
+                    {!! Form::select('curso', $cursos, '', ['class' => 'form-control']) !!}
+                    @if($errors->has('curso'))<p class="alert alert-danger">{{$errors->first('curso')}}</p>@endif
+                </div>
             </div>
-            <div class="form-group">
-                {!! Form::label('Nome da Turma') !!}
-                {!! Form::text('nome', null, ['class' => 'form-control']) !!}
+            <div class="col-md-4">
+                <div class="form-group">
+                    {!! Form::label('Nome da Turma') !!}
+                    {!! Form::text('nome', null, ['class' => 'form-control']) !!}
+                    @if($errors->has('nome'))<p class="alert alert-danger">{{$errors->first('nome')}}</p>@endif
+                </div>
             </div>
-            <div class="form-group">
-                {!! Form::label('Data de In&iacute;cio') !!}
-                {!! Form::text('data_inicio', null, ['id'=>'data_inicio','class' => 'form-control']) !!}
+            <div class="col-md-4">
+                <div class="form-group">
+                    {!! Form::label('Data de In&iacute;cio') !!}
+                    {!! Form::text('data_inicio', null, ['id'=>'data_inicio','class' => 'form-control']) !!}
+                    @if($errors->has('data_inicio'))<p class="alert alert-danger">{{$errors->first('data_inicio')}}</p>@endif
+                </div>
             </div>
-            <div class="form-group">
-                {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
+            <div class="col-md-4">
+                <div class="form-group">
+                    {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
+                </div>
             </div>
-
+        </div>
         {!! Form::close() !!}
     </div>
     <div class="container">

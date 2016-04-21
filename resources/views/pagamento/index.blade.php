@@ -37,7 +37,7 @@
                         @endif
                     </td>
                     <td style="text-align: center">
-                        <a href="{{ route('mensalidades.edit',['id'=>$mensalidade->id]) }}" class="btn-sm btn-success">Ver Detalhes do Pagto</a>
+                        <a href="{{ route('pagamentos.show',['id'=>$mensalidade->cod]) }}" class="btn-sm btn-success">Ver Detalhes do Pagto</a>
                     </td>
                 </tr>
             @endforeach

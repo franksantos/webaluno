@@ -51,7 +51,7 @@ class TurmaController extends Controller
         $turma = Turma::find($id);
         $cur_id = $turma->tur_cur_id;//pega o id do curso da turma a ser editada
         $c = new Curso();
-        $cursos = $c->all()->lists('cur_nome', 'cur_id');
+        $cursos = $c->all()->lists('cur_nome', 'id');
         return view('turma.edit', ['turma'=>$turma,'cursos'=>$cursos, 'cur_id'=>$cur_id]);
 
     }
@@ -63,7 +63,7 @@ class TurmaController extends Controller
         $t->save();
 
         $c = new Curso();
-        $cursos = $c->all()->lists('cur_nome', 'cur_id');
+        $cursos = $c->all()->lists('cur_nome', 'id');
         $tur = new Turma();
         $turmas = $tur->all();
         return view('turma.create', ['cursos'=>$cursos, 'turmas'=>$turmas]);

@@ -27,8 +27,7 @@ class AlunoRequest extends Request
             //
             'turma'    => 'required',
             'nome'     => 'required|min:5',
-            'cpf'      => 'required',
-            'telefone' => 'required'
+            'cpf'      => 'required'
         ];
     }
 }

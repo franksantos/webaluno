@@ -62,6 +62,7 @@ class MensalidadeController extends Controller
         //$nomeAluno = $aluno->all()->where('alu_id',$request->aluno);
         $objAluno = DB::table('aluno')->where('id', '=', $request->aluno)->get();
         //return $nomeAluno;
+        //return redirect()->route('mensalidades.lista', ['mensalidades'=>$mensalidades, 'aluno'=>$objAluno, 'test'=>1]);
         return view('mensalidade.index',['mensalidades'=>$mensalidades, 'aluno'=>$objAluno, 'test'=>1]);
         //return var_dump($mensalidades);
 

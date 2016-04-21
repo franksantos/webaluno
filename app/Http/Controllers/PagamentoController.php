@@ -74,6 +74,16 @@ class PagamentoController extends Controller
 		/** verificar se o pagamento ja foi feito anteriormente */
         $existPagto = $p->find($request->idMensalidade);
         if($existPagto != null){
+            /** Após salvar o pagamento busca novamente as mensalidades do aluno no banco de dados para exibi-las atualizadas */
+            $mensalidades = $m->join('aluno', function($join) {
+                $join->on('mensalidade.mes_alu_id', '=', 'aluno.id');
+            })
+                ->select('mensalidade.id AS cod', 'mensalidade.mes_num', 'mensalidade.mes_valor', 'mensalidade.mes_data_venc', 'mensalidade.mes_status')
+                ->where('mes_alu_id', '=', $request->idAluno)
+                ->get();
+            $aluno = new Aluno();
+            //$nomeAluno = $aluno->all()->where('alu_id',$request->aluno);
+            $objAluno = DB::table('aluno')->where('id', '=', $request->idAluno)->get();
 			$flag = array('acao'=>'listar', 'mensagem'=>'ja existe um pagamento cadastrado para essa parcela');
             return view('pagamento.create',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno, 'flag'=>$flag]);
         }else{
@@ -92,6 +102,7 @@ class PagamentoController extends Controller
         $mensalidades = $m->join('aluno', function($join) {
             $join->on('mensalidade.mes_alu_id', '=', 'aluno.id');
         })
+            ->select('mensalidade.id AS cod', 'mensalidade.mes_num', 'mensalidade.mes_valor', 'mensalidade.mes_data_venc', 'mensalidade.mes_status')
             ->where('mes_alu_id', '=', $request->idAluno)
             ->get();
         $aluno = new Aluno();
@@ -100,6 +111,18 @@ class PagamentoController extends Controller
         //return view('pagamento.create',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno, 'flag'=>$flag]);
         return view('pagamento.index',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno, 'flag'=>$flag]);
         //return var_dump($mensalidades);
+    }
+
+    public function show($id, Pagamento $p){
+        //exibe os detalhes de um pagamento
+        //$id é o id da mensalidade do aluno
+        $idMensalidade = intval($id);
+        $pagamento = $p->join('mensalidade', 'mensalidade.id', '=','pagamento.pag_mes_id' )
+            ->where('pagamento.pag_mes_id', '=', $id)
+            ->get()
+            ->first();
+        return view('pagamento.detalhes', ['pagamento' => $pagamento]);
+        //return $pagamento;
     }
 
     public function listaMensalidadesAluno(Request $request, Mensalidade $m){

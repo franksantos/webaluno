@@ -23,16 +23,21 @@
                                 <span class="text-muted">Gest&atilde;o de Alunos</span>
                             </a>
                         </div>
-                        <div class="col-xs-6 col-sm-3 placeholder">
-                            <img src="{!! asset('bower_components/AdminLTE/dist/img/classroom_icone.png') !!}" style="border:1px solid #cccccc" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                            <h4>Turmas</h4>
-                            <span class="text-muted">Listagem de turmas</span>
+                    <div class="col-xs-6 col-sm-3 placeholder">
+                        <a href="{{url('mensalidade/create')}}">
+                            <img src="{!! asset('bower_components/AdminLTE/dist/img/carne_pagamento.png') !!}" style="border:1px solid #cccccc; width: 200px; height: 200px;" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                            <h4>Parcelas</h4>
+                            <span class="text-muted">Criar Parcelas para um Aluno</span>
+                        </a>
                         </div>
                         <div class="col-xs-6 col-sm-3 placeholder">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                            <h4>Busca Pagamento</h4>
-                            <span class="text-muted">Historico de pagamentos</span>
+                            <a href="{{url('turma/create')}}">
+                                <img src="{!! asset('bower_components/AdminLTE/dist/img/classroom_icone.png') !!}" style="border:1px solid #cccccc;" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                                <h4>Turmas</h4>
+                                <span class="text-muted">Gest&atilde;o de Turmas</span>
+                            </a>
                         </div>
+
                     </div>
 
                 </div>

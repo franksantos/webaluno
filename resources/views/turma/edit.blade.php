@@ -15,7 +15,7 @@
             </ul>
         @endif
 
-        {!! Form::open(array('url' => "turma/$turma->tur_id/update", 'method'=>'put')) !!}
+        {!! Form::open(array('url' => "turma/$turma->id/update", 'method'=>'put')) !!}
         <div class="form-group">
             {!! Form::label('Curso') !!}
             {!! Form::select('curso', $cursos, $cur_id, ['class' => 'form-control']) !!}

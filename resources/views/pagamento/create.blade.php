@@ -53,7 +53,7 @@
                     </td>
                     <td style="text-align: center">
                         @if($mensalidade->mes_status == 'Pago')
-                            &nbsp;
+                            <a href="{{route('pagamentos.show', ['id'=>$mensalidade->id])}}" class="btn btn-info">Ver Detalhes do Pagto.</a>
                         @else
                             <a href="{{ route('pagamentos.cadcomprovante',['idMensalidade'=>$mensalidade->id, 'idAluno'=>$alunos->id]) }}" class="btn-sm btn-success">Confirmar Pagamento</a>
                         @endif
@@ -80,6 +80,25 @@
                 language: 'pt-BR',
                 autoclose: true,
                 todayHighlight: true
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+                /** validate */
+                $("form").validate({
+                    debug: false,
+                    rules:{
+                        alunoNome:{required:true}
+                    },
+                    messages:{
+                        alunoNome:{
+                            required:"Esse campo n&atilde;o pode ser vazio"
+                        }
+                    },
+                    submitHandler: function(form){
+                        return true;
+                    }
+                });
             });
         </script>
         <script>
