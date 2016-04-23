@@ -52,6 +52,7 @@ class TurmaController extends Controller
         $cur_id = $turma->tur_cur_id;//pega o id do curso da turma a ser editada
         $c = new Curso();
         $cursos = $c->all()->lists('cur_nome', 'id');
+
         return view('turma.edit', ['turma'=>$turma,'cursos'=>$cursos, 'cur_id'=>$cur_id]);
 
     }

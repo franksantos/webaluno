@@ -152,6 +152,7 @@ return [
         'Kris\LaravelFormBuilder\FormBuilderServiceProvider',
         Yajra\Datatables\DatatablesServiceProvider::class,
         'GrahamCampbell\Exceptions\ExceptionsServiceProvider',
+        Barryvdh\Debugbar\ServiceProvider::class,
 
 
         /*
@@ -211,6 +212,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'FormBuilder' => 'Kris\LaravelFormBuilder\Facades\FormBuilder',
         'Datatables' => Yajra\Datatables\Datatables::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
     ],
 

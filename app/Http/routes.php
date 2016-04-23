@@ -145,6 +145,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('pagamento/{id}/edit', ['as' => 'pagamentos.edit', 'uses' => 'PagamentoController@edit']);
     /* -- rota para pesquisar um pagamento de aluno --*/
     Route::get('pagamento/pesquisar', ['as' => 'pagamentos.pesquisar', 'uses' => 'PagamentoController@show']);
+    /* -- rota para exibir os detalhes de um pagamento CLONADO -- */
+    Route::get('pagamento/clonado/detalhes', ['as' => 'pagamentos.clonado.detalhes', 'uses' => 'PagamentoController@showDetalhesClonado']);
+
     Route::post('pagamento/pesquisar/mensalidades', ['as' => 'pagamentos.searchmensalidade', 'uses' => 'PagamentoController@show']);
     /*-- rota para mostrar detalhes de um determinado pagamento --*/
     Route::get('pagamento/{id}/show', ['as' => 'pagamentos.show', 'uses' => 'PagamentoController@show']);

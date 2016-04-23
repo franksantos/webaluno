@@ -8,7 +8,6 @@
         <h3 class="box-title">Confirma&ccedil;&atilde;o de Pagamento</h3>
     </div>
 </div>
-@if($flag['acao'] == 'listar')
     <div class="container">
         @foreach($alunos as $chave)
             <h4>Parcelas do aluno: <span class="label label-success">{{ $chave->alu_nome }}</span></h4>
@@ -37,7 +36,11 @@
                         @endif
                     </td>
                     <td style="text-align: center">
-                        <a href="{{ route('pagamentos.show',['id'=>$mensalidade->cod]) }}" class="btn-sm btn-success">Ver Detalhes do Pagto</a>
+                        @if($mensalidade->mes_status == 'Pago')
+                            <a href="{{route('pagamentos.show', ['id'=>$mensalidade->id])}}" class="btn btn-info">Ver Detalhes do Pagto.</a>
+                        @else
+                            <a href="{{ route('pagamentos.cadcomprovante',['idMensalidade'=>$mensalidade->id, 'idAluno'=>$alunos->id]) }}" class="btn-sm btn-success">Confirmar Pagamento</a>
+                        @endif
                     </td>
                 </tr>
             @endforeach
@@ -45,12 +48,20 @@
         </table>
     </div>
     </div>
+
+
+
+
+
+@endsection
+
+@if($clonado)
+    @section('scripts')
+        <script>
+            $(document).ready(function(){
+                $("#myModal").modal('show');
+            })
+        </script>
+    @endsection
 @endif
 
-
-
-
-@endsection
-@section('scripts')
-
-@endsection

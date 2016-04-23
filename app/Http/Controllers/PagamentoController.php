@@ -21,7 +21,7 @@ class PagamentoController extends Controller
     public function __construct(){
         $this->middleware('auth');
     }
-    public function index(Aluno $aluno, Mensalidade $mensalidade){
+    public function index(Aluno $aluno, Mensalidade $m){
         //nome do aluno
         // valor da mensalidade do aluno
         //quantas mensalidade foram pagas do total de mensalidades
@@ -30,6 +30,7 @@ class PagamentoController extends Controller
             ->join('turma', 'turma.id','=','aluno.alu_tur_id')
             ->distinct()
             ->get();
+
         //$alunos = $aluno->all()->lists('alu_nome','id')->sortByDesc('id')->toArray();
         $alunos = $aluno->all();
         //dd($alunos);
@@ -68,25 +69,45 @@ class PagamentoController extends Controller
         $data_vencimento = Carbon::create($anoVenc, $mesVenc, $diaVenc);
 
         //return $nomeAluno;
-        $flag = array('acao'=>'listar');
+
         //dd($flag);
 		
 		/** verificar se o pagamento ja foi feito anteriormente */
-        $existPagto = $p->find($request->idMensalidade);
-        if($existPagto != null){
-            /** Após salvar o pagamento busca novamente as mensalidades do aluno no banco de dados para exibi-las atualizadas */
-            $mensalidades = $m->join('aluno', function($join) {
-                $join->on('mensalidade.mes_alu_id', '=', 'aluno.id');
-            })
-                ->select('mensalidade.id AS cod', 'mensalidade.mes_num', 'mensalidade.mes_valor', 'mensalidade.mes_data_venc', 'mensalidade.mes_status')
-                ->where('mes_alu_id', '=', $request->idAluno)
-                ->get();
-            $aluno = new Aluno();
-            //$nomeAluno = $aluno->all()->where('alu_id',$request->aluno);
-            $objAluno = DB::table('aluno')->where('id', '=', $request->idAluno)->get();
-			$flag = array('acao'=>'listar', 'mensagem'=>'ja existe um pagamento cadastrado para essa parcela');
-            return view('pagamento.create',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno, 'flag'=>$flag]);
-        }else{
+//        $existPagto = $p->find($request->idMensalidade);
+//        if($existPagto != null){
+//            /** Após salvar o pagamento busca novamente as mensalidades do aluno no banco de dados para exibi-las atualizadas */
+//            $mensalidades = $m->join('aluno', function($join) {
+//                $join->on('mensalidade.mes_alu_id', '=', 'aluno.id');
+//            })
+//                ->select('mensalidade.id AS cod', 'mensalidade.mes_num', 'mensalidade.mes_valor', 'mensalidade.mes_data_venc', 'mensalidade.mes_status')
+//                ->where('mes_alu_id', '=', $request->idAluno)
+//                ->get();
+//            $aluno = new Aluno();
+//            //$nomeAluno = $aluno->all()->where('alu_id',$request->aluno);
+//            $objAluno = DB::table('aluno')->where('id', '=', $request->idAluno)->get();
+//			$flag = array('acao'=>'listar', 'mensagem'=>'ja existe um pagamento cadastrado para essa parcela');
+//            return view('pagamento.create',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno, 'flag'=>$flag]);
+//        }else{
+            /*
+             * Verificar se o pagamento é clonado e retorna uma mensagem
+             * Se o pagamento for clonado avisa o usuário com mensagem na tela
+             * Se não for clonado deixa salvar o pagamento normalmente
+             * */
+            $clone = self::verificaPagamentoClonado($p, $data_pagamento, $request->hora_pagto, $request->cod_barras_pagto );
+            if($clone){
+                //envia a mensagem para a tela e não salva
+                //dd("é um clone. Pagamento CLONADO! ALERTA".$data_pagamento.$request->hora_pagto);
+                $detalhes = self::detalhesPagamentoClonado($p, $data_pagamento, $request->hora_pagto, $request->cod_barras_pagto);
+                foreach($detalhes as $item){
+                    $pag_mes_id = $item->pag_mes_id;
+                }
+                //dd($pag_mes_id);
+                $mensalidades = $m->find($pag_mes_id);
+
+                $mes_id = $mensalidades->id;
+                //dd($objAluno);
+                return view('pagamento.clonado',['mensalidade'=>$mes_id, 'clonado'=>true]);
+            }
             /* recebo o id da parcela a ser mudada o status */
 			$p->pag_mes_id     = $request->idMensalidade;
 			$p->pag_data       = $data_pagamento;
@@ -97,7 +118,7 @@ class PagamentoController extends Controller
 			$p->pag_data_venc  = $data_vencimento;
 			$p->pag_valor      = $request->valor_parcela;
 			$p->save();
-        }
+        //}
         /** Após salvar o pagamento busca novamente as mensalidades do aluno no banco de dados para exibi-las atualizadas */
         $mensalidades = $m->join('aluno', function($join) {
             $join->on('mensalidade.mes_alu_id', '=', 'aluno.id');
@@ -107,9 +128,9 @@ class PagamentoController extends Controller
             ->get();
         $aluno = new Aluno();
         //$nomeAluno = $aluno->all()->where('alu_id',$request->aluno);
-        $objAluno = DB::table('aluno')->where('id', '=', $request->idAluno)->get();
+        $objAluno = DB::table('aluno')->where('id', '=', $request->idAluno)->first();
         //return view('pagamento.create',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno, 'flag'=>$flag]);
-        return view('pagamento.index',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno, 'flag'=>$flag]);
+        return view('pagamento.index',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno]);
         //return var_dump($mensalidades);
     }
 
@@ -123,6 +144,29 @@ class PagamentoController extends Controller
             ->first();
         return view('pagamento.detalhes', ['pagamento' => $pagamento]);
         //return $pagamento;
+    }
+
+    public function showDetalhesClonado($id, Pagamento $p){
+        $pagamento = $p->join('mensalidade', 'mensalidade.id', '=','pagamento.pag_mes_id' )
+            ->join('aluno', 'aluno.id', '=', 'mensalidade.mes_alu_id')
+            ->join('turma', 'turma.id', '=','aluno.alu_tur_id')
+            ->select('pagamento.pag_data',
+                'pagamento.pag_hora',
+                'pagamento.pag_cod_barras',
+                'pagamento.pag_data_venc',
+                'pagamento.pag_valor',
+                'mensalidade.mes_num',
+                'aluno.alu_nome',
+                'turma.tur_nome')
+            ->where('pagamento.pag_mes_id', '=', $id)
+            ->get()
+            ->first();
+        /*SELECT * FROM pagamento
+        INNER JOIN mensalidade ON (mensalidade.id = pagamento.pag_mes_id)
+        INNER JOIN aluno ON (aluno.id = mensalidade.mes_alu_id)
+        INNER JOIN turma ON (turma.id = aluno.alu_tur_id)
+        WHERE pagamento.pag_mes_id = 11*/
+        return view('pagamento.clonadodetalhes', ['pagamento'=>$pagamento]);
     }
 
     public function listaMensalidadesAluno(Request $request, Mensalidade $m){
@@ -201,5 +245,44 @@ class PagamentoController extends Controller
         //dd($dados);
         //return Datatables::of(Aluno::select('*'))->make(true);
         return Datatables::of($dados)->make(true);
+    }
+
+    public function verificaPagamentoClonado(Pagamento $p, $data, $hora, $cod_barras){
+        $qry_cod_barras = $p->where("pag_cod_barras", "like", "%".$cod_barras."%")->get();
+        $qry_data_hora  = $p->where( function($query) use ($data, $hora){
+                              $query->where("pag_hora", "like", "%".$hora."%")
+                                    ->where("pag_data", "like", "%" . $data . "%");
+                            })
+                            ->get();
+        $testa_cod_barras = count($qry_cod_barras);
+        $testa_data_hora  = count($qry_data_hora);
+
+        if($testa_data_hora>0){
+            return true;
+        }else{
+            if($testa_cod_barras) return true;
+             return false;
+        }
+        //dd($v);
+
+    }
+    public function detalhesPagamentoClonado(Pagamento $p, $data, $hora, $cod_barras){
+        $qry_cod_barras = $p->where("pag_cod_barras", "like", "%".$cod_barras."%")->get();
+        $qry_data_hora  = $p->where( function($query) use ($data, $hora){
+            $query->where("pag_hora", "like", "%".$hora."%")
+                ->where("pag_data", "like", "%" . $data . "%");
+        })
+            ->get();
+        $testa_cod_barras = count($qry_cod_barras);
+        $testa_data_hora  = count($qry_data_hora);
+
+        if($testa_data_hora>0){
+            return $qry_data_hora;
+        }else{
+            if($testa_cod_barras)
+            return $qry_cod_barras;
+        }
+        //dd($v);
+
     }
 }

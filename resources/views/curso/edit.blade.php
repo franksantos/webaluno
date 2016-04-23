@@ -12,7 +12,7 @@
                 @endforeach
             </ul>
         @endif
-        {!! Form::open(array('url' => "curso/$curso->cur_id/update", 'method'=>'put')) !!}
+        {!! Form::open(array('url' => "curso/$curso->id/update", 'method'=>'put')) !!}
         <div class="form-group">
             {!! Form::label('Polo') !!}
             {!! Form::select('polo', $todosPolos, $cur_pol_id, ['class'=>'form-control']) !!}

@@ -10,7 +10,8 @@
         "kris/laravel-form-builder": "1.6.*",
         "laravelcollective/html": "5.2.*",
         "yajra/laravel-datatables-oracle": "^6.4",
-        "graham-campbell/exceptions": "^8.3"
+        "graham-campbell/exceptions": "^8.3",
+        "barryvdh/laravel-debugbar": "^2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
