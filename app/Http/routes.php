@@ -109,6 +109,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('turma/{id}/destroy', ['as' => 'turmas.destroy', 'uses' => 'TurmaController@destroy']);
     /*-- Rota para API retornar turmas JSON --*/
     Route::get('turma/api','TurmaController@getJsonTurmas');
+    /*-- Rota pegar a turmas de um polo --*/
+    Route::get('get-turma/{idPolo}', 'TurmaController@getTurmasPorPolo');
 
     /**
      * Todas as Rotas de Mensalidades
@@ -146,7 +148,7 @@ Route::group(['middleware' => 'web'], function () {
     /* -- rota para pesquisar um pagamento de aluno --*/
     Route::get('pagamento/pesquisar', ['as' => 'pagamentos.pesquisar', 'uses' => 'PagamentoController@show']);
     /* -- rota para exibir os detalhes de um pagamento CLONADO -- */
-    Route::get('pagamento/clonado/detalhes', ['as' => 'pagamentos.clonado.detalhes', 'uses' => 'PagamentoController@showDetalhesClonado']);
+    Route::get('pagamento/clonado/detalhes/{id}', ['as' => 'pagamentos.clonado.detalhes', 'uses' => 'PagamentoController@showDetalhesClonado']);
 
     Route::post('pagamento/pesquisar/mensalidades', ['as' => 'pagamentos.searchmensalidade', 'uses' => 'PagamentoController@show']);
     /*-- rota para mostrar detalhes de um determinado pagamento --*/

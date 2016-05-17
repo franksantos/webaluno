@@ -10,6 +10,7 @@ use App\Http\Requests\TurmaRequest;
 use App\Http\Controllers\Controller;
 use Kris\LaravelFormBuilder\FormBuilder;
 use App\Curso;
+use App\Polo;
 
 class TurmaController extends Controller
 {
@@ -23,22 +24,26 @@ class TurmaController extends Controller
 		return view('turma.index');
     }
     public function create(){
+        $polo = new Polo();
+        $polos = $polo->all()->lists('pol_nome', 'id');
 		$c = new Curso();
 		$cursos = $c->all()->lists('cur_nome', 'id');
         $t = new Turma();
         $turmas = $t->all();
-        return view('turma.create', ['cursos'=>$cursos, 'turmas'=>$turmas]);
+        return view('turma.create', ['cursos'=>$cursos,'polos' => $polos, 'turmas'=>$turmas]);
     }
     public function store(TurmaRequest $request){
         $c = new Curso();
         $cursos = $c->all()->lists('cur_nome', 'id');
+        $polo = new Polo();
+        $polos = $polo->all()->lists('pol_nome', 'id');
         /*$data_BRA = $request->data_inicio;
         $data_USA = date('Y-m-d', strtotime(str_replace('/','-',$data_BRA)));
         echo $data_USA;
         dd();*/
         $t = new Turma();
         $t->tur_cur_id      = $request->curso;
-        $t->tur_nome        = $request->nome;
+        $t->tur_nome        = strtoupper($request->nome);
         $t->tur_data_inicio = date('Y-m-d', strtotime(str_replace('/','-',$request->data_inicio)));
         $t->save();
         $turmas = $t->all();
@@ -92,6 +97,15 @@ class TurmaController extends Controller
             $list[$key]['text'] = $value->tur_nome;
         }
         return $list;
+    }
+
+    /**
+     * @params id do polo
+     */
+    public function getTurmasPorPolo($idPolo){
+        $p = new Polo();
+        $c = new Curso();
+
     }
 
 }

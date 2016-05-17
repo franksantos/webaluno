@@ -27,7 +27,6 @@ class PagamentoRequest extends Request
             //
             'data_pagto'  => 'required',
             'hora_pagto'  => 'required',
-            'terminal_pagto'=> 'required',
             'cod_barras_pagto'=>'required'
         ];
     }

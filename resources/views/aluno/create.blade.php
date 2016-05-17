@@ -88,7 +88,8 @@
         $('#telefone').inputmask("(99) 99999-9999", {"placeholder": "(__) _____-____"});
     </script>
     <!-- validação do cpf do aluno -->
-    <script> function TestaCPF(strCPF) {
+    <script>
+        function TestaCPF(strCPF) {
             var Soma;
             var Resto;
             Soma = 0;
@@ -112,9 +113,15 @@
 
         $("#cpf").blur(function(){
             var cpf = $('#cpf').val();
-            var i = "";
+            var i = cpf.replace(".","");
+            var j = i.replace("-","");
+            var k = j.replace(".","");
+            if(TestaCPF(k)){
 
-            alert(cpf);
+            }else{
+                alert("CPF Digitado Invalido. \n Verifique o CPF informado e tente novamente");
+                $("#cpf").focus();
+            }
 
         });
 

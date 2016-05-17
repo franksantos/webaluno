@@ -17,14 +17,21 @@
 
         {!! Form::open(array('url' => 'turma/store')) !!}
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
+                <div class="form-group">
+                    {!! Form::label('Pólo') !!}
+                    {!! Form::select('polo', $polos, '', ['class' => 'form-control']) !!}
+                    @if($errors->has('polo'))<p class="alert alert-danger">{{$errors->first('polo')}}</p>@endif
+                </div>
+            </div>
+            <div class="col-md-2">
                 <div class="form-group">
                     {!! Form::label('Curso') !!}
                     {!! Form::select('curso', $cursos, '', ['class' => 'form-control']) !!}
                     @if($errors->has('curso'))<p class="alert alert-danger">{{$errors->first('curso')}}</p>@endif
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div class="form-group">
                     {!! Form::label('Nome da Turma') !!}
                     {!! Form::text('nome', null, ['class' => 'form-control']) !!}

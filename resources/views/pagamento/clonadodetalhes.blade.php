@@ -43,7 +43,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <a href="javascript:history.go(-1)" class="btn btn-success">Voltar</a>
+                    <a href="javascript:history.go(-2)" class="btn btn-success">Voltar</a>
                 </div>
             </div>
         </div>

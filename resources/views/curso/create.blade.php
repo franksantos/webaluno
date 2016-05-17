@@ -101,8 +101,13 @@
 @endsection
 @section('scripts')
     <script>
-       /* $("#btnRemover").click(function(event){
-            event.preventDefault();
-        });*/
+       $("#btnRemover").click(function(e){
+           var teste = confirm("Tem certeza que deseja Deletar este curso?");
+           if(teste==true){
+
+           }else{
+               e.preventDefault();
+           }
+        });
     </script>
 @endsection

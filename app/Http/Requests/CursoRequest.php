@@ -25,7 +25,6 @@ class CursoRequest extends Request
     {
         return [
             //
-            'polo' => 'required',
             'nome' => 'required|min:5',
             'area' => 'required'
         ];

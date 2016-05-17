@@ -25,6 +25,7 @@ class TurmaRequest extends Request
     {
         return [
             //
+            'polo' => 'required',
             'curso'      =>'required',
             'nome'       =>'required|min:5',
             'data_inicio'=>'required'

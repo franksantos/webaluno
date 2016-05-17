@@ -24,7 +24,7 @@
             <div class="modal-body">
                 <h4>Comprovante de Pagamento Clonado.</h4>
 
-                    <h4> <a href="{{ route('pagamentos.show',['id'=>$mensalidade])}}" class="btn btn-info">Ver Detalhes</a> </h4>
+                    <h4> <a href="{{ route('pagamentos.clonado.detalhes',['id'=>$mensalidade])}}" class="btn btn-info">Ver Detalhes</a> </h4>
             </div>
             <div class="modal-footer">
                 <button data-dismiss="modal" class="btn btn-sm" type="button">FECHAR</button>

@@ -17,9 +17,9 @@
                     @if (Auth::guest())
 
                     @else
-                        <li class="dropdown">
+                        <!--<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastros <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu">-->
                                 <li><a href="{!! route('cursos.create') !!}">Cursos</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{url('turma/create')}}">Turmas</a></li>
@@ -29,8 +29,8 @@
                                 <li><a href="{!! route('mensalidades.create') !!}">Mensalidades</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{!! url('pagamento/create') !!}">Pagamentos</a></li>
-                            </ul>
-                        </li>
+                            <!--</ul>
+                        </li>-->
                         <!--<li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relat&oacute;rios <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -65,7 +65,7 @@
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Registrar-se</a></li>
+                        <!--<li><a href="{{ url('/register') }}">Registrar-se</a></li>-->
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
