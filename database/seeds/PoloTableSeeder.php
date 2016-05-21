@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Polo as Polo;// para usar o Eloquent Model
+use App\User as User;// para usar o Eloquent Model
 
 class PoloTableSeeder extends Seeder
 {
@@ -13,18 +13,14 @@ class PoloTableSeeder extends Seeder
     public function run()
     {
         //limpa a tabela
-        //Polo::truncate();
+        Polo::truncate();
         //adciono as linhas
-        Polo::create(['pol_nome'=>'IMPERATRIZ-MA']);
-        Polo::create(['pol_nome'=>'GRAJAU-MA']);
-        Polo::create(['pol_nome'=>'COCOS-MA']);
-        Polo::create(['pol_nome'=>'PASSAGEM BOA-MA']);
-        Polo::create(['pol_nome'=>'LAJEADO-MA']);
-        Polo::create(['pol_nome'=>'SITIO NOVO-MA']);
-        /*
-        DB::table('polo')->insert(['pol_nome'=>'IMPERATRIZ']);
-        DB::table('polo')->insert(['pol_nome'=>'GRAJAU']);
-        */
-
+        Polo::create(['pol_nome'      =>'IMPERATRIZ-MA']);//id=1
+        Polo::create(['pol_nome'          =>'GRAJAU-MA']);//id=2
+        Polo::create(['pol_nome'           =>'COCOS-MA']);//id=3
+        Polo::create(['pol_nome'    =>'PASSAGEM BOA-MA']);//id=4
+        Polo::create(['pol_nome'         =>'LAJEADO-MA']);//id=5
+        Polo::create(['pol_nome'      =>'SITIO NOVO-MA']);//id=6
+        Polo::create(['pol_nome'          =>'BREJÃO-MA']);//id=7
     }
 }

@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-2">
                 <div class="form-group">
-                    {!! Form::label('Pólo') !!}
+                    {!! Form::label('P&oacute;lo') !!}
                     {!! Form::select('polo', $polos, '', ['class' => 'form-control']) !!}
                     @if($errors->has('polo'))<p class="alert alert-danger">{{$errors->first('polo')}}</p>@endif
                 </div>
