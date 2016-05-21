@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Polo as Polo;// para usar o Eloquent Model
+use App\User as User;// para usar o Eloquent Model
 
 class UserTableSeeder extends Seeder
 {
