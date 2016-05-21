@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\User as User;// para usar o Eloquent Model
 
-class UserTableSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
