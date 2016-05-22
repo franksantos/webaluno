@@ -21,6 +21,10 @@
             {!! Form::select('curso', $cursos, $cur_id, ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
+            {!! Form::label('Polo') !!}
+            {!! Form::select('polo', $polos, $pol_id, ['class' => 'form-control']) !!}
+        </div>
+        <div class="form-group">
             {!! Form::label('Nome da Turma') !!}
             {!! Form::text('nome', $turma->tur_nome, ['class' => 'form-control']) !!}
         </div>

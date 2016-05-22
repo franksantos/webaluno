@@ -31,7 +31,7 @@ class AlunoController extends Controller
     public function store(AlunoRequest $request, Aluno $query){
         $a = new Aluno();
         $a->alu_tur_id = $request->turma;
-        $a->alu_nome   = $request->nome;
+        $a->alu_nome   = strtoupper($request->nome);
         $a->alu_cpf    = str_replace(".","",str_replace("-","",$request->cpf));
         $a->alu_tel    = $request->telefone;
         $a->save();
@@ -55,7 +55,7 @@ class AlunoController extends Controller
     public function update(AlunoRequest $request, $id){
         $aluno = Aluno::find($id);
         $aluno->alu_tur_id = $request->turma;
-        $aluno->alu_nome   = $request->nome;
+        $aluno->alu_nome   = strtoupper($request->nome);
         $aluno->alu_cpf    = str_replace(".","",str_replace("-","",$request->cpf));
         $aluno->alu_tel    = $request->telefone;
         $aluno->save();

@@ -82,6 +82,27 @@
             </tbody>
         </table>
     </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Mensagem Importante</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Você não tem permissão para REMOVER uma Turma. Procure o administrador do sistema.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 @endsection
 @section('scripts')
     <script>
@@ -90,6 +111,16 @@
             language: 'pt-BR',
             autoclose: true,
             todayHighlight: true
+        });
+    </script>
+    <script>
+
+        //teste
+
+        $(".btn-danger").on("click", function(e){
+                e.preventDefault();
+            $("#myModal").modal();
+            console.log($("#btnRemovar").val());
         });
     </script>
 @endsection

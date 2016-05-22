@@ -21,7 +21,7 @@ class AlunoTableSeeder extends Seeder
         // TODO: Implement run() method.
         //limpa a tabela
         Aluno::truncate();
-        /** Alunos de ADMINISTRAÇÃO LAJEADO*/
+        /** Alunos de ADMINISTRAÃ‡ÃƒO LAJEADO*/
         Aluno::create(['alu_tur_id'=>1,'alu_nome'  =>'RAWLLISON COSTA PINHEIRO','alu_cpf'   =>'05690602302','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>1,'alu_nome'  =>'TACIZIO BANDEIRA MARTINS','alu_cpf'   =>'05521515305','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>1,'alu_nome'  =>'EVA KAROLLYNNE COUTINHO BANDEIRA','alu_cpf'   =>'05691551345','alu_tel'   =>'']);
@@ -50,7 +50,7 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>1,'alu_nome'  =>'IRES PEREIRA CARVALHO','alu_cpf'   =>'00229702317','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>1,'alu_nome'  =>'EDVANIA MARIA ALVES LIMA','alu_cpf'   =>'83038965200','alu_tel'   =>'']);
 
-        /** Alunos Complementação E */
+        /** Alunos ComplementaÃ§Ã£o E */
         Aluno::create(['alu_tur_id'=>2,'alu_nome'=>'CECILIA MARIA SILVA CARVALHO','alu_cpf'=>'34526080349','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>2,'alu_nome'=>'ROZINETE MORAIS DE CARVALHO','alu_cpf'=>'34333002320','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>2,'alu_nome'=>'ROSILENE PEREIRA DO NASCIMENTO','alu_cpf'=>'28849205368','alu_tel'=>'']);
@@ -83,7 +83,7 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>2,'alu_nome'=>'MARCIA  ANDREIA ALVES','alu_cpf'=>'83433678391','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>2,'alu_nome'=>'IRENALDO SILVA SAMPAIO','alu_cpf'=>'80482503300','alu_tel'=>'']);
 
-        /** Alunos de Complementação F */
+        /** Alunos de ComplementaÃ§Ã£o F */
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'VALDENIA DE MATOS ALENCAR','alu_cpf'   =>'36348066304','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'JANDIRA LIRA SILVA','alu_cpf'   =>'34369252334','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'MARIA DO SOCORRO TEXEIRA DE OLIVEIRA','alu_cpf'   =>'32955987387','alu_tel'   =>'']);
@@ -96,7 +96,8 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'SILVIA MARIA PEREIRA SILVA','alu_cpf'   =>'17971586353','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'MARIA EULANA SA  ARAUJO','alu_cpf'   =>'52323161334','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'ROSIMEIRE DASILVA BRITO','alu_cpf'   =>'65255550353','alu_tel'   =>'']);
-        Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'VILENE MARIA FERREIRA DE PAULA','alu_cpf'   =>'75427044353','alu_tel'   =>'']);
+        //Obs essa aluno aparece em duas turmas diferentes
+        //Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'VILENE MARIA FERREIRA DE PAULA','alu_cpf'   =>'75427044353','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'MARIA SANDRA CARDOSO DE ARAUJO','alu_cpf'   =>'77010485372','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'MARIA CLEITA SILVA SOARES','alu_cpf'   =>'93892896372','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'RAYMARA SILVA SOUSA','alu_cpf'   =>'60314617302','alu_tel'   =>'']);
@@ -114,7 +115,6 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'RAIMUNDO NONATO BARROS JUNIOR','alu_cpf'   =>'04021032380','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'ROZANA DE MORAIS SILVA','alu_cpf'   =>'02894367376','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'ILDENE CARNEIRO BRITO','alu_cpf'   =>'03331781304','alu_tel'   =>'']);
-        Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'ILDENE CARNEIRO BRITO','alu_cpf'   =>'03331781304','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'NATALIA COSTA  ALVES','alu_cpf'   =>'03334175340','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'MARIA GABRIELLA PEREIRA MENEZE','alu_cpf'   =>'05441347376','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'ELIANE FERREIRA CARVALHO','alu_cpf'   =>'00817609300','alu_tel'   =>'']);
@@ -124,10 +124,10 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'SARAH REGINA SILVA VIEIRA','alu_cpf'   =>'01239515340','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'CLAUDIA HELENA MDA SILVA','alu_cpf'   =>'57203695387','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'MARILENE LOPES SILVA','alu_cpf'   =>'70391190300','alu_tel'   =>'']);
-        Aluno::create(['alu_tur_id'=>3,'alu_nome'  =>'MARIA SANDRA CARDOSO DE ARAUJO','alu_cpf'   =>'77010485372','alu_tel'   =>'']);
+        //duplicadoAluno::create(['alu_tur_id'=>3,'alu_nome'  =>'MARIA SANDRA CARDOSO DE ARAUJO','alu_cpf'   =>'77010485372','alu_tel'   =>'']);
 
 
-        /** Alunos Pós-Graduação H */
+        /** Alunos PÃ³s-GraduaÃ§Ã£o H */
         Aluno::create(['alu_tur_id'=>4,'alu_nome'  =>'KATIA CILENE VIEIRA PONTES','alu_cpf'=>'34448757391','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>4,'alu_nome'  =>'ROSA MARIA MATIAS BARBOSA','alu_cpf'=>'34391517353','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>4,'alu_nome'  =>'MARINA DE NAZARE OLIVEIRA CANTANHEDE','alu_cpf'=>'34202447204','alu_tel'=>'']);
@@ -231,11 +231,12 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>5,'alu_nome'=>'FRANCILEIA LUIZA FERREIRA DE SA    ','alu_cpf'=>'92665659387','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>5,'alu_nome'=>'SONIA MARIA DE JESUS FERREIRA      ','alu_cpf'=>'93237170100','alu_tel'=>'']);
 
-        /** Alunos do curso de Serviço Social B */
+        /** Alunos do curso de ServiÃ§o Social B */
         Aluno::create(['alu_tur_id'=>6,'alu_nome'=>'FERNANDO ALENCAR MORAES','alu_cpf'=>'52359786334','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>6,'alu_nome'=>'SANDRA MARIA BATISTA MOURA SODRE','alu_cpf'=>'34328904353','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>6,'alu_nome'=>'LAURICE DE ALMEIDA CRUZ','alu_cpf'=>'32903529353','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>6,'alu_nome'=>'HELENI FRANCISCA DOS SANTOS SILVA','alu_cpf'=>'25443550349','alu_tel'=>'']);
+        //OBS Aluno com cpf duplicado
         Aluno::create(['alu_tur_id'=>6,'alu_nome'=>'JAIRA DA SILVA MENDES MELO','alu_cpf'=>'78025931315','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>6,'alu_nome'=>'IRESLOURANIA SILVA PASSOS','alu_cpf'=>'60751822337','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>6,'alu_nome'=>'PATRICIA  ARAUJO DOAS SANTOS','alu_cpf'=>'60008745374','alu_tel'=>'']);
@@ -268,7 +269,7 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>6,'alu_nome'=>'NUBIA  ALVES SILVA CARVALHO','alu_cpf'=>'00728980380','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>6,'alu_nome'=>'VIVIANE SILVA SANTOS','alu_cpf'=>'03326281323','alu_tel'=>'']);
 
-        /** Alunos de Serviço Social A */
+        /** Alunos de ServiÃ§o Social A */
         Aluno::create(['alu_tur_id'=>7,'alu_nome'=>'MARIA DE FATIMA  PEREIRA BARBOSA','alu_cpf'=>'33417695368','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>7,'alu_nome'=>'ROSEMARY NASCIMENTO PEREIRA','alu_cpf'=>'32830076320','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>7,'alu_nome'=>'MARINALVA ARAUJO ALMEIDA','alu_cpf'=>'48947610330','alu_tel'=>'']);
@@ -298,8 +299,6 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>7,'alu_nome'=>'GILVANI PEREIRA DA SILVA','alu_cpf'=>'94579407334','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>7,'alu_nome'=>'ANTONIA VALDIRENE DA SILVA','alu_cpf'=>'94548234349','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>7,'alu_nome'=>'MARIA EDILENE NUNES DE SOUSA','alu_cpf'=>'93891393334','alu_tel'=>'']);
-        Aluno::create(['alu_tur_id'=>7,'alu_nome'=>'MIRIAN DE SOUSA  ALMEIDA','alu_cpf'=>'98968530378','alu_tel'=>'']);
-        Aluno::create(['alu_tur_id'=>7,'alu_nome'=>'LUIZANGELA IDALGO MIRANDA','alu_cpf'=>'92863442104','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>7,'alu_nome'=>'MIRIAN DE SOUSA  ALMEIDA','alu_cpf'=>'98968530378','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>7,'alu_nome'=>'GILDA DIAS DE SOUSA','alu_cpf'=>'92102557391','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>7,'alu_nome'=>'SANDRA MARIA SOUSA PEREIRA','alu_cpf'=>'87858460415','alu_tel'=>'']);
@@ -363,7 +362,7 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>9,'alu_nome'=>'VERA LUCIA NUNES BARROS','alu_cpf'=>'90562224300','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>9,'alu_nome'=>'IZABEL CRISTINA REIS MENDES','alu_cpf'=>'91270170368','alu_tel'=>'']);
 
-        /** Alunos da  PÓS-GRADUAÇÃO I*/
+        /** Alunos da  PÃ“S-GRADUAÃ‡ÃƒO I*/
         Aluno::create(['alu_tur_id'=>10,'alu_nome'=>'MARIA DE JESUS F SILVA ','alu_cpf'=>'33370338300','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>10,'alu_nome'=>'ANTONIO VALQUINES DE OLIVEIRA BEZERRA','alu_cpf'=>'87948117334','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>10,'alu_nome'=>'CASSIA SALES DE SOUSA','alu_cpf'=>'98128353349','alu_tel'=>'']);
@@ -390,10 +389,10 @@ class AlunoTableSeeder extends Seeder
 
         /**
          *
-         *  TURMAS DO GRAJÁU
+         *  TURMAS DO GRAJÃU
          *
          * */
-        //Alunos Educação Grajáu
+        //Alunos EducaÃ§Ã£o GrajÃ¡u
         Aluno::create(['alu_tur_id'=>11,'alu_nome'=>'RODRIGO DE SA SILVA','alu_cpf'=>'05481912392','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>11,'alu_nome'=>'BOMFIM ALVES DOS SANTOS SOUSA','alu_cpf'=>'01472794370','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>11,'alu_nome'=>'LUCAS SILVA DA CRUZ','alu_cpf'=>'60894744364','alu_tel'=>'']);
@@ -435,12 +434,13 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>11,'alu_nome'=>'FRANCILDO DE LIMA DE SOUZA','alu_cpf'=>'95878831368','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>11,'alu_nome'=>'UDSON CARVALHO DE SOUSA','alu_cpf'=>'95660283349','alu_tel'=>'']);
 
-        /* Alunos Pedagogia Grajaú Turma A */
+        /* Alunos Pedagogia GrajaÃº Turma A */
         Aluno::create(['alu_tur_id'=>12,'alu_nome'=>'HERLANDIA MOREIRA LIMA SILVA','alu_cpf'=>'04765247333','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>12,'alu_nome'=>'MARIA JOSE DA COSTA FIGUEIREDO','alu_cpf'=>'50485091372','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>12,'alu_nome'=>'THAYNARA MARTINS SILVA','alu_cpf'=>'05996614375','alu_tel'=>'']);
-        Aluno::create(['alu_tur_id'=>12,'alu_nome'=>'SAMOLARAYANE CONCEICAO SILVA','alu_cpf'=>'71914234200','alu_tel'=>'']);
-        Aluno::create(['alu_tur_id'=>12,'alu_nome'=>'SOLANGE DESOUZA','alu_cpf'=>'71914234200','alu_tel'=>'']);
+        //OBS Alunos diferentes com o mesmo CPF
+        //Aluno::create(['alu_tur_id'=>12,'alu_nome'=>'SAMOLARAYANE CONCEICAO SILVA','alu_cpf'=>'71914234200','alu_tel'=>'']);
+        //Aluno::create(['alu_tur_id'=>12,'alu_nome'=>'SOLANGE DE SOUZA','alu_cpf'=>'71914234200','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>12,'alu_nome'=>'VILMA BENTO LOPES BONE','alu_cpf'=>'83740643315','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>12,'alu_nome'=>'LORIANE DA SILVA LIMA','alu_cpf'=>'60474298310','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>12,'alu_nome'=>'FRANCISCA FREIRE DA ROCHA SOUZA','alu_cpf'=>'90428633315','alu_tel'=>'']);
@@ -469,7 +469,7 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>12,'alu_nome'=>'CINTIA SOUSA DOS SANTOS','alu_cpf'=>'02915535329','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>12,'alu_nome'=>'GILMARA MACHADO BARBOSA','alu_cpf'=>'01982988380','alu_tel'=>'']);
 
-        /* Alunos Pedagogia Grajaú Turma B */
+        /* Alunos Pedagogia GrajaÃº Turma B */
         Aluno::create(['alu_tur_id'=>13,'alu_nome'=>'ALMIR LIMA NASCIMENTO','alu_cpf'=>'40102866368','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>13,'alu_nome'=>'JOANA DA SILVA BATISTA NETA','alu_cpf'=>'40200930320','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>13,'alu_nome'=>'POLIANA MENESES','alu_cpf'=>'06442967395','alu_tel'=>'']);
@@ -477,7 +477,6 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>13,'alu_nome'=>'BETINA BENTO RIBEIRO LIMA','alu_cpf'=>'05886162305','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>13,'alu_nome'=>'GEORGE RABELO SOUSA','alu_cpf'=>'05681076326','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>13,'alu_nome'=>'CAROLINA BEZERRA GUALBERTO','alu_cpf'=>'06054537300','alu_tel'=>'']);
-        Aluno::create(['alu_tur_id'=>13,'alu_nome'=>'MARIA ANEIDE BARROS DA SILVA SOUZA','alu_cpf'=>'17960096368','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>13,'alu_nome'=>'MARIA  IVANEIS ALVES DOS SANTOS','alu_cpf'=>'67713505334','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>13,'alu_nome'=>'MARCONES DE OLIVEIRA ALMEIDA','alu_cpf'=>'79128009304','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>13,'alu_nome'=>'ELIZETH RODRIGUES DA SILVA','alu_cpf'=>'76605515315','alu_tel'=>'']);
@@ -517,7 +516,7 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>13,'alu_nome'=>'CLEONILDES CONCEICAO DO NASCIMENTO','alu_cpf'=>'81372060359','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>13,'alu_nome'=>'BENTO DA COSTA SILVA FILHO','alu_cpf'=>'92182860304','alu_tel'=>'']);
 
-        /* Alunos Pedagogia Grajaú Turma C */
+        /* Alunos Pedagogia GrajaÃº Turma C */
         Aluno::create(['alu_tur_id'=>14,'alu_nome'=>'MARIA DO SOCORRO VIANA ','alu_cpf'=>'88071081353','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>14,'alu_nome'=>'JESSICA ANGELO DA SILVA','alu_cpf'=>'05794733330','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>14,'alu_nome'=>'MARIA  ANIEDE BARROS DA SILVA SOUZA','alu_cpf'=>'17960096368','alu_tel'=>'']);
@@ -533,10 +532,8 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>14,'alu_nome'=>'JOAO BENTO RIBEIRO FILHO','alu_cpf'=>'04135241328','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>14,'alu_nome'=>'ANTONIA COSTA  SILVA','alu_cpf'=>'03994038332','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>14,'alu_nome'=>'ADOAN SIRINO DA SILVA','alu_cpf'=>'03646746360','alu_tel'=>'']);
-        Aluno::create(['alu_tur_id'=>14,'alu_nome'=>'PAULLIANA MENESES','alu_cpf'=>'06442967395','alu_tel'=>'']);
-        Aluno::create(['alu_tur_id'=>14,'alu_nome'=>'ANDREIA SOUSA SILVA','alu_cpf'=>'00246882310','alu_tel'=>'']);
 
-        /* Alunos Serviço Social Grajaú*/
+        /* Alunos ServiÃ§o Social GrajaÃº*/
         Aluno::create(['alu_tur_id'=>15,'alu_nome'=>'RITA FILOMENA FERREIRA BRANDAO SOARES','alu_cpf'=>'26889714334','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>15,'alu_nome'=>'RICLEIA BARROS SA','alu_cpf'=>'05476934359','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>15,'alu_nome'=>'KRILEY DAYANNE DE OLIVEIRA ALVES','alu_cpf'=>'05944476311','alu_tel'=>'']);
@@ -555,7 +552,6 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>15,'alu_nome'=>'ANTONIO WILSON SOARES DO NASCIMENTO  ','alu_cpf'=>'01387962388','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>15,'alu_nome'=>'JOANA DARQUE DA SILVA','alu_cpf'=>'02319123318','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>15,'alu_nome'=>'ELOIDE DA SILVA  ALVES','alu_cpf'=>'01871288398','alu_tel'=>'']);
-        Aluno::create(['alu_tur_id'=>15,'alu_nome'=>'GILMARA MACHADDO BARBOSA','alu_cpf'=>'01982988380','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>15,'alu_nome'=>'CREUSENIR RODRIGUES DA SILVA','alu_cpf'=>'00233906380','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>15,'alu_nome'=>'HUGO DELEON DA SILVA LOIOLA','alu_cpf'=>'00986870340','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>15,'alu_nome'=>'MARIA GEANA CARDOSO DE ARAUJO','alu_cpf'=>'00646470302','alu_tel'=>'']);
@@ -580,7 +576,7 @@ class AlunoTableSeeder extends Seeder
 
 
 
-        /* Alunos de Pós-Gaduação A 2016 */
+        /* Alunos de PÃ³s-GaduaÃ§Ã£o A 2016 */
         Aluno::create(['alu_tur_id'=>16,'alu_nome'=>'JOELMA DE SOUSA MARTINS              ','alu_cpf'=>'01159383383','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>16,'alu_nome'=>'EDIVALDO ARAUJO FERREIRA             ','alu_cpf'=>'90459490168','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>16,'alu_nome'=>'ALBERTINA DE CARVALHO SOUSA          ','alu_cpf'=>'01006087362','alu_tel'=>'']);
@@ -603,7 +599,7 @@ class AlunoTableSeeder extends Seeder
 
         /**
          *
-         * TURMAS DE SÍTIO NOVO - MA
+         * TURMAS DE SÃTIO NOVO - MA
          */
 
         /* Alunos de Pedagogia Sitio Novo */
@@ -666,13 +662,14 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>18,'alu_nome'=>'LUZINEIDE  BARBOSA OLIVEIRA','alu_cpf'=>'43749267391','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>18,'alu_nome'=>'MARCIA REJANE DESOUSA SOARES ','alu_cpf'=>'84485442349','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>18,'alu_nome'=>'LOURANY RODRIGUES SILVA','alu_cpf'=>'92734049368','alu_tel'=>'']);
-        Aluno::create(['alu_tur_id'=>18,'alu_nome'=>'FRANCILENE DE FRANCA SILVA','alu_cpf'=>'78025931315','alu_tel'=>'']);
+        //OBS Aluno com cpf duplicado
+        //Aluno::create(['alu_tur_id'=>18,'alu_nome'=>'FRANCILENE DE FRANCA SILVA','alu_cpf'=>'78025931315','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>18,'alu_nome'=>'ANA MARIA SOUSA DA SILVA','alu_cpf'=>'90027620387','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>18,'alu_nome'=>'RUTH GEREMIAS DE OLIVEIRA','alu_cpf'=>'01556933363','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>18,'alu_nome'=>'RAQUEL SANTOS MELO','alu_cpf'=>'60282731393','alu_tel'=>'']);
 
 
-        /** Aluno Pós-Graduação B 2015 */
+        /** Aluno PÃ³s-GraduaÃ§Ã£o B 2015 */
         Aluno::create(['alu_tur_id'=>19,'alu_nome'=>'IRIS DE MORAES SJUNIOR','alu_cpf'=>'76023540104','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>19,'alu_nome'=>'DANIELE PEREIRA DA SILVA','alu_cpf'=>'02463880309','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>19,'alu_nome'=>'CAMILA SILVA DEOLIVEIRA','alu_cpf'=>'04171825385','alu_tel'=>'']);
@@ -685,7 +682,7 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>19,'alu_nome'=>'GERINALVA BORGES DA SILVA','alu_cpf'=>'01456374338','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>19,'alu_nome'=>'ELDA GOMES DE SOUSA','alu_cpf'=>'00417167369','alu_tel'=>'']);
 
-        /** Aluno do ENSINO MÉDIO  */
+        /** Aluno do ENSINO MÃ‰DIO  */
         Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'MARIA DAS GRACAS DE LIMA SOUZA','alu_cpf'=>'33389268391','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'MARIA DO ESPIRITO SANTO DE SOUSA SILVA','alu_cpf'=>'40213064391','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'MARIA ANTONIA BRAGA DE BRITO SILVA','alu_cpf'=>'26878003334','alu_tel'=>'']);
@@ -717,7 +714,8 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>21,'alu_nome'=>'ELIANE RODRIGUES GORGE','alu_cpf'=>'25066803300','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>21,'alu_nome'=>'MARILENE CALISTO SILVA','alu_cpf'=>'27211428368','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>21,'alu_nome'=>'RAIMUNDO NONATO DOS SANTOS ','alu_cpf'=>'24304522353','alu_tel'=>'']);
-        Aluno::create(['alu_tur_id'=>21,'alu_nome'=>'MARCIA  MONTEIRO OLIVEIRA','alu_cpf'=>'00553911333','alu_tel'=>'']);
+        //OBS essa aluna aparece em duas turmas diferentes
+        //Aluno::create(['alu_tur_id'=>21,'alu_nome'=>'MARCIA  MONTEIRO OLIVEIRA','alu_cpf'=>'00553911333','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>21,'alu_nome'=>'VANIA LUCIA RODRIGUES DA COSTA','alu_cpf'=>'94448299368','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>21,'alu_nome'=>'JANAINA SILVA SA','alu_cpf'=>'52382583304','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>21,'alu_nome'=>'CRISTIANE RODRIGUES NASCIMENTO','alu_cpf'=>'69246050363','alu_tel'=>'']);
@@ -762,7 +760,8 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>22,'alu_nome'=>'ENEDINA EUGENIA SOUSA DE OLIVEIRA ','alu_cpf'=>'32104715334','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>22,'alu_nome'=>'ELRIANE COSTA DE ANDRADE','alu_cpf'=>'02492291103','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>22,'alu_nome'=>'BRENDA LIMA SOUSA','alu_cpf'=>'05894547300','alu_tel'=>'']);
-        Aluno::create(['alu_tur_id'=>22,'alu_nome'=>'EDELMARA MENESES RODRIGUES','alu_cpf'=>'01896751369','alu_tel'=>'']);
+        //Obs aluno aparece em dois cursos
+        //Aluno::create(['alu_tur_id'=>22,'alu_nome'=>'EDELMARA MENESES RODRIGUES','alu_cpf'=>'01896751369','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>22,'alu_nome'=>'RICARDO PIRANGI LIMA','alu_cpf'=>'02240927313','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>22,'alu_nome'=>'RUBENILDE FERREIRA CORREA DE SOUSA','alu_cpf'=>'98594206372','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>22,'alu_nome'=>'FRANCISCA OLISANGELA C A BAILEY','alu_cpf'=>'02754253394','alu_tel'=>'']);
@@ -783,7 +782,7 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>22,'alu_nome'=>'ILENILDE DOS SANTOS NOLETO','alu_cpf'=>'52304060382','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>22,'alu_nome'=>'JULIANA COSTA OLIVEIRA','alu_cpf'=>'07610330922','alu_tel'=>'']);
 
-        /* Alunos Pedagogia Brejão */
+        /* Alunos Pedagogia BrejÃ£o */
         Aluno::create(['alu_tur_id'=>23,'alu_nome'=>'RAIFRAN GOMES MOURA','alu_cpf'=>'93731396300','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>23,'alu_nome'=>'SELMA PORTO FREITAS','alu_cpf'=>'01803257369','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>23,'alu_nome'=>'FABIANA DE SOUZA SIQUEIRA','alu_cpf'=>'02563352304','alu_tel'=>'']);
@@ -877,7 +876,7 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>24,'alu_nome'=>'ELIETE DOS SANTOS SANTANA','alu_cpf'=>'57669090391','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>24,'alu_nome'=>'CARMITA DE MIRANDA BANDEIRA','alu_cpf'=>'03987580348','alu_tel'=>'']);
 
-        /** alunos de Pós-Graduação A 2015 */
+        /** alunos de PÃ³s-GraduaÃ§Ã£o A 2015 */
         Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'VILENE MARIA FERREIRA DE PAULA','alu_cpf'=>'75427044353','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'WDESLEIA BATISTA DASILVA','alu_cpf'=>'04412921190','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'OSMARIA DO ESPIRITO SANTOS SILVA','alu_cpf'=>'62377647120','alu_tel'=>'']);
@@ -914,7 +913,8 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'CACILDA DE SOUSA REIS','alu_cpf'=>'14749084387','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'ELIANA CARDOSO DE OLIVEIRA','alu_cpf'=>'05911021374','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'JAYLENE DAMACENO SILVA','alu_cpf'=>'04040486331','alu_tel'=>'']);
-        Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'MARIA APARECIDARIBEIRO LIMA','alu_cpf'=>'00000000000','alu_tel'=>'']);
+        //Obs aluna com CPF incorreto
+        //Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'MARIA APARECIDARIBEIRO LIMA','alu_cpf'=>'00000000000','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'MARIA GORETE BATISTA','alu_cpf'=>'15850234349','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'DANIEL CONCEICAO NASCIMENTO','alu_cpf'=>'00271495367','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'SIMONIA SOUSA B DE OLIVEIRA','alu_cpf'=>'61556009372','alu_tel'=>'']);
@@ -939,19 +939,19 @@ class AlunoTableSeeder extends Seeder
         Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'ANDREA SILVA DE CASTRO','alu_cpf'=>'02183155388','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'MARIA JULIA GOMES DE PAIVA','alu_cpf'=>'34577874334','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'CAROLINEA BATISTA DE OLIVEIRA','alu_cpf'=>'02720652342','alu_tel'=>'']);
-        Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'EDIANE CRUZ DE SOUSA','alu_cpf'=>'00000000000','alu_tel'=>'']);
+        //Obs aluna com CPF incorreto
+        //Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'EDIANE CRUZ DE SOUSA','alu_cpf'=>'00000000000','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'IZABEL CRISTINA LEAL DA SILVA','alu_cpf'=>'87543621304','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'CONCITA CONCEICAO DE MARIA M DUARTE','alu_cpf'=>'40168883368','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'MATUZALEM SOARES DA COSTA','alu_cpf'=>'02379602301','alu_tel'=>'']);
-        Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'VANDA  LUCIA KURSTEN','alu_cpf'=>'44574649372','alu_tel'=>'']);
+        Aluno::create(['alu_tur_id'=>25,'alu_nome'=>'VANDA LUCIA KURSTEN','alu_cpf'=>'44574649372','alu_tel'=>'']);
 
-        /** Alunos de Pós-Graduação COCOS */
+        /** Alunos de PÃ³s-GraduaÃ§Ã£o COCOS */
         Aluno::create(['alu_tur_id'=>26,'alu_nome'=>'ARINETE DE ALMEIDA FERREIRA','alu_cpf'=>'34329803372','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>26,'alu_nome'=>'DOMINGOS SOUSA SA','alu_cpf'=>'70318379368','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>26,'alu_nome'=>'MARQUEANE ALVES DA COSTA','alu_cpf'=>'60210482370','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>26,'alu_nome'=>'SHEILA BRAGA LIMA','alu_cpf'=>'01345600356','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>26,'alu_nome'=>'EVNILDA PEREIRA DE MELO ','alu_cpf'=>'03592349333','alu_tel'=>'']);
-        Aluno::create(['alu_tur_id'=>26,'alu_nome'=>'EVANILDA PEREIRA DE MELO','alu_cpf'=>'03592349333','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>26,'alu_nome'=>'PERINA FERNANDES PEREIRA SA','alu_cpf'=>'84930276349','alu_tel'=>'']);
         Aluno::create(['alu_tur_id'=>26,'alu_nome'=>'ANA LUCIA SANTOS DE SOUSA','alu_cpf'=>'85935018349','alu_tel'=>'']);
 

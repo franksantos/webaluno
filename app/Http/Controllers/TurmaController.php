@@ -49,26 +49,31 @@ class TurmaController extends Controller
 
     }
     public function edit($id){
+        $polo = new Polo();
+        $polos = $polo->all()->lists('pol_nome', 'id');
         $turma = Turma::find($id);
         $cur_id = $turma->tur_cur_id;//pega o id do curso da turma a ser editada
+        $pol_id = $turma->cur_pol_id;//pega o id do polo da tuma a ser editada
         $c = new Curso();
         $cursos = $c->all()->lists('cur_nome', 'id');
 
-        return view('turma.edit', ['turma'=>$turma,'cursos'=>$cursos, 'cur_id'=>$cur_id]);
+        return view('turma.edit', ['turma'=>$turma,'cursos'=>$cursos, 'cur_id'=>$cur_id, 'polos'=>$polos, 'pol_id'=>$pol_id]);
 
     }
     public function update(TurmaRequest $request, $id){
         $t = Turma::find($id);
         $t->tur_cur_id = $request->curso;
-        $t->tur_nome = $request->nome;
+        $t->tur_nome = strtoupper($request->nome);
         $t->tur_data_inicio = date('Y-m-d', strtotime(str_replace('/','-',$request->data_inicio)));
         $t->save();
 
         $c = new Curso();
         $cursos = $c->all()->lists('cur_nome', 'id');
+        $polo = new Polo();
+        $polos = $polo->all()->lists('pol_nome', 'id');
         $tur = new Turma();
         $turmas = $tur->all();
-        return view('turma.create', ['cursos'=>$cursos, 'turmas'=>$turmas]);
+        return view('turma.create', ['cursos'=>$cursos,'polos'=>$polos,'turmas'=>$turmas]);
     }
     public function destroy($id){
         $turma = Turma::findOrFail($id);

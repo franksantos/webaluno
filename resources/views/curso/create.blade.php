@@ -17,10 +17,7 @@
 
 
         {!! Form::open(array('url' => 'curso/store')) !!}
-        <div class="form-group">
-            {!! Form::label('Polo') !!}
-            {!! Form::select('polo', $todosPolos) !!}
-        </div>
+
         <div class="form-group">
             {!! Form::label('Nome do Curso') !!}
             {!! Form::text('nome', null, ['class' => 'form-control']) !!}
@@ -28,11 +25,8 @@
         <div class="form-group">
             {!! Form::label('Area do Curso') !!}
             {!! Form::select('area',
-                [''=>'Selecione a Area','Ciencias Exatas e da Terra'=>'Ci&ecirc;ncias Exatas e da Terra',
-                'Ciencias Humanas'=>'Ci&ecirc;ncias Humanas',
-                'Ciencias da Saude'=>'Ci&ecirc;ncias da Saude',
-                'Engenharias'=>'Engenharias',
-                'Ciencias Biologicas'=>'Ci&ecirc;ncias Biologicas', ''],'', ['class' => 'form-control']) !!}
+                [''=>'Selecione a Area','Geral'=>'Geral',
+                'Outras'=>'Outras', ''],'', ['class' => 'form-control']) !!}
         </div>
         <div class="form-group">
             {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}

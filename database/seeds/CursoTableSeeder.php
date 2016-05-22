@@ -20,10 +20,10 @@ class CursoTableSeeder extends Seeder
     {
         // TODO: Implement run() method.
         Curso::truncate();
-        Curso::create(['cur_nome'=>'Pós-Graduação', 'cur_area'=>'Geral']);
+        Curso::create(['cur_nome'=>'PÃ³s-GraduaÃ§Ã£o', 'cur_area'=>'Geral']);
         Curso::create(['cur_nome'=>'Curso Livre', 'cur_area'=>'Geral']);
-        Curso::create(['cur_nome'=>'Ensino Médio', 'cur_area'=>'Geral']);
-        Curso::create(['cur_nome'=>'Complementação', 'cur_area'=>'Geral']);
+        Curso::create(['cur_nome'=>'Ensino MÃ©dio', 'cur_area'=>'Geral']);
+        Curso::create(['cur_nome'=>'ComplementaÃ§Ã£o', 'cur_area'=>'Geral']);
         Curso::create(['cur_nome'=>'Independente', 'cur_area'=>'Geral']);
     }
 }

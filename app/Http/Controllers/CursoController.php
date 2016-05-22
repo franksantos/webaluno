@@ -34,7 +34,7 @@ class CursoController extends Controller
         $todosPolos = $polo->all()->lists('pol_nome', 'id');
         $b = new Curso();
         $b->cur_pol_id = $request->polo;
-        $b->cur_nome   = $request->nome;
+        $b->cur_nome   = strtoupper($request->nome);
         $b->cur_area   = $request->area;
         $b->save();
         $cursos = $b->all();
