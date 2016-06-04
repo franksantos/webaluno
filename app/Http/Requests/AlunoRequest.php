@@ -25,8 +25,8 @@ class AlunoRequest extends Request
     {
         return [
             //
-            'turma'    => 'required',
-            'nome'     => 'required|min:5',
+            'turma'    => 'required',['required'=>'O nome da turma é obrigatório'],
+            'nome'     => 'required|min:5',['required'=>'O nome do Aluno é obrigatório', 'min'=>'O nome do aluno não poder ter menos de 5 caracteres'],
             'cpf'      => 'required'
         ];
     }
