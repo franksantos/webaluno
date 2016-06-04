@@ -1,0 +1,15 @@
+INSERT INTO curso(cur_pol_id,cur_nome, cur_area, created_at, updated_at ) VALUES (7, 'ENSINO MÉDIO', 'GERAL', '2016-05-03 00:00:00', '2016-06-03 00:00:00');
+INSERT INTO curso(cur_pol_id,cur_nome, cur_area, created_at, updated_at ) VALUES (7, 'SERVIÇO SOCIAL', 'HUMANAS', '2016-05-03 00:00:00', '2016-05-04 00:00:00');
+INSERT INTO curso(cur_pol_id,cur_nome, cur_area, created_at, updated_at ) VALUES (7, 'COMPLEMENTAÇÃO', 'GERAL', '2016-05-03 00:00:00', '2016-06-04 00:00:00');
+INSERT INTO curso(cur_pol_id,cur_nome, cur_area, created_at, updated_at ) VALUES (7, 'PEDAGOGIA', 'HUMANAS', '2016-05-03 00:00:00', '2016-06-04 00:00:00');
+INSERT INTO curso(cur_pol_id,cur_nome, cur_area, created_at, updated_at ) VALUES (7, 'PÓS GRADUAÇÃO', 'GERAL', '2016-05-03 00:00:00', '2016-06-04 00:00:00');
+INSERT INTO curso(cur_pol_id,cur_nome, cur_area, created_at, updated_at ) VALUES (7, 'INDEPENDENTE', 'GERAL', '2016-05-03 00:00:00', '2016-06-04 00:00:00');
+INSERT INTO curso(cur_pol_id,cur_nome, cur_area, created_at, updated_at ) VALUES (8, 'PEDAGOGIA', 'HUMANAS', '2016-05-03 00:00:00', '2016-06-04 00:00:00');
+INSERT INTO curso(cur_pol_id,cur_nome, cur_area, created_at, updated_at ) VALUES (8, 'SERVIÇO SOCIAL', 'HUMANAS', '2016-05-03 00:00:00', '2016-06-04 00:00:00');
+INSERT INTO curso(cur_pol_id,cur_nome, cur_area, created_at, updated_at ) VALUES (8, 'EDUCAÇÃO', 'HUMANAS', '2016-05-03 00:00:00', '2016-06-04 00:00:00');
+INSERT INTO curso(cur_pol_id,cur_nome, cur_area, created_at, updated_at ) VALUES (9, 'PEDAGOGIA', 'HUMANAS', '2016-05-03 00:00:00', '2016-06-04 00:00:00');
+INSERT INTO curso(cur_pol_id,cur_nome, cur_area, created_at, updated_at ) VALUES (9, 'PÓS GRADUAÇÃO', 'GERAL', '2016-05-03 00:00:00', '2016-06-04 00:00:00');
+INSERT INTO curso(cur_pol_id,cur_nome, cur_area, created_at, updated_at ) VALUES (10, 'PEDAGOGIA', 'HUMANAS', '2016-05-03 00:00:00', '2016-06-04 00:00:00');
+INSERT INTO curso(cur_pol_id,cur_nome, cur_area, created_at, updated_at ) VALUES (11, 'ADMINISTRAÇÃO', 'HUMANAS', '2016-05-03 00:00:00', '2016-06-04 00:00:00');
+INSERT INTO curso(cur_pol_id,cur_nome, cur_area, created_at, updated_at ) VALUES (11, 'PEDAGOGIA', 'GERAL', '2016-05-03 00:00:00', '2016-06-04 00:00:00');
+INSERT INTO curso(cur_pol_id,cur_nome, cur_area, created_at, updated_at ) VALUES (12, 'PEDAGOGIA', 'GERAL', '2016-05-03 00:00:00', '2016-06-04 00:00:00');

@@ -1,0 +1,24 @@
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'MARIAFRANCILENE GOMES DE GOUVEIA','alu_cpf'=>'40145298353','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'ANTONIA DO ESPIRITO SANTO COSTA LIMA','alu_cpf'=>'05538105377','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'MARIA IRENE RODRIGUES MANTINS','alu_cpf'=>'81143486315','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'ROBERTO PEREIRA BELFORT','alu_cpf'=>'52376621372','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'MARIA ZELIA CHAVES PEREIRA','alu_cpf'=>'74839373353','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'EVA  MARIA DOS SANTOS','alu_cpf'=>'74049356368','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'JARDEON RODRIGUES DOS SANTOS ','alu_cpf'=>'60554905361','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'CLAUDIRENE DOS SANTOS APINAGE','alu_cpf'=>'02172480398','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'CEILANJA FERREIRA DA SILVA','alu_cpf'=>'00638262321','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'ELENIRA LIMA DA SILVA','alu_cpf'=>'00460407309','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'ELBA LIMA DA SILVA ','alu_cpf'=>'00460391399','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'MANOEL MESSIS DE OLIVEIRA CIRQUEIRA ','alu_cpf'=>'01164143328','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'REGINA BARROS PAIXAO','alu_cpf'=>'01007124369','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'FERNANDO DINIZ DE SOUSA BEQUIMAN','alu_cpf'=>'05184302352','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'WELITON DE ABREU BARROS ','alu_cpf'=>'05172672338','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'CAMILA BARROS DOS SANTOS','alu_cpf'=>'03456852371','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'GENIVAN RIBEIRO DE BRITO','alu_cpf'=>'04201564371','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'MARIA DE SOUSA SANTANA VIANA','alu_cpf'=>'94948992372','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'LUCINETE NEVES DA SILVA  ','alu_cpf'=>'96243430391','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'SEBASTIANA GOMES DA SILVA','alu_cpf'=>'94600112172','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'MARIA DE JESUS AGUIAR DE SOUSA','alu_cpf'=>'99294281353','alu_tel'=>'']); 
+Aluno::create(['alu_tur_id'=>8,'alu_nome'=>'MARIA JOSE DE SOUSA PEREIRA','alu_cpf'=>'84770988320','alu_tel'=>'']); 
+
+

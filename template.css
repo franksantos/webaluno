@@ -1,0 +1,485 @@
+@charset "utf-8";
+/* CSS Document */
+/* ######################################################### */
+
+/* CORPO DA PGINA E CENTRALIZAO*/
+
+/* ######################################################### */
+
+body {
+	background:transparent;
+	font-family:"Myriad Pro", Myriad, Helvetica, Arial, sans-serif;
+	font-size:90%;
+	color:#000/*968765*/;
+	margin:20px auto;
+	text-align:center;
+	line-height:1.4em;
+	width:960px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:1.5em;
+	letter-spacing:-0.06em;
+	text-transform:uppercase;
+	font-weight:normal;
+}
+
+a:link, a:visited {
+	font-family:georgia, times, serif;
+	font-weight:bold;
+	color:#005ba1;
+	text-decoration:none;
+	border-bottom:1px solid #005ba1;
+	font-size:.8em;
+}
+
+a:hover {
+	border-bottom:1px dotted #91476c;
+}
+
+a img {
+	border:none;
+}
+
+header, section, article, footer {
+	padding:10px 20px 20px;
+	margin:10px;
+	border:1px solid #e7e2d7;
+	border-radius:8px;
+	-webkit-border-radius:.8em;
+	-moz-border-radius:.8em;
+	background:#fff url(../imagens/sprites.png) repeat-x 0px -120px;
+}
+
+header {
+	display:block;
+	position:relative;
+	text-align:left;
+}
+
+header img {
+	position:absolute;
+	left:50px;
+	top:18px;
+}
+
+header h1 {
+	font-size:1.7em;
+	text-transform:none;
+	letter-spacing:0em;
+	text-align:center;
+}
+
+header h2 {
+	margin:-10px 0px 20px;
+	font-size:1.3em;
+	text-align:center
+}
+
+nav {
+	text-align:center;
+	display:block;
+}
+
+nav ul {
+	padding:0px;
+	list-style-type:none;
+	display:inline;
+}
+
+nav li {
+	margin:0px 10px;
+	padding:0px;
+	list-style-type:none;
+	display:inline;
+}
+
+nav a:link, nav a:visited {
+	font-size:1em;
+	font-weight:normal;
+}
+
+section {
+	float:left;
+	width:178px;
+	text-align:left;
+}
+
+section h1, section h2, section h3, section h4, section h5, section h6 {
+	background:transparent url(../imagens/sprites.png) no-repeat 0px -80px;
+	color:#fff;
+	padding:9px 10px 10px 10px;
+	margin:13px -10px;	
+	text-shadow:0 1px 0 #403232;
+}
+
+section ul {
+	padding:0px;
+	list-style:none;
+	border-top:1px solid #e7e2d7;
+	margin:14px 0px;
+}
+
+section li {
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+section li a:link, section li a:visited {
+	float:left;
+	width:96%;
+	padding:3px 1%;
+	border-bottom:1px solid #e7e2d7;
+}
+
+section li a:hover {
+	background:#f2f1ec;
+}
+
+article {
+	float:right;
+	width:898px;
+	text-align:left;
+}
+
+article #icones{
+	margin: 10px;
+
+}
+
+article #icones div{
+	float:left;
+	width:20%;
+	margin: 20px 20px;
+
+
+}
+
+article #icones div a:link{
+	border:none;
+	text-decoration:none;
+}
+
+article h1 {
+	background:transparent url(../imagens/sprites.png) no-repeat 0px 0px;
+	color:#fff;
+	padding:7px 10px 12px 30px;
+	margin-left:-30px;
+	text-shadow:0 1px 0 #403232;
+}
+
+article h2, article h3, article h4, article h5, article h6  {
+	background:transparent url(../imagens/sprites.png) no-repeat 0px -40px;
+	color:#fff;
+	padding:7px 10px 12px 30px;
+	margin-left:-30px;
+	text-shadow:0 1px 0 #913951;
+}
+
+/*article p:first-of-type {
+	font-family:Helvetica, Arial, serif;
+	text-transform:uppercase;
+	border-top:1px dotted #968765;
+	border-bottom:1px dotted #968765;
+	padding:10px 0px;
+	color:#5F0E24;
+}*/
+
+article legend{
+	font-size:1.4em;
+	font-weight:normal;
+	color:#333;
+}
+footer {
+	display:block;
+	clear:both !important;
+	width:898px;
+}
+
+footer a {
+	margin:0px 5px;
+}
+.geral {
+width:950px;
+margin:0 auto;
+text-align:left; /* "remdio" para o hack do IE */
+heigth:auto;
+min-height:100%;
+background:#FFFFFF;
+
+}
+
+h1{
+font-size:18px;
+margin:15px;
+
+}
+/* ######################################################### */
+
+/* Configurando o topo do site*/
+
+/* ######################################################### */
+
+.topo{
+margin:0;
+height:140px;
+}
+
+/* estilo da parte da logo*/
+.topo .logo{
+/*margin-left:20px;*/
+margin-top:20px;
+float:left;
+height:100px;
+width:20%;
+text-align:center;
+}
+.topo .logo h1{
+
+margin-left:20px;
+}
+/* estilo da parte do título*/
+
+.topo .titulo-topo{
+float:left;
+/*margin-left:60px;*/
+/*margin-right:60px;*/
+margin-top:26px;
+width:60%;
+
+}
+
+.topo .titulo-topo h1{
+font-family:Arial, Helvetica, sans-serif;
+font-size:24px;
+color:#0b7793;
+font-style:normal;
+font-weight:900;
+text-align:center;
+margin-top:30px;
+padding-right:30px;
+}
+
+.topo .foto-domraymundo{
+float:left;
+margin-top:22px;
+/*margin-left:20px;*/
+width:20%;
+text-align:center;
+}
+
+/* estilo da parte do conteúdo da página */
+
+.conteudo{
+height:600px;
+min-height:100%;
+}
+/* #########################################################
+
+/* ----- INICIO -----  CÓDIGO PARA A PAGINA DE LOGIN -------*/
+
+/* #########################################################*/
+
+div.login{
+background:  #fff url(../imagens/fundo_login.jpg) repeat-x scroll left top;
+width:982px;
+height:600px;
+margin: 1px auto;
+border: 1px solid #c16b11;
+
+}
+.login .topo-login{
+margin: 20px 10px 10px 10px;
+
+
+}
+.login .topo-login h1{
+background:url(../img/logo-da-esea.png) no-repeat;
+
+width:400px;
+height:100px;
+
+padding-top:20px;
+
+}
+
+.login .topo-login h1 span {
+position:relative;
+left:20px;
+top:20px;
+color:#0b7994;
+font-size:14px;
+}
+    label, input {
+        display: block;
+        /*float: left;*/
+    }
+input[type=text]{ 
+	  /*border-radius:1px;
+	  -moz-border-radius:1px;
+	  -webkit-border-radius:1px;
+	  box-shadow: 1px 1px 2px #f2f2f2;
+	  -moz-box-shadow: 1px 1px 2px #f2f2f2;
+	  -webkit-box-shadow: 1px 1px 2px #f2f2f2;*/
+	  background: #fff; 
+	  border:1px solid #c5c8cb;
+	  /*width:150px;*/
+	  height:26px;
+	  color:#868b8e;
+	  text-transform:uppercase;
+}
+input[type=date]{ 
+	  /*border-radius:1px;
+	  -moz-border-radius:1px;
+	  -webkit-border-radius:1px;
+	  box-shadow: 1px 1px 2px #f2f2f2;
+	  -moz-box-shadow: 1px 1px 2px #f2f2f2;
+	  -webkit-box-shadow: 1px 1px 2px #f2f2f2;*/
+	  background: #fff; 
+	  border:1px solid #c5c8cb;
+	  /*width:150px;*/
+	  height:26px;
+	  color:#868b8e;
+	  text-transform:uppercase;
+}
+input[type=password]{ 
+	  /*border-radius:1px;
+	  -moz-border-radius:1px;
+	  -webkit-border-radius:1px;
+	  box-shadow: 1px 1px 2px #f2f2f2;
+	  -moz-box-shadow: 1px 1px 2px #f2f2f2;
+	  -webkit-box-shadow: 1px 1px 2px #f2f2f2;*/
+	  background: #fff; 
+	  border:1px solid #f1f1f1;
+	  width:150px;
+	  height:26px;
+	    color:#868b8e;
+}
+    label {    
+        text-align: left;
+        width: auto;
+        padding-right: 20px;
+        padding-bottom: 0px;
+		margin-left:0px;
+    }
+    fieldset {
+        border: solid 1px #000;
+		margin-bottom:20px;
+    }
+    br {
+        clear: left;
+    }
+	.campos-login{margin: 0 10px}
+	.form{ width:550px; padding-top:200px; margin-left:230px; }
+	.boc{float:left; margin: 60px 80px 20px 100px;}
+	
+	.inputs{float:left; color:#fff; font-family: , Arial, sans-serif, Gotham, "Helvetica Neue", Helvetica;}
+	
+	
+	.botoes {
+/*background-color: #CC3300;*/
+font: 10px Arial, sans-serif;
+color: #CCFFFF;
+/*float:right;*/
+text-align:center;
+width:300px;
+margin:20px auto 0px;
+}
+html body article div.botoes input{ display: inline;}
+
+.tituloLogin{ width:400px; position:relative; top:60px; right:140px; color:#fff; text-transform:uppercase;}
+
+
+/* Mensagem de ERRO da página de ERRO no login: index2.html*/
+.mensagem-erro{
+font:12px Arial, sans-serif;
+}
+.mensagem-erro p{
+color:#0000FF;
+text-align:center;
+}
+/* #########################################################
+
+/* -----  FIM -----  CÓDIGO PARA A PAGINA DE LOGIN -------*/
+
+/* #########################################################*/
+
+
+/* #########################################################
+
+/* -----  TABELA DE NOTAS -------*/
+
+/* #########################################################*/
+
+table.tabelageral{
+	border-collapse: collapse;
+    border-top: 3px solid #0A6184;
+    /*position: relative;*/
+    width: 100%;
+
+}
+
+table.tabelageral thead tr.hedaer{
+ background-image: url("../img/tables/icone_tabela_geral.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+
+table.tabelanotas {
+    border-collapse: collapse;
+    border-top: 3px solid #0A6184;
+    position: relative;
+    width: 100%;
+}
+
+table.tabelanotas thead tr .header {
+    background-image: url("../images/tables/bg.gif");
+    background-position: right center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+table.tabelanotas thead tr th, table.tabelanotas tfoot tr th {
+    background-color: #4386A1;
+    color: #FFFFFF;
+    padding: 0 5px;
+    text-align: left;
+}
+
+/*
+#################   estilo do text area ##############
+*/
+
+.estilotextarea {
+
+font-family: arial, verdana;
+font-size: 13pt;
+font-weight: normal;
+letter-spacing: 3px;
+text-transform:uppercase;
+}
+.botao{
+	padding-top:15px;
+}
+.condicao{display:inline;}
+.inline{display:inline;}
+::-webkit-input-placeholder  { color:#4C4; font-family:Verdana, sans-serif; font-size:10px; }
+input:-moz-placeholder { color:#4C4; font-family:Verdana, sans-serif; font-size:10px; }
+textarea:-moz-placeholder { color:#4C4; font-family:Verdana, sans-serif; font-size:10px; }​
+
+/* Div Dados do Solicitante */
+#dadosSolicitante{margin-top:20px;}
+
+/* links do box Dialog com os ícones para as páginas de cadastros */
+#boxBotoesCadastros.icones_boxDialog.ui-dialog-content.ui-widget-content{
+	display: inline-flex;
+	
+}
+#boxBotoesCadastros.icones_boxDialog.ui-dialog-content.ui-widget-content div{
+	padding:20px;
+}
+/* -------- fim do bloco de links das páginas de cadastro --------*/

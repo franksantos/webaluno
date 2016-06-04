@@ -1,0 +1,1 @@
+INSERT INTO turma(tur_cur_id, tur_nome, tur_data_inicio, created_at, updated_at) VALUES (,'','','','','');

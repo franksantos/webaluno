@@ -1,0 +1,18 @@
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'MARIA DAS GRACAS DE LIMA SOUZA','alu_cpf'=>'33389268391','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'MARIA DO ESPIRITO SANTO DE SOUSA SILVA','alu_cpf'=>'40213064391','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'MARIA ANTONIA BRAGA DE BRITO SILVA','alu_cpf'=>'26878003334','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'MARIA PEREIRA SOUZA','alu_cpf'=>'15884996349','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'JONATAS NOBRE DE MESQUITA','alu_cpf'=>'13797727372','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'MARIA LUCIA BARROS SOUSA','alu_cpf'=>'13481282320','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'ALESSANDRA MORAES DA SILVA','alu_cpf'=>'67257208387','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'JOSIMAR FARIAS CANTANHEDE','alu_cpf'=>'58671153215','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'LUZIANNE AZEVEDO DASILVA','alu_cpf'=>'60800102320','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'RICARDO CRISTIAN VIEIRA DA SILVA','alu_cpf'=>'01741059321','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'MARCIA MONTEIRO OLIVEIRA','alu_cpf'=>'00553911333','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'ANTONIA UELMA SILVA  BARROS LIMA','alu_cpf'=>'04875152345','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'JOAO PAIVA LEITAO NETO','alu_cpf'=>'03754423169','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'SANDRA  CONCEICAO DE MORAIS','alu_cpf'=>'83628339391','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'ANTONIA NEIDE ALVES M DA SILVA','alu_cpf'=>'91934940330','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'VALDIRENE OLIVEIRA E SILVA','alu_cpf'=>'91784891304','alu_tel'=>'']);
+Aluno::create(['alu_tur_id'=>20,'alu_nome'=>'VANILDA DE SOUSA MARCIEL LIMA','alu_cpf'=>'86697897368','alu_tel'=>'']);
+
