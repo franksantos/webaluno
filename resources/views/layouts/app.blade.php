@@ -14,19 +14,19 @@
     <!-- Styles -->
     <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">-->
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLte/bootstrap/css/bootstrap.min.css")}}">
+    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css")}}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!--teste -->
     <!--<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">-->
     <!-- Datepicker -->
-    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLte/plugins/datepicker/datepicker3.css")}}">
+    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLTE/plugins/datepicker/datepicker3.css")}}">
     <!-- Timepicker -->
-    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLte/plugins/timepicker/bootstrap-timepicker.min.css")}}">
+    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLTE/plugins/timepicker/bootstrap-timepicker.min.css")}}">
     <!-- DataTable for laravel -->
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
     <!-- CSS do Plugin Select2 -->
-    <link href="{{ asset("/bower_components/AdminLte/plugins/select2/select2.css") }}" rel="stylesheet">
+    <link href="{{ asset("/bower_components/AdminLTE/plugins/select2/select2.css") }}" rel="stylesheet">
 
     <style>
         .error{color:red;}
@@ -61,24 +61,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <!-- Datepicker -->
-    <script src="{{ asset("/bower_components/AdminLte/plugins/datepicker/bootstrap-datepicker.js")}}"></script>
+    <script src="{{ asset("/bower_components/AdminLTE/plugins/datepicker/bootstrap-datepicker.js")}}"></script>
     <!-- Timepicker -->
-    <script src="{{ asset("/bower_components/AdminLte/plugins/timepicker/bootstrap-timepicker.js")}}"></script>
+    <script src="{{ asset("/bower_components/AdminLTE/plugins/timepicker/bootstrap-timepicker.js")}}"></script>
     <!-- Locales Datepicker -->
-    <script src="{{ asset("/bower_components/AdminLte/plugins/datepicker/locales/bootstrap-datepicker.pt-BR.js")}}"></script>
+    <script src="{{ asset("/bower_components/AdminLTE/plugins/datepicker/locales/bootstrap-datepicker.pt-BR.js")}}"></script>
     <!-- Input Mask -->
-    <script src="{{ asset("/bower_components/AdminLte/plugins/input-mask/jquery.inputmask.js")}}"></script>
+    <script src="{{ asset("/bower_components/AdminLTE/plugins/input-mask/jquery.inputmask.js")}}"></script>
     <!-- Input Mask DAte Extensions -->
-    <script src="{{ asset("/bower_components/AdminLte/plugins/input-mask/jquery.inputmask.date.extensions.js")}}"></script>
+    <script src="{{ asset("/bower_components/AdminLTE/plugins/input-mask/jquery.inputmask.date.extensions.js")}}"></script>
     <!-- Input Mask Extensions -->
-    <script src="{{ asset("/bower_components/AdminLte/plugins/input-mask/jquery.inputmask.extensions.js")}}"></script>
+    <script src="{{ asset("/bower_components/AdminLTE/plugins/input-mask/jquery.inputmask.extensions.js")}}"></script>
     <!-- Plugin Plentz MaskMoney -->
-    <script src="{{ asset("/bower_components/AdminLte/plugins/plentz/jquery.maskMoney.js")}}"></script>
+    <script src="{{ asset("/bower_components/AdminLTE/plugins/plentz/jquery.maskMoney.js")}}"></script>
     <!-- Plugin Select2 -->
-    <script src="{{ asset("/bower_components/AdminLte/plugins/select2/select2.js") }}"></script>
+    <script src="{{ asset("/bower_components/AdminLTE/plugins/select2/select2.js") }}"></script>
     <!-- Plugin Validate -->
-    <script src="{{ asset("/bower_components/AdminLte/plugins/validate/jquery.validate.min.js") }}"></script>
-    <script src="{{ asset("/bower_components/AdminLte/plugins/validate/localization/messages_pt_BR.min.js") }}"></script>
+    <script src="{{ asset("/bower_components/AdminLTE/plugins/validate/jquery.validate.min.js") }}"></script>
+    <script src="{{ asset("/bower_components/AdminLTE/plugins/validate/localization/messages_pt_BR.min.js") }}"></script>
     <!-- DataTable laravel -->
     <script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
     @yield('scripts')

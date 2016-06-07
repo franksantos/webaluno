@@ -10,22 +10,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <title>IESPIMA | Sistema de Controle de Pagamentos</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"><!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLte/bootstrap/css/bootstrap.min.css")}}">
+    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css")}}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLte/dist/css/AdminLTE.min.css")}}">
+    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLTE/dist/css/AdminLTE.min.css")}}">
     <!-- Datepicker -->
-    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLte/plugins/datepicker/datepicker3.css")}}">
+    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLTE/plugins/datepicker/datepicker3.css")}}">
     <!-- Timepicker -->
-    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLte/plugins/timepicker/bootstrap-timepicker.css")}}">
+    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLTE/plugins/timepicker/bootstrap-timepicker.css")}}">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLte/dist/css/skins/skin-blue.min.css")}}">
+    <link rel="stylesheet" href="{{ asset("/bower_components/AdminLTE/dist/css/skins/skin-blue.min.css")}}">
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -36,7 +36,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <![endif]-->
 
     <!-- jQuery 2.1.4 -->
-    <script src="{{ asset("/bower_components/AdminLte/plugins/jQuery/jQuery-2.1.4.min.js")}}"></script>
+    <script src="{{ asset("/bower_components/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js")}}"></script>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -176,21 +176,21 @@ desired effect
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 2.1.4 -->
-<script src="{{ asset("/bower_components/AdminLte/plugins/jQuery/jQuery-2.1.4.min.js")}}"></script>
+<script src="{{ asset("/bower_components/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js")}}"></script>
 <!-- Bootstrap 3.3.5 -->
-<script src="{{ asset("/bower_components/AdminLte/bootstrap/js/bootstrap.min.js")}}"></script>
+<script src="{{ asset("/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js")}}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset("/bower_components/AdminLte/dist/js/app.min.js")}}"></script>
+<script src="{{ asset("/bower_components/AdminLTE/dist/js/app.min.js")}}"></script>
 <!-- Datepicker -->
-<script src="{{ asset("/bower_components/AdminLte/plugins/datepicker/bootstrap-datepicker.js")}}"></script>
+<script src="{{ asset("/bower_components/AdminLTE/plugins/datepicker/bootstrap-datepicker.js")}}"></script>
 <!-- Locales Datepicker -->
-<script src="{{ asset("/bower_components/AdminLte/plugins/datepicker/locales/bootstrap-datepicker.pt-BR.js")}}"></script>
+<script src="{{ asset("/bower_components/AdminLTE/plugins/datepicker/locales/bootstrap-datepicker.pt-BR.js")}}"></script>
 <!-- Input Mask -->
-<script src="{{ asset("/bower_components/AdminLte/plugins/input-mask/jquery.inputmask.js")}}"></script>
+<script src="{{ asset("/bower_components/AdminLTE/plugins/input-mask/jquery.inputmask.js")}}"></script>
 <!-- Input Mask DAte Extensions -->
-<script src="{{ asset("/bower_components/AdminLte/plugins/input-mask/jquery.inputmask.date.extensions.js")}}"></script>
+<script src="{{ asset("/bower_components/AdminLTE/plugins/input-mask/jquery.inputmask.date.extensions.js")}}"></script>
 <!-- Input Mask Extensions -->
-<script src="{{ asset("/bower_components/AdminLte/plugins/input-mask/jquery.inputmask.extensions.js")}}"></script>
+<script src="{{ asset("/bower_components/AdminLTE/plugins/input-mask/jquery.inputmask.extensions.js")}}"></script>
 @yield('scripts')
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
