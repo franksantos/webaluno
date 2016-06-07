@@ -19,7 +19,7 @@ class TurmaTableSeeder extends Seeder
     public function run()
     {
         // TODO: Implement run() method.
-        Turma::truncate();
+        //Turma::truncate();
         Turma::create(['tur_cur_id'=>2,'cur_pol_id'=>5,'tur_nome'=>'ADMINISTRAÇÃO LAJEADO-MA','tur_data_inicio'=>'2014-01-03']);
         Turma::create(['tur_cur_id'=>4,'cur_pol_id'=>1,'tur_nome'=>'COMPLEMENTAÇÃO E','tur_data_inicio'=>'2014-01-03']);
         Turma::create(['tur_cur_id'=>4,'cur_pol_id'=>1,'tur_nome'=>'COMPLEMENTAÇÃO F','tur_data_inicio'=>'2014-01-03']);

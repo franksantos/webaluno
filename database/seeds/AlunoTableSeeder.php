@@ -20,7 +20,7 @@ class AlunoTableSeeder extends Seeder
     {
         // TODO: Implement run() method.
         //limpa a tabela
-        Aluno::truncate();
+        //Aluno::truncate();
         /** Alunos de ADMINISTRAÇÃO LAJEADO*/
         Aluno::create(['alu_tur_id'=>1,'alu_nome'  =>'RAWLLISON COSTA PINHEIRO','alu_cpf'   =>'05690602302','alu_tel'   =>'']);
         Aluno::create(['alu_tur_id'=>1,'alu_nome'  =>'TACIZIO BANDEIRA MARTINS','alu_cpf'   =>'05521515305','alu_tel'   =>'']);

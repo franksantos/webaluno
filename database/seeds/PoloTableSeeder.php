@@ -13,7 +13,7 @@ class PoloTableSeeder extends Seeder
     public function run()
     {
         //limpa a tabela
-        Polo::truncate();
+        //Polo::truncate();
         //adciono as linhas
         Polo::create(['pol_nome'      =>'IMPERATRIZ-MA']);//id=1
         Polo::create(['pol_nome'          =>'GRAJAÚ-MA']);//id=2

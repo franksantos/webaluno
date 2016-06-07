@@ -29,6 +29,8 @@ class CreateTriggerInsPagto extends Migration
     public function down()
     {
         //
-        DB::unprepared('DROP TRIGGER `tr_User_Default_Member_Role`');
+        DB::unprepared('DROP TRIGGER IF EXISTS tr_Update_Mensalidade_Apos_Pagamento');
+        //DB::unprepared('DROP TRIGGER `tr_User_Default_Member_Role`');
+
     }
 }

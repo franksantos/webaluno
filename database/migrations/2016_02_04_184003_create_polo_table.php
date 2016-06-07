@@ -27,8 +27,6 @@ class CreatePoloTable extends Migration
      */
     public function down()
     {
-        Schema::table('polo', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('polo');
     }
 }

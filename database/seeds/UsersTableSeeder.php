@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
     {
         //
         //limpa a tabela
-        User::truncate();
+        //User::truncate();
         //adciono o usuário frank
         User::create([
             'name'=>'frank',
