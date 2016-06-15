@@ -41,14 +41,14 @@
             </div>
             <!--<div class="form-group">
                 {!! Form::label('Lote do Pagamento ( informado no comprovante )') !!}
-                {!! Form::text('lote_pagto', null, ['id'=>'lote_pagto', 'class'=>'form-control', 'required'=>'required']) !!}
-            </div>-->
+                -->{!! Form::hidden('lote_pagto', "padrao", ['id'=>'lote_pagto', 'class'=>'form-control', 'required'=>'required']) !!}
+            <!--</div>-->
         </div>
         <div class="col-md-6">
             <!--<div class="form-group">
                 {!! Form::label('Numero do Terminal usado no Pagamento ( informado no comprovante )') !!}
-                {!! Form::text('terminal_pagto', null, ['id'=>'terminal_pagto', 'class'=>'form-control', 'required'=>'required']) !!}
-            </div>-->
+                -->{!! Form::hidden('terminal_pagto', "Iespima Sede", ['id'=>'terminal_pagto', 'class'=>'form-control', 'required'=>'required']) !!}
+            <!--</div>-->
             <div class="form-group">
                 {!! Form::label('C&oacute;digo de Barras do Pagamento ( informado no comprovante )') !!}
                 {!! Form::text('cod_barras_pagto', null, ['id'=>'cod_barras_pagto', 'class'=>'form-control', 'required'=>'required']) !!}
@@ -83,7 +83,7 @@
                     autoclose: true,
                     todayHighlight: true
                 });
-                //máscara para o telefone
+                //mï¿½scara para o telefone
                 $('#hora_pagto').inputmask("99:99:99", {"placeholder": "__:__:__"});
 
                 /** validate */

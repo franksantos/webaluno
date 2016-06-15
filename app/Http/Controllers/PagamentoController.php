@@ -68,35 +68,10 @@ class PagamentoController extends Controller
         $anoVenc = $dta2[2];
         $data_vencimento = Carbon::create($anoVenc, $mesVenc, $diaVenc);
 
-        //return $nomeAluno;
-
-        //dd($flag);
-		
-		/** verificar se o pagamento ja foi feito anteriormente */
-//        $existPagto = $p->find($request->idMensalidade);
-//        if($existPagto != null){
-//            /** Após salvar o pagamento busca novamente as mensalidades do aluno no banco de dados para exibi-las atualizadas */
-//            $mensalidades = $m->join('aluno', function($join) {
-//                $join->on('mensalidade.mes_alu_id', '=', 'aluno.id');
-//            })
-//                ->select('mensalidade.id AS cod', 'mensalidade.mes_num', 'mensalidade.mes_valor', 'mensalidade.mes_data_venc', 'mensalidade.mes_status')
-//                ->where('mes_alu_id', '=', $request->idAluno)
-//                ->get();
-//            $aluno = new Aluno();
-//            //$nomeAluno = $aluno->all()->where('alu_id',$request->aluno);
-//            $objAluno = DB::table('aluno')->where('id', '=', $request->idAluno)->get();
-//			$flag = array('acao'=>'listar', 'mensagem'=>'ja existe um pagamento cadastrado para essa parcela');
-//            return view('pagamento.create',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno, 'flag'=>$flag]);
-//        }else{
-            /*
-             * Verificar se o pagamento é clonado e retorna uma mensagem
-             * Se o pagamento for clonado avisa o usuário com mensagem na tela
-             * Se não for clonado deixa salvar o pagamento normalmente
-             * */
             $clone = self::verificaPagamentoClonado($p, $data_pagamento, $request->hora_pagto, $request->cod_barras_pagto );
             if($clone){
-                //envia a mensagem para a tela e não salva
-                //dd("é um clone. Pagamento CLONADO! ALERTA".$data_pagamento.$request->hora_pagto);
+                //envia a mensagem para a tela e nï¿½o salva
+                //dd("ï¿½ um clone. Pagamento CLONADO! ALERTA".$data_pagamento.$request->hora_pagto);
                 $detalhes = self::detalhesPagamentoClonado($p, $data_pagamento, $request->hora_pagto, $request->cod_barras_pagto);
                 foreach($detalhes as $item){
                     $pag_mes_id = $item->pag_mes_id;
@@ -119,16 +94,16 @@ class PagamentoController extends Controller
 			$p->pag_valor      = $request->valor_parcela;
 			$p->save();
         //}
-        /** Após salvar o pagamento busca novamente as mensalidades do aluno no banco de dados para exibi-las atualizadas */
+        /** Apï¿½s salvar o pagamento busca novamente as mensalidades do aluno no banco de dados para exibi-las atualizadas */
         $mensalidades = $m->join('aluno', function($join) {
             $join->on('mensalidade.mes_alu_id', '=', 'aluno.id');
-        })
-            ->select('mensalidade.id AS cod', 'mensalidade.mes_num', 'mensalidade.mes_valor', 'mensalidade.mes_data_venc', 'mensalidade.mes_status')
+            }) ->select('mensalidade.id AS cod', 'mensalidade.mes_num', 'mensalidade.mes_valor', 'mensalidade.mes_data_venc', 'mensalidade.mes_status')
             ->where('mes_alu_id', '=', $request->idAluno)
             ->get();
         $aluno = new Aluno();
         //$nomeAluno = $aluno->all()->where('alu_id',$request->aluno);
         $objAluno = DB::table('aluno')->where('id', '=', $request->idAluno)->first();
+
         //return view('pagamento.create',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno, 'flag'=>$flag]);
         return view('pagamento.index',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno]);
         //return var_dump($mensalidades);
@@ -136,7 +111,7 @@ class PagamentoController extends Controller
 
     public function show($id, Pagamento $p){
         //exibe os detalhes de um pagamento
-        //$id é o id da mensalidade do aluno
+        //$id ï¿½ o id da mensalidade do aluno
         $idMensalidade = intval($id);
         $pagamento = $p->join('mensalidade', 'mensalidade.id', '=','pagamento.pag_mes_id' )
             ->where('pagamento.pag_mes_id', '=', $id)
