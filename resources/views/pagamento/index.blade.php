@@ -9,9 +9,9 @@
     </div>
 </div>
     <div class="container">
-        @foreach($alunos as $chave)
-            <h4>Parcelas do aluno: <span class="label label-success">{{ $chave->alu_nome }}</span></h4>
-        @endforeach
+
+            <h4>Parcelas do aluno: <span class="label label-success">{{ $aluno->alu_nome }}</span></h4>
+
         <table class="table table-striped table-bordered table-hover">
             <thead>
             <tr>
@@ -39,7 +39,7 @@
                         @if($mensalidade->mes_status == 'Pago')
                             <a href="{{route('pagamentos.show', ['id'=>$mensalidade->id])}}" class="btn btn-info">Ver Detalhes do Pagto.</a>
                         @else
-                            <a href="{{ route('pagamentos.cadcomprovante',['idMensalidade'=>$mensalidade->id, 'idAluno'=>$alunos->id]) }}" class="btn-sm btn-success">Confirmar Pagamento</a>
+                            <a href="{{ route('pagamentos.cadcomprovante',['idMensalidade'=>$mensalidade->id, 'idAluno'=>$aluno->id]) }}" class="btn-sm btn-success">Confirmar Pagamento</a>
                         @endif
                     </td>
                 </tr>

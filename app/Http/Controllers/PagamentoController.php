@@ -105,7 +105,7 @@ class PagamentoController extends Controller
         $objAluno = DB::table('aluno')->where('id', '=', $request->idAluno)->first();
 
         //return view('pagamento.create',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno, 'flag'=>$flag]);
-        return view('pagamento.index',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno]);
+        return view('pagamento.index',['mensalidades'=>$mensalidades, 'aluno'=>$objAluno, 'clonado'=>false]);
         //return var_dump($mensalidades);
     }
 
