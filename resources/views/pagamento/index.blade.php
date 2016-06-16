@@ -37,9 +37,9 @@
                     </td>
                     <td style="text-align: center">
                         @if($mensalidade->mes_status == 'Pago')
-                            <a href="{{route('pagamentos.show', ['id'=>$mensalidade->id])}}" class="btn btn-info">Ver Detalhes do Pagto.</a>
+                            <a href="{{route('pagamentos.show', ['id'=>$mensalidade->cod])}}" class="btn btn-info">Ver Detalhes do Pagto.</a>
                         @else
-                            <a href="{{ route('pagamentos.cadcomprovante',['idMensalidade'=>$mensalidade->id, 'idAluno'=>$aluno->id]) }}" class="btn-sm btn-success">Confirmar Pagamento</a>
+                            <a href="{{ route('pagamentos.cadcomprovante',['idMensalidade'=>$mensalidade->cod, 'idAluno'=>$aluno->id]) }}" class="btn-sm btn-success">Confirmar Pagamento</a>
                         @endif
                     </td>
                 </tr>

@@ -84,7 +84,7 @@ class PagamentoController extends Controller
                 return view('pagamento.clonado',['mensalidade'=>$mes_id, 'clonado'=>true]);
             }
             /* recebo o id da parcela a ser mudada o status */
-			$p->pag_mes_id     = $request->idMensalidade;
+			/*$p->pag_mes_id     = $request->idMensalidade;
 			$p->pag_data       = $data_pagamento;
 			$p->pag_hora       = $request->hora_pagto;
 			$p->pag_lote       = $request->lote_pagto;
@@ -92,8 +92,9 @@ class PagamentoController extends Controller
 			$p->pag_cod_barras = $request->cod_barras_pagto;
 			$p->pag_data_venc  = $data_vencimento;
 			$p->pag_valor      = $request->valor_parcela;
-			$p->save();
+			$p->save();*/
         //}
+
         /** Ap�s salvar o pagamento busca novamente as mensalidades do aluno no banco de dados para exibi-las atualizadas */
         $mensalidades = $m->join('aluno', function($join) {
             $join->on('mensalidade.mes_alu_id', '=', 'aluno.id');

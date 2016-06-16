@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/',['middleware' => 'auth', function () {
+/*Route::get('/',['middleware' => 'auth', function () {
     return view('home');
-}]);
+}]);*/
 //ROTA PARA O TEMPLATE
 Route::get('admin', function(){
     return view('admin_template');
@@ -30,11 +30,6 @@ Route::get('admin', function(){
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
-
-
 //Route::auth();
 
 //Route::get('/home', 'HomeController@index');
@@ -42,6 +37,10 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
+
+    Route::get('/',['middleware' => 'auth', function () {
+        return view('home');
+    }]);
 
     Route::get('/home', 'HomeController@index');
 
