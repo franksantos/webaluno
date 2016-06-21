@@ -245,8 +245,8 @@ class PagamentoController extends Controller
     public function detalhesPagamentoClonado(Pagamento $p, $data, $hora, $cod_barras){
         $qry_cod_barras = $p->where("pag_cod_barras", "like", "%".$cod_barras."%")->get();
         $qry_data_hora  = $p->where( function($query) use ($data, $hora){
-            $query->where("pag_hora", "like", "%".$hora."%")
-                ->where("pag_data", "like", "%" . $data . "%");
+            $query->where("pag_hora", "=", "%".$hora."%")
+                ->where("pag_data", "=", "%" . $data . "%");
         })
             ->get();
         $testa_cod_barras = count($qry_cod_barras);
