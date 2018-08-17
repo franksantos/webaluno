@@ -42,6 +42,32 @@
 
                 </div>
             </div>
+            {{-- Painel com relatórios de valores recebidos  --}}
+            {{-- INÍCIO  --}}
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3>Total Geral: R$ {{$totalGeral}}</h3>
+              </div>
+              <div class="panel-body">
+                  <div class="row placeholders" style="text-align: center">
+                      <div class="col-xs-6 col-sm-3 placeholder">
+                            <h4>Utilipeças: R$ {{$totalUtilipecas}} | Qtd Pagas: {{$qtdPagasUtilipecas}}</h4>
+                      </div>
+                      <div class="col-xs-6 col-sm-3 placeholder">
+                        <h4>Carrão Acessórios: R$ {{$totalCarraoAcessorios}} | Qtd Pagas: {{$qtdPagasCarrao}}</h4>
+                      </div>
+                      <div class="col-xs-6 col-sm-3 placeholder">
+                        <h4>Ipesa: R$ {{$totalIpesa}} | Qtd Pagas: {{$qtdPagasIpesa}}</h4>
+                      </div>
+                      <div class="col-xs-6 col-sm-3 placeholder">
+                        <h4>Wnuclear: R$ {{$totalWnuclear}} | Qtd Pagas: {{$qtdPagasWnuclear}}</h4>
+                      </div>
+
+                  </div>
+
+              </div>
+            </div>
+            {{-- FIM  --}}
         </div>
     </div>
 </div>
