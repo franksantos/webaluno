@@ -20,21 +20,21 @@
                             <a href="{{url('aluno/create')}}">
                                 <img src="{!! asset('bower_components/AdminLTE/dist/img/alunos.png') !!}" style="border:1px solid #cccccc" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                                 <h4>Alunos</h4>
-                                <span class="text-muted">Gest&atilde;o de Alunos</span>
+                                <span class="text-muted">Gest&atilde;o de Clientes</span>
                             </a>
                         </div>
                     <div class="col-xs-6 col-sm-3 placeholder">
                         <a href="{{url('mensalidade/create')}}">
                             <img src="{!! asset('bower_components/AdminLTE/dist/img/carne_pagamento.png') !!}" style="border:1px solid #cccccc; width: 200px; height: 200px;" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                             <h4>Parcelas</h4>
-                            <span class="text-muted">Criar Parcelas para um Aluno</span>
+                            <span class="text-muted">Criar Parcelas para um Cliente</span>
                         </a>
                         </div>
                         <div class="col-xs-6 col-sm-3 placeholder">
                             <a href="{{url('turma/create')}}">
                                 <img src="{!! asset('bower_components/AdminLTE/dist/img/classroom_icone.png') !!}" style="border:1px solid #cccccc;" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                                 <h4>Turmas</h4>
-                                <span class="text-muted">Gest&atilde;o de Turmas</span>
+                                <span class="text-muted">Gest&atilde;o de Categorias</span>
                             </a>
                         </div>
 
