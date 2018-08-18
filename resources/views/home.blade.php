@@ -19,7 +19,7 @@
                         <div class="col-xs-6 col-sm-3 placeholder">
                             <a href="{{url('aluno/create')}}">
                                 <img src="{!! asset('bower_components/AdminLTE/dist/img/alunos.png') !!}" style="border:1px solid #cccccc" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                                <h4>Alunos</h4>
+                                <h4>Clientes</h4>
                                 <span class="text-muted">Gest&atilde;o de Clientes</span>
                             </a>
                         </div>
