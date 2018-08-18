@@ -51,16 +51,20 @@
               <div class="panel-body">
                   <div class="row placeholders" style="text-align: center">
                       <div class="col-xs-6 col-sm-3 placeholder">
-                            <h4>Utilipeças: R$ {{$totalUtilipecas}} | Qtd Pagas: {{$qtdPagasUtilipecas}}</h4>
+                            <h4>Utilipeças: R$ {{$totalUtilipecas}}</h4>
+                            <h5>Qtd Pagas: {{$qtdPagasUtilipecas}}</h5>
                       </div>
                       <div class="col-xs-6 col-sm-3 placeholder">
-                        <h4>Carrão Acessórios: R$ {{$totalCarraoAcessorios}} | Qtd Pagas: {{$qtdPagasCarrao}}</h4>
+                        <h4>Carrão: R$ {{$totalCarraoAcessorios}} </h4>
+                        <h5>Qtd Pagas: {{$qtdPagasCarrao}}</h5>
                       </div>
                       <div class="col-xs-6 col-sm-3 placeholder">
-                        <h4>Ipesa: R$ {{$totalIpesa}} | Qtd Pagas: {{$qtdPagasIpesa}}</h4>
+                        <h4>Ipesa: R$ {{$totalIpesa}}</h4>
+                        <h5>Qtd Pagas: {{$qtdPagasIpesa}}</h5>
                       </div>
                       <div class="col-xs-6 col-sm-3 placeholder">
-                        <h4>Wnuclear: R$ {{$totalWnuclear}} | Qtd Pagas: {{$qtdPagasWnuclear}}</h4>
+                        <h4>Wnuclear: R$ {{$totalWnuclear}} </h4>
+                        <h5>Qtd Pagas: {{$qtdPagasWnuclear}}</h5>
                       </div>
 
                   </div>
