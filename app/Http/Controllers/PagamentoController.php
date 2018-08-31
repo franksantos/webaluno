@@ -156,6 +156,7 @@ class PagamentoController extends Controller
         })
             ->where('mes_alu_id', '=', $request->alunoNome)
             ->select('mensalidade.id','mensalidade.mes_num', 'mensalidade.mes_valor', 'mensalidade.mes_data_venc', 'mensalidade.mes_status')
+            ->orderBy('mensalidade.mes_data_venc', 'ASC')
             ->get();
         $flag = array('acao'=>'listar');
         return view('pagamento.create',['mensalidades'=>$mensalidades, 'alunos'=>$objAluno, 'flag'=>$flag]);
