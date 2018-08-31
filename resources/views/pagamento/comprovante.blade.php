@@ -32,7 +32,7 @@
             </div>
             <div class="form-group">
                 {!! Form::label('Data do Pagamento ( informada no comprovante )') !!}
-                {!! Form::text('data_pagto', null, ['id'=>'data_pagto', 'class'=>'form-control', 'required'=>'required']) !!}
+                {!! Form::text('data_pagto', null, ['id'=>'data_pagto', 'class'=>'form-control', 'required'=>'required', 'autocomplete'=>'off']) !!}
 
             </div>
             <div class="form-group">
