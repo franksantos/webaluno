@@ -168,6 +168,12 @@ Route::group(['middleware' => 'web'], function () {
         'getIndex' => 'datatables',
     ]);
 
+    /* -- rota cadastro de Pagamentos --*/
+    Route::get('pagamento/create',['as' => 'pagamentos.create', 'uses' => 'PagamentoController@create']);
+    /*-- lista todas as mensalidades de um aluno --*/
+    Route::post('pagamento/lista/mensalidades',['as' => 'pagamentos.listamensalidades', 'uses' => 'PagamentoController@listaMensalidadesAluno']);
 
+    /** Rotas de despesas */
+    Route::get('despesa/create', ['as'=>'despesa.crate', 'uses'=>'DespesaController@create']);
 
 });
