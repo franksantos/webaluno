@@ -10,7 +10,7 @@ class DespesaController extends Controller
 {
     //
     public function create(){
-        return view('despesa.create');
+        return view('despesa.create', ['test'=>0]);
     }
     public function store(Request $request, Despesa $d){
       $dta = explode("/", $request->vencimento);
