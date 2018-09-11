@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+      <h3 class="box-title">Cadastro de Despesa</h3>
         <!-- aqui entrara a tela de detalhes do pagamento -->
         {!! Form::open(array('url' => 'aluno/store')) !!}
         <div class="row">
@@ -17,12 +18,12 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('Tipo de Pagamento') !!}
-                    {!! Form::radio('tipo_pagamento', "0", true, ['class'=>'form-control']) !!} Dinheiro
+                    {!! Form::radio('tipo_pagamento', "0", ['class'=>'form-control']) !!} Dinheiro
                     {!! Form::radio('tipo_pagamento', "1", ['class'=>'form-control']) !!} Cartão de Crédito
                 </div>
                 <div class="form-group">
                     {!! Form::label('Situação (Status da despesa)') !!}
-                    {!! Form::radio('situacao', '0', true, ['class'=>'form-control']) !!} Em Dias
+                    {!! Form::radio('situacao', '0', ['class'=>'form-control']) !!} Em Dias
                     {!! Form::radio('situacao', '1', ['class'=>'form-control']) !!} Paga
                     {!! Form::radio('situacao', '2', ['class'=>'form-control text-red']) !!} Em Atraso
                 </div>
@@ -40,14 +41,6 @@
                 <div class="form-group">
                     {!! Form::label('Data do Pagamento') !!}
                     {!! Form::text('data_pagamento', null, ['id'=>'data_pagamento', 'class'=>'form-control']) !!}
-                </div>
-                <div class="form-group">
-                    {!! Form::label('Data de Vencimento da Parcela') !!}
-                    {!! Form::text('data_venc', null, ['id'=>'data_venc', 'class'=>'form-control']) !!}
-                </div>
-                <div class="form-group">
-                    {!! Form::label('Valor Pago') !!}
-                    {!! Form::text('valor_parcela', null, ['id'=>'valor_parcela','class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('Observação') !!}
