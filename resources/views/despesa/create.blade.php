@@ -1,6 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
+  @if($test==1)
+  <!-- Modal Mensagem SUCESSO  -->
+  <!-- inicio -->
+  <div class="modal fade" id="sucessoAjax" tabindex="-1" role="dialog" aria-     labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel">SALVO COM SUCESSO</h4>
+              </div>
+              <div class="modal-body">
+                  <p id="retorno">
+
+                  </p>
+
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+              </div>
+          </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  <!-- FIM Mensagem de SUCESSO-->
+  @endif
     <div class="container">
       <h3 class="box-title">Cadastro de Despesa</h3>
         <!-- aqui entrara a tela de detalhes do pagamento -->
