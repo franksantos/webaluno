@@ -33,6 +33,6 @@ class DespesaController extends Controller
       $d->data_pagamento = $data_pagamento;
       $d->obs = $request->obs;
       $d->save();
-        return view('despesa.create');
+        return view('despesa.create', ['test'=>1]);
     }
 }
