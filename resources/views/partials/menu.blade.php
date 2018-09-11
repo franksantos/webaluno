@@ -22,13 +22,14 @@
                             <ul class="dropdown-menu">-->
                                 <li><a href="{!! route('cursos.create') !!}">Cursos</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="{{url('turma/create')}}">Turmas</a></li>
+                                <li><a href="{{url('turma/create')}}">Categorias</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{!! route('alunos.create') !!}">Alunos</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{!! route('mensalidades.create') !!}">Mensalidades</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{!! url('pagamento/create') !!}">Pagamentos</a></li>
+                                <li><a href="{!! url('despesa/create') !!}">Despesas</a></li>
                             <!--</ul>
                         </li>-->
                         <!--<li class="dropdown">
