@@ -175,5 +175,6 @@ Route::group(['middleware' => 'web'], function () {
 
     /** Rotas de despesas */
     Route::get('despesa/create', ['as'=>'despesa.crate', 'uses'=>'DespesaController@create']);
+    Route::post('despesa/store', ['as'=>'despesa.store', 'uses'=>'DespesaController@store']);
 
 });
