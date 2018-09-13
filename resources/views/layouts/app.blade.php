@@ -77,7 +77,8 @@
     <!-- Plugin Select2 -->
     <script src="{{ asset("/bower_components/AdminLTE/plugins/select2/select2.js") }}"></script>
     <!-- Plugin Validate -->
-    <script src="{{ asset("/bower_components/AdminLTE/plugins/validate/jquery.validate.min.js") }}"></script>
+    {{-- <script src="{{ asset("/bower_components/AdminLTE/plugins/validate/jquery.validate.min.js") }}"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
     <script src="{{ asset("/bower_components/AdminLTE/plugins/validate/localization/messages_pt_BR.min.js") }}"></script>
     <!-- DataTable laravel -->
     <script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
