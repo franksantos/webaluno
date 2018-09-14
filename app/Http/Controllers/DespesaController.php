@@ -28,7 +28,7 @@ class DespesaController extends Controller
 
       $d->descricao = $request->descricao;
       $d->vencimento = $data_vencimento;
-      $d->tipo_pagamento = $request->ipo_pagamento;
+      $d->tipo_pagamento = $request->tipo_pagamento;
       $d->situacao = $request->situacao;
       $d->valor = $request->valor;
       $d->data_pagamento = $data_pagamento;
