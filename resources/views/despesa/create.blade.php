@@ -28,7 +28,7 @@
     <div class="container">
       <h3 class="box-title">Cadastro de Despesa</h3>
         <!-- aqui entrara a tela de detalhes do pagamento -->
-        {!! Form::open(array('url' => 'aluno/store')) !!}
+        {!! Form::open(array('url' => 'despesa/store')) !!}
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
