@@ -106,7 +106,7 @@
                         <tr>
                             <th>Descrição</th>
                             <th>Valor</th>
-                            <th>Data de Vencimento</th>
+                            <th>Data de Pagamento</th>
                             <th>Status</th>
                             <th style="text-align: center">A&ccedil;&otilde;es</th>
                         </tr>
@@ -116,7 +116,7 @@
                             <tr>
                                 <td>{{ $d->descricao }}</td>
                                 <td>{{ $d->valor }}</td>
-                                <td>{{ $d->vencimento->format('d/m/Y') }}</td>
+                                <td>{{ $d->data_pagamento->format('d/m/Y') }}</td>
                                 <td>
                                     @if($d->situacao == 1)
                                         <p class="text-success"><strong>Pago</strong></p>
