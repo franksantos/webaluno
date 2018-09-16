@@ -11,7 +11,8 @@ class DespesaController extends Controller
 {
     //
     public function create(){
-        return view('despesa.create', ['test'=>0]);
+        $despesas = Despesa::all();
+        return view('despesa.create', ['test'=>0, 'despesas'=>$despesas]);
     }
     public function store(Request $request, Despesa $d){
       $dta = explode("/", $request->vencimento);
@@ -25,7 +26,6 @@ class DespesaController extends Controller
       $mesVenc = $dta2[1];
       $anoVenc = $dta2[2];
       $data_pagamento = Carbon::create($anoVenc, $mesVenc, $diaVenc);
-
       $d->descricao = $request->descricao;
       $d->vencimento = $data_vencimento;
       $d->tipo_pagamento = $request->tipo_pagamento;
@@ -34,6 +34,8 @@ class DespesaController extends Controller
       $d->data_pagamento = $data_pagamento;
       $d->obs = $request->obs;
       $d->save();
-        return view('despesa.create', ['test'=>1]);
+
+        $despesas = Despesa::all();
+        return view('despesa.create', ['test'=>1, 'despesas'=>$despesas]);
     }
 }
