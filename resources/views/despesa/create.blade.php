@@ -30,7 +30,7 @@
         <!-- aqui entrara a tela de detalhes do pagamento -->
         {!! Form::open(array('url' => 'despesa/store')) !!}
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="form-group">
                     {!! Form::label('Descrição') !!}
                     {!! Form::text('descricao', null, ['class'=>'form-control']) !!}
@@ -41,20 +41,24 @@
 
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="form-group">
                     {!! Form::label('Tipo de Pagamento') !!}
+                    <br>
                     {!! Form::radio('tipo_pagamento', "0", ['class'=>'form-control']) !!} Dinheiro
                     {!! Form::radio('tipo_pagamento', "1", ['class'=>'form-control']) !!} Cartão de Crédito
                 </div>
                 <div class="form-group">
                     {!! Form::label('Situação (Status da despesa)') !!}
+                    <br>
                     {!! Form::radio('situacao', '0', ['class'=>'form-control']) !!} Em Dias
+                    <br>
                     {!! Form::radio('situacao', '1', ['class'=>'form-control']) !!} Paga
+                    <br>
                     {!! Form::radio('situacao', '2', ['class'=>'form-control text-red']) !!} Em Atraso
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="form-group">
                     {!! Form::label('Valor ( em Reais )') !!}
                     {!! Form::number('valor', null, [
@@ -74,7 +78,7 @@
           <div class="col-md-12">
             <div class="form-group">
                 {!! Form::label('Observação') !!}
-                {!! Form::textarea('obs',null, ['id'=>'valor_parcela','class' => 'form-control']) !!}
+                {!! Form::textarea('obs',null, ['id'=>'valor_parcela','class' => 'form-control', 'rows'=>'4', 'cols'=>'100%']) !!}
             </div>
           </div>
         </div>
