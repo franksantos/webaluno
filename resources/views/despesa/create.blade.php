@@ -80,6 +80,50 @@
                 </div>
             </div> --}}
         </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="container">
+                    <h4>Despesas</h4>
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data de Vencimento</th>
+                        <th>Status</th>
+                        <th style="text-align: center">A&ccedil;&otilde;es</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($despesas as $d)
+                        <tr>
+                            <td>{{ $d->descricao }}</td>
+                            <td>{{ $d->valor }}</td>
+                            <td>{{ $d->vencimento->format('d/m/Y') }}</td>
+                            <td>
+                                @if($d->situacao == 1)
+                                    <p class="text-success"><strong>Pago</strong></p>
+                                @elseif($d->situacao == 0)
+                                    <p class="text-danger"><strong>Em aberto</strong></p>
+                                @endif
+                                {{-- $mensalidade->mes_status --}}
+                            </td>
+                            <td style="text-align: center">
+                                {{-- @if($mensalidade->mes_status == 'Pago')
+                                    <a href="{{route('pagamentos.show', ['id'=>$mensalidade->id])}}" class="btn btn-info">Ver Detalhes do Pagto.</a>
+                                @else
+                                    <a href="{{ route('pagamentos.cadcomprovante',['idMensalidade'=>$mensalidade->id, 'idAluno'=>$alunos->id]) }}" class="btn-sm btn-success">Confirmar Pagamento</a>
+                                @endif --}}
+                                
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+          </div>
+
+        </div>
     </div>
 @endsection
 @section('scripts')
