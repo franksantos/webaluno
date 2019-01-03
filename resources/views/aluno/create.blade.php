@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
-                    {!! Form::label('Turma') !!}
+                    {!! Form::label('Tipo') !!}
                     {!! Form::select('turma', $turmas,'', ['class' => 'form-control']) !!}
                     @if($errors->has('turma'))<p class="alert alert-danger">{{$errors->first('turma')}}</p>@endif
                 </div>
@@ -48,7 +48,7 @@
         {!! Form::close() !!}
 
         <div class="container">
-                <h4>Lista de Alunos</h4>
+                <h4>Lista de Clientes</h4>
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
                     <tr>
@@ -82,12 +82,12 @@
 @endsection
 @section('scripts')
     <script>
-        //máscara para o cpf
+        //mï¿½scara para o cpf
         $('#cpf').inputmask("999.999.999-99", {"placeholder": "___.___.___-__"});
-        //máscara para o telefone
+        //mï¿½scara para o telefone
         $('#telefone').inputmask("(99) 99999-9999", {"placeholder": "(__) _____-____"});
     </script>
-    <!-- validação do cpf do aluno -->
+    <!-- validaï¿½ï¿½o do cpf do aluno -->
     <script>
         function TestaCPF(strCPF) {
             var Soma;
