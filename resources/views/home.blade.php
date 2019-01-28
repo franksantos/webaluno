@@ -47,9 +47,9 @@
             <div class="panel panel-info">
               <div class="panel-heading">
                 <div class="row">
-                  <div class="col-md-4"><h3>Receitas Totais: R$ {{$totalGeral}}</h3></div>
-                  <div class="col-md-4"><h3>Despesas Totais: R$ {{$totalDespesas}}</h3></div>
-                  <div class="col-md-4"><h3>Lucro Líquido: R$ {{($totalGeral-$totalDespesas)}}</h3></div>
+                  <div class="col-md-4"><h3>Receitas: R$ {{$totalGeral}}</h3></div>
+                  <div class="col-md-4"><h3>Despesas: R$ {{$totalDespesas}}</h3></div>
+                  <div class="col-md-4"><h3>Resultado: R$ {{($totalGeral-$totalDespesas)}}</h3></div>
                 </div>
               </div>
               <div class="panel-body">
