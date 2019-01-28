@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Mensalidade;
+use App\Despesa;
 use Carbon\Carbon;
 class HomeController extends Controller
 {
@@ -34,6 +35,7 @@ class HomeController extends Controller
         $totalIpesa = Mensalidade::where('mes_status','=','Pago')->where('mes_alu_id', '=', 852)->sum('mes_valor');
         $totalWnuclear = Mensalidade::where('mes_status','=','Pago')->where('mes_alu_id', '=', 853)->sum('mes_valor');
         $totalGeral = Mensalidade::where('mes_status','=','Pago')->sum('mes_valor');
+        $totalDespesas = Despesa::where('situacao','=',1)->sum('valor');
 
         $qtdPagasUtilipecas = Mensalidade::where('mes_status','=','Pago')->where('mes_alu_id', '=', 850)->count();
         $qtdPagasCarrao = Mensalidade::where('mes_status','=','Pago')->where('mes_alu_id', '=', 851)->count();
@@ -45,6 +47,7 @@ class HomeController extends Controller
           'totalIpesa'=>$totalIpesa,
           'totalWnuclear'=>$totalWnuclear,
           'totalGeral' => $totalGeral,
+          'totalDespesas' => $totalDespesas,
           'qtdPagasUtilipecas'=>$qtdPagasUtilipecas,
           'qtdPagasCarrao'=>$qtdPagasCarrao,
           'qtdPagasIpesa'=>$qtdPagasIpesa,
