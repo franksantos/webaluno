@@ -47,9 +47,12 @@
             <div class="panel panel-info">
               <div class="panel-heading">
                 <div class="row">
-                  <div class="col-md-4"><h3>Receitas: R$ {{$totalGeral}}</h3></div>
-                  <div class="col-md-4"><h3>Despesas: R$ {{$totalDespesas}}</h3></div>
-                  <div class="col-md-4"><h3>Resultado: R$ {{($totalGeral-$totalDespesas)}}</h3></div>
+                  <div class="col-md-4"><h3>Receitas: R$ {{number_format($totalGeral, 2, ',', '.')}}</h3></div>
+                  <div class="col-md-4"><h3>Despesas: R$ {{number_format($totalDespesas, 2, ',', '.')}}</h3></div>
+                  @php
+                    $resultado = $totalGeral-$totalDespesas;
+                  @endphp
+                  <div class="col-md-4"><h3>Resultado: R$ {{number_format($resultado, 2, ',', '.')}}</h3></div>
                 </div>
               </div>
               <div class="panel-body">
