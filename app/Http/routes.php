@@ -38,10 +38,11 @@ Route::get('admin', function(){
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/',['middleware' => 'auth', function () {
-        return view('home');
-    }]);
+    // Route::get('/',['middleware' => 'auth', function () {
+    //     return view('home');
+    // }]);
 
+    Route::get('/', 'HomeController@index');
     Route::get('/home', 'HomeController@index');
 
     /**
